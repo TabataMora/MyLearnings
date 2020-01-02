@@ -1,0 +1,17 @@
+C:\gitRepository\MyLearnings\MyLearnings.Desktop\bin\Debug\MyLearnings.Desktop.exe.config
+C:\gitRepository\MyLearnings\MyLearnings.Desktop\bin\Debug\MyLearnings.Desktop.exe
+C:\gitRepository\MyLearnings\MyLearnings.Desktop\bin\Debug\MyLearnings.Desktop.pdb
+C:\gitRepository\MyLearnings\MyLearnings.Desktop\bin\Debug\MyLearnings.Entidades.dll
+C:\gitRepository\MyLearnings\MyLearnings.Desktop\bin\Debug\MyLearnings.Entidades.pdb
+C:\gitRepository\MyLearnings\MyLearnings.Desktop\obj\Debug\MyLearnings.Desktop.csprojAssemblyReference.cache
+C:\gitRepository\MyLearnings\MyLearnings.Desktop\obj\Debug\MyLearnings.Desktop.frmLogin.resources
+C:\gitRepository\MyLearnings\MyLearnings.Desktop\obj\Debug\MyLearnings.Desktop.Properties.Resources.resources
+C:\gitRepository\MyLearnings\MyLearnings.Desktop\obj\Debug\MyLearnings.Desktop.csproj.GenerateResource.cache
+C:\gitRepository\MyLearnings\MyLearnings.Desktop\obj\Debug\MyLearnings.Desktop.csproj.CoreCompileInputs.cache
+C:\gitRepository\MyLearnings\MyLearnings.Desktop\obj\Debug\MyLearnings.Desktop.csproj.CopyComplete
+C:\gitRepository\MyLearnings\MyLearnings.Desktop\obj\Debug\MyLearnings.Desktop.exe
+C:\gitRepository\MyLearnings\MyLearnings.Desktop\obj\Debug\MyLearnings.Desktop.pdb
+C:\gitRepository\MyLearnings\MyLearnings.Desktop\bin\Debug\MyLearnings.AcessoADados.dll
+C:\gitRepository\MyLearnings\MyLearnings.Desktop\bin\Debug\MyLearnings.AcessoADados.pdb
+C:\gitRepository\MyLearnings\MyLearnings.Desktop\bin\Debug\MyLearnings.RegrasDeNegocio.dll
+C:\gitRepository\MyLearnings\MyLearnings.Desktop\bin\Debug\MyLearnings.RegrasDeNegocio.pdb

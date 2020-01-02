@@ -1,0 +1,6 @@
+C:\gitRepository\MyLearnings\MyLearnings.Entidades\bin\Debug\MyLearnings.Entidades.dll
+C:\gitRepository\MyLearnings\MyLearnings.Entidades\bin\Debug\MyLearnings.Entidades.pdb
+C:\gitRepository\MyLearnings\MyLearnings.Entidades\obj\Debug\MyLearnings.Entidades.csprojAssemblyReference.cache
+C:\gitRepository\MyLearnings\MyLearnings.Entidades\obj\Debug\MyLearnings.Entidades.csproj.CoreCompileInputs.cache
+C:\gitRepository\MyLearnings\MyLearnings.Entidades\obj\Debug\MyLearnings.Entidades.dll
+C:\gitRepository\MyLearnings\MyLearnings.Entidades\obj\Debug\MyLearnings.Entidades.pdb

@@ -1,0 +1,11 @@
+C:\gitRepository\MyLearnings\MyLearnings.RegrasDeNegocio\bin\Debug\MyLearnings.RegrasDeNegocio.dll
+C:\gitRepository\MyLearnings\MyLearnings.RegrasDeNegocio\bin\Debug\MyLearnings.RegrasDeNegocio.pdb
+C:\gitRepository\MyLearnings\MyLearnings.RegrasDeNegocio\bin\Debug\MyLearnings.AcessoADados.dll
+C:\gitRepository\MyLearnings\MyLearnings.RegrasDeNegocio\bin\Debug\MyLearnings.Entidades.dll
+C:\gitRepository\MyLearnings\MyLearnings.RegrasDeNegocio\bin\Debug\MyLearnings.AcessoADados.pdb
+C:\gitRepository\MyLearnings\MyLearnings.RegrasDeNegocio\bin\Debug\MyLearnings.Entidades.pdb
+C:\gitRepository\MyLearnings\MyLearnings.RegrasDeNegocio\obj\Debug\MyLearnings.RegrasDeNegocio.csprojAssemblyReference.cache
+C:\gitRepository\MyLearnings\MyLearnings.RegrasDeNegocio\obj\Debug\MyLearnings.RegrasDeNegocio.csproj.CoreCompileInputs.cache
+C:\gitRepository\MyLearnings\MyLearnings.RegrasDeNegocio\obj\Debug\MyLearnings.RegrasDeNegocio.csproj.CopyComplete
+C:\gitRepository\MyLearnings\MyLearnings.RegrasDeNegocio\obj\Debug\MyLearnings.RegrasDeNegocio.dll
+C:\gitRepository\MyLearnings\MyLearnings.RegrasDeNegocio\obj\Debug\MyLearnings.RegrasDeNegocio.pdb
