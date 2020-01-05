@@ -1,4 +1,5 @@
 ﻿using MyLearnings.AcessoADados.AcessoEntidades;
+using MyLearnings.Entidades.Auxiliares;
 using MyLearnings.Entidades.Entidades;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,24 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
                 throw;
             }
              
+        }
+
+        public bool ValidaUsuario(string email, string senha)
+        {       
+            bool validado;
+
+            UsuarioAcessoADados usuarioAcessoADados = new UsuarioAcessoADados();
+
+            Usuario usuario = usuarioAcessoADados.ObterUsuario(email);
+
+            Criptografia criptografia = new Criptografia();
+
+            // senhaCriptografada = criptografia.CriptografarSenha(senha);
+
+            validado = criptografia.VerificarSenha(senha, usuario.Senha);
+            
+            return true;
+            
         }
     }
 }

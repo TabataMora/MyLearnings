@@ -19,5 +19,10 @@ namespace MyLearnings.Entidades.Entidades
             this.Senha = senha;
             this.Email = email;
         }
+
+        public Usuario()
+        {
+
+        }
     }
 }

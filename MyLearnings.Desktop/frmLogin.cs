@@ -24,49 +24,32 @@ namespace MyLearnings.Desktop
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            try
-            {
-                Usuario usuario = new Usuario(nome: "Dkljnkljhgho", senha: "123456", email: "diego@hotmail.com");
+            //try
+            //{
+            //    Usuario usuario = new Usuario(nome: "Dkljnkljhgho", senha: "123456", email: "diego@hotmail.com");
 
-                UsuarioRegrasDeNegocio usuarioRegrasDeNegocio = new UsuarioRegrasDeNegocio();
-                usuarioRegrasDeNegocio.Incluir(usuario);
+            //    UsuarioRegrasDeNegocio usuarioRegrasDeNegocio = new UsuarioRegrasDeNegocio();
+            //    usuarioRegrasDeNegocio.Incluir(usuario);
 
 
-            }
-            catch (Exception ex)
-            {
+            //}
+            //catch (Exception ex)
+            //{
 
-                MessageBox.Show(ex.Message);
-            }
+            //    MessageBox.Show(ex.Message);
+            //}
 
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            //string senhaDigitada = "marlene";
-            //string senhaParaSalvarNoBanco = string.Empty;
-
-
-            //Criptografia criptografia = new Criptografia();
-
-            //senhaParaSalvarNoBanco = criptografia.CriptografarSenha(senhaDigitada);
-
-            // Este sistema está sendo feito uma validação 
-
-            string usuario = string.Empty; 
-            string senhaDigitada = string.Empty;
-            string senhaCadastrada = "049AD99D6785BFCF5E707E6C3461CBBA52667FD670B0774A215D0CDEEE89B42851E5B54EA30F2B1DA14453426B873FF9830E7C2AD7561278986B9DFFDBEF43C6";
+            UsuarioRegrasDeNegocio usuarioRegras = new UsuarioRegrasDeNegocio();
             bool validado = false;
 
             if (txtUsuario.Text != string.Empty || txtSenha.Text != string.Empty) //validando se a variável está vazia, se não for vazia
             {
-                senhaDigitada = txtSenha.Text; //passando a senha do txt para a variável
-                usuario = txtUsuario.Text; 
-
-                Criptografia criptografia = new Criptografia(); // instaciando a classe para poder usar o método de validação
-                validado = criptografia.VerificarSenha(senhaDigitada, senhaCadastrada); // passando para a variável de validação o retorno do metódo true ou falso
+                validado = usuarioRegras.ValidaUsuario(txtUsuario.Text, senha: txtSenha.Text);
             }
-
             else
             {
                 MessageBox.Show("Usuário e/ou senha inválidos!");
@@ -82,6 +65,9 @@ namespace MyLearnings.Desktop
             {
                 MessageBox.Show("Usuário e/ou senha inválidos!");
             }
+
+
+
         }
     }
 }
