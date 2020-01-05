@@ -15,3 +15,6 @@ C:\gitRepository\MyLearnings\MyLearnings.Desktop\bin\Debug\MyLearnings.AcessoADa
 C:\gitRepository\MyLearnings\MyLearnings.Desktop\bin\Debug\MyLearnings.AcessoADados.pdb
 C:\gitRepository\MyLearnings\MyLearnings.Desktop\bin\Debug\MyLearnings.RegrasDeNegocio.dll
 C:\gitRepository\MyLearnings\MyLearnings.Desktop\bin\Debug\MyLearnings.RegrasDeNegocio.pdb
+C:\gitRepository\MyLearnings\MyLearnings.Desktop\obj\Debug\MyLearnings.Desktop.frmCadastroTecnica.resources
+C:\gitRepository\MyLearnings\MyLearnings.Desktop\obj\Debug\MyLearnings.Desktop.frmCadastroUsuario.resources
+C:\gitRepository\MyLearnings\MyLearnings.Desktop\obj\Debug\MyLearnings.Desktop.frmPrincipal.resources

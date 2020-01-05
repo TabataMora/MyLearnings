@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auxiliares\Criptografia.cs" />
     <Compile Include="Entidades\Ciclo.cs" />
     <Compile Include="Entidades\EuSouUmaClasse.cs" />
     <Compile Include="Entidades\Item.cs" />
