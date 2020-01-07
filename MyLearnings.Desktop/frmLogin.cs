@@ -38,36 +38,39 @@ namespace MyLearnings.Desktop
 
             //    MessageBox.Show(ex.Message);
             //}
-
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            UsuarioRegrasDeNegocio usuarioRegras = new UsuarioRegrasDeNegocio();
+            UsuarioRegrasDeNegocio usuarioRegras = new UsuarioRegrasDeNegocio(); //instanciando uma classe para usar o método
             bool validado = false;
-
-            if (txtUsuario.Text != string.Empty || txtSenha.Text != string.Empty) //validando se a variável está vazia, se não for vazia
+            try
             {
-                validado = usuarioRegras.ValidaUsuario(txtUsuario.Text, senha: txtSenha.Text);
+                if (txtUsuario.Text != string.Empty || txtSenha.Text != string.Empty) //validando se a variável está vazia, se não for vazia
+                {
+                    validado = usuarioRegras.ValidaUsuario(txtUsuario.Text, senha: txtSenha.Text); // passando para a variável validado o que tem no usuário e senha digitados pelo usuário.
+                }
+                else
+                {
+                    MessageBox.Show("Usuário e/ou senha inválidos!");
+                }
+
+                if (validado == true) //testando o retorno da validação
+                {
+                    frmCadastroUsuario frm = new frmCadastroUsuario(); // se for verdadeiro a validação acima, abre o form principal.
+                    frm.Show();
+                }
+
+                else
+                {
+                    MessageBox.Show("Usuário e/ou senha inválidos!");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Usuário e/ou senha inválidos!");
+
+                MessageBox.Show(ex.Message);
             }
-
-            if (validado == true)
-            {
-                frmPrincipal frm = new frmPrincipal(); // se for verdadeiro a validação de cima, abre o form principal.
-                frm.Show();
-            }
-
-            else
-            {
-                MessageBox.Show("Usuário e/ou senha inválidos!");
-            }
-
-
-
         }
     }
 }

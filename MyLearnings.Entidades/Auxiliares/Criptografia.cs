@@ -33,7 +33,7 @@ namespace MyLearnings.Entidades.Auxiliares
         public bool VerificarSenha(string senhaDigitada, string senhaCadastrada)
         {
             if (string.IsNullOrEmpty(senhaCadastrada))
-                throw new NullReferenceException("Cadastre uma senha.");
+                throw new NullReferenceException("Senha ou/e usuário inválido(s)!");
 
             var encryptedPassword = _algoritmo.ComputeHash(Encoding.UTF8.GetBytes(senhaDigitada));
 

@@ -40,26 +40,26 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                 finally
                 {
                     _conexao.Desconectar();
-                }             
-            }                     
+                }
+            }
         }
 
-        public Usuario ObterUsuario(string email)
+        public Usuario ObterUsuario(string email) //método para obter um usuário
         {
-            Usuario retorno = new Usuario();
+            Usuario retorno = new Usuario(); //instaciando criando uma variável do tipo usuario
             SqlCommand cmd = new SqlCommand();
-            using (cmd.Connection = _conexao.ObjetoDaConexao)
+            using (cmd.Connection = _conexao.ObjetoDaConexao) //usando a conexão e passando para o objetodaconexão
             {
                 try
                 {
                     _conexao.Conectar();
                     cmd.CommandText = "SELECT * FROM TB_USUARIO WHERE EMAIL = @EMAIL";
                     cmd.Parameters.AddWithValue("@EMAIL", email);
-                    using (cmd)
+                    using (cmd) //usando o comando
                     {
                         using (DbDataReader dbReader = cmd.ExecuteReader())
                         {
-                            while (dbReader.Read())
+                            while (dbReader.Read()) //se os campos não forem vazios atribui os valores para as variáveis e salva no banco de dados.
                             {
                                 retorno.Id = Convert.ToInt32(dbReader["ID"]);
                                 retorno.Senha = (dbReader["SENHA"].ToString());

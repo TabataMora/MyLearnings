@@ -15,11 +15,20 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
         {
             try
             {
-                if (usuario.Nome.Trim().Length <= 3)
+                if (usuario.Nome.Trim().Length <= 0)
                 {
-                    throw new Exception("O nome do usuário precisa ser maior!");
+                    throw new Exception("O nome do usuário precisa ser informado!");
                 }
 
+                if (usuario.Email.Trim().Length < 0)
+                {
+                    throw new Exception("O e-mail precisa ser informado!");
+                }
+
+                if (usuario.Senha.Trim().Length <= 0)
+                {
+                    throw new Exception("Uma senha precisa ser informada!");
+                }
                 else
                 {
                     UsuarioAcessoADados usuarioAcessoADados = new UsuarioAcessoADados();
@@ -31,25 +40,30 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
 
                 throw;
             }
-             
         }
 
         public bool ValidaUsuario(string email, string senha)
-        {       
+        {
             bool validado;
 
-            UsuarioAcessoADados usuarioAcessoADados = new UsuarioAcessoADados();
+            try
+            {
+                UsuarioAcessoADados usuarioAcessoADados = new UsuarioAcessoADados(); //instanciando a classe para utilizar o método Usuario
 
-            Usuario usuario = usuarioAcessoADados.ObterUsuario(email);
+                Usuario usuario = usuarioAcessoADados.ObterUsuario(email); //criando uma variável do tipo Usuário e passando o email para o UsuárioAcessoADados
 
-            Criptografia criptografia = new Criptografia();
+                Criptografia criptografia = new Criptografia(); //instanciando a classe
 
-            // senhaCriptografada = criptografia.CriptografarSenha(senha);
+                // senhaCriptografada = criptografia.CriptografarSenha(senha);
 
-            validado = criptografia.VerificarSenha(senha, usuario.Senha);
-            
-            return true;
-            
+                validado = criptografia.VerificarSenha(senha, usuario.Senha); //validando a criptografia pegando a senha digitada e comparando com a senha salva no banco de dados.
+
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }
