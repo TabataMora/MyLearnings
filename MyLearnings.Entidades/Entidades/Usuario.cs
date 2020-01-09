@@ -13,8 +13,9 @@ namespace MyLearnings.Entidades.Entidades
         public string Senha { get; set; }
         public string Email { get; set; }
 
-        public Usuario(string nome, string senha, string email)
+        public Usuario(int id,string nome, string senha, string email)
         {
+            this.Id = id;
             this.Nome = nome;
             this.Senha = senha;
             this.Email = email;

@@ -24,24 +24,16 @@ namespace MyLearnings.Desktop
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    Usuario usuario = new Usuario(nome: "Dkljnkljhgho", senha: "123456", email: "diego@hotmail.com");
-
-            //    UsuarioRegrasDeNegocio usuarioRegrasDeNegocio = new UsuarioRegrasDeNegocio();
-            //    usuarioRegrasDeNegocio.Incluir(usuario);
-
-
-            //}
-            //catch (Exception ex)
-            //{
-
-            //    MessageBox.Show(ex.Message);
-            //}
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+            frmCadastroUsuario frm = new frmCadastroUsuario(); // se for verdadeiro a validação acima, abre o form principal.
+#if DEBUG
+            
+            frm.Show();
+
+#else
             UsuarioRegrasDeNegocio usuarioRegras = new UsuarioRegrasDeNegocio(); //instanciando uma classe para usar o método
             bool validado = false;
             try
@@ -56,21 +48,17 @@ namespace MyLearnings.Desktop
                 }
 
                 if (validado == true) //testando o retorno da validação
-                {
-                    frmCadastroUsuario frm = new frmCadastroUsuario(); // se for verdadeiro a validação acima, abre o form principal.
+                {                    
                     frm.Show();
                 }
 
-                else
-                {
-                    MessageBox.Show("Usuário e/ou senha inválidos!");
-                }
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
             }
+#endif
         }
     }
 }
