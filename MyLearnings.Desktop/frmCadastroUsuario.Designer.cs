@@ -46,12 +46,14 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.toolTipMeusBotoes = new System.Windows.Forms.ToolTip(this.components);
+            this.btnLocalizar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnLocalizar);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnExcluir);
@@ -68,13 +70,13 @@
             this.panel1.Controls.Add(this.txtIdUsuario);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(540, 361);
+            this.panel1.Size = new System.Drawing.Size(642, 361);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(262, 40);
+            this.pictureBox1.Location = new System.Drawing.Point(310, 24);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(256, 166);
@@ -88,7 +90,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(438, 271);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 78);
-            this.btnCancelar.TabIndex = 12;
+            this.btnCancelar.TabIndex = 6;
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnExcluir
@@ -97,8 +99,9 @@
             this.btnExcluir.Location = new System.Drawing.Point(333, 271);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(80, 78);
-            this.btnExcluir.TabIndex = 11;
+            this.btnExcluir.TabIndex = 8;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -106,17 +109,17 @@
             this.btnAlterar.Location = new System.Drawing.Point(228, 271);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(80, 78);
-            this.btnAlterar.TabIndex = 10;
+            this.btnAlterar.TabIndex = 9;
             this.btnAlterar.UseVisualStyleBackColor = true;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnSalvar
             // 
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.Location = new System.Drawing.Point(124, 271);
+            this.btnSalvar.Location = new System.Drawing.Point(542, 271);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(80, 78);
-            this.btnSalvar.TabIndex = 9;
+            this.btnSalvar.TabIndex = 5;
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
@@ -126,7 +129,7 @@
             this.btnInserir.Location = new System.Drawing.Point(22, 271);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(80, 78);
-            this.btnInserir.TabIndex = 8;
+            this.btnInserir.TabIndex = 4;
             this.btnInserir.UseVisualStyleBackColor = true;
             this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
@@ -171,35 +174,45 @@
             this.txtEmail.Location = new System.Drawing.Point(22, 219);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(342, 20);
-            this.txtEmail.TabIndex = 3;
+            this.txtEmail.TabIndex = 2;
             // 
             // txtSenha
             // 
             this.txtSenha.Location = new System.Drawing.Point(22, 161);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(100, 20);
-            this.txtSenha.TabIndex = 2;
+            this.txtSenha.TabIndex = 1;
             // 
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(22, 102);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
-            this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.TabIndex = 0;
             // 
             // txtIdUsuario
             // 
+            this.txtIdUsuario.Enabled = false;
             this.txtIdUsuario.Location = new System.Drawing.Point(22, 40);
             this.txtIdUsuario.Name = "txtIdUsuario";
             this.txtIdUsuario.ReadOnly = true;
             this.txtIdUsuario.Size = new System.Drawing.Size(62, 20);
-            this.txtIdUsuario.TabIndex = 0;
+            this.txtIdUsuario.TabIndex = 10;
+            // 
+            // btnLocalizar
+            // 
+            this.btnLocalizar.Image = ((System.Drawing.Image)(resources.GetObject("btnLocalizar.Image")));
+            this.btnLocalizar.Location = new System.Drawing.Point(126, 271);
+            this.btnLocalizar.Name = "btnLocalizar";
+            this.btnLocalizar.Size = new System.Drawing.Size(80, 78);
+            this.btnLocalizar.TabIndex = 7;
+            this.btnLocalizar.UseVisualStyleBackColor = true;
             // 
             // frmCadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 385);
+            this.ClientSize = new System.Drawing.Size(666, 385);
             this.Controls.Add(this.panel1);
             this.Name = "frmCadastroUsuario";
             this.Text = "Cadastro de Usuário";
@@ -229,5 +242,6 @@
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtIdUsuario;
         private System.Windows.Forms.ToolTip toolTipMeusBotoes;
+        private System.Windows.Forms.Button btnLocalizar;
     }
 }

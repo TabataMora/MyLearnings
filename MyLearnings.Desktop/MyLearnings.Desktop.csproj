@@ -107,6 +107,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MyLearnings.AcessoADados\MyLearnings.AcessoADados.csproj">
+      <Project>{06c31a2e-3f4d-496e-8dd9-e75fa2fcffb4}</Project>
+      <Name>MyLearnings.AcessoADados</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyLearnings.Entidades\MyLearnings.Entidades.csproj">
       <Project>{6144b44a-43c8-4e79-81e5-971ed65eda2e}</Project>
       <Name>MyLearnings.Entidades</Name>

@@ -80,5 +80,29 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
             }
             return retorno;
         }
+
+        public void Excluir(int id)
+        {
+            SqlCommand cmd = new SqlCommand();
+            using (cmd.Connection = _conexao.ObjetoDaConexao)
+            {
+                try
+                {
+                    _conexao.Conectar();
+                    cmd.CommandText = "DELETE FROM TB_USUARIO WHERE ID = @ID";
+                    cmd.Parameters.AddWithValue("@ID", id);
+                    cmd.ExecuteNonQuery();                 
+                }
+
+                catch(Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _conexao.Desconectar();
+                }
+            }
+        }
     }
 }

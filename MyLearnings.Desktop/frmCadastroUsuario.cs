@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using MyLearnings.AcessoADados;
 
 namespace MyLearnings.Desktop
 {
@@ -99,7 +100,8 @@ namespace MyLearnings.Desktop
                 {
                     //alterar usuário
                     usuario.Id = Convert.ToInt32(txtIdUsuario.Text);
-                    usuarioRegras. //criar método para alterar no regras de negócio
+                    usuarioRegras.Alterar(usuario);
+                    MessageBox.Show("Cadastro alterado com sucesso!");
                     
                 }
                 this.LimpaTela();
@@ -115,6 +117,28 @@ namespace MyLearnings.Desktop
         {
             this.operacao = "Alterar";
             this.AlteraBotoes(2);
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult d = MessageBox.Show("Deseja excluir o registro?", "Aviso", MessageBoxButtons.YesNo);
+                
+                if (d.ToString() == "Yes")
+                {
+                    Conexao cx = new Conexao(ConfiguraConexao.StringDeConexao);
+                    UsuarioRegrasDeNegocio usuarioRegras = new UsuarioRegrasDeNegocio(cx);
+                    usuarioRegras.(Convert.ToInt32(txtCodigo.Text));
+                    this.LimpaTela();
+                    this.AlteraBotoes(1);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Impossível excluir esse registro. \nO registro está sendo utilizado em outro local.");
+                this.AlteraBotoes(3);
+            }
         }
     }
 }

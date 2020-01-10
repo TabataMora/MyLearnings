@@ -11,6 +11,8 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
 {
     public class UsuarioRegrasDeNegocio
     {
+        private UsuarioAcessoADados conexao;
+
         public int Incluir(Usuario usuario)
         {
             try
@@ -64,6 +66,39 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
             {
                 throw;
             }
+        }
+
+        public int Alterar(Usuario usuario)
+        {
+            try
+            {
+                if (usuario.Nome.Trim().Length <= 0)
+                {
+                    throw new Exception("O nome do usuário precisa ser informado!");
+                }
+
+                if (usuario.Email.Trim().Length < 0)
+                {
+                    throw new Exception("O e-mail precisa ser informado!");
+                }
+
+                if (usuario.Senha.Trim().Length <= 0)
+                {
+                    throw new Exception("Uma senha precisa ser informada!");
+                }
+
+                UsuarioAcessoADados usuarioAcessoADados = new UsuarioAcessoADados(conexao);
+                return usuarioAcessoADados.Incluir(usuario);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public void Excluir(int id)
+        {
+            UsuarioAcessoADados usuarioAcesso = new UsuarioAcessoADados(conexao);
         }
     }
 }
