@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroUsuario));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLocalizar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -46,7 +47,6 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.toolTipMeusBotoes = new System.Windows.Forms.ToolTip(this.components);
-            this.btnLocalizar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +73,16 @@
             this.panel1.Size = new System.Drawing.Size(642, 361);
             this.panel1.TabIndex = 0;
             // 
+            // btnLocalizar
+            // 
+            this.btnLocalizar.Image = ((System.Drawing.Image)(resources.GetObject("btnLocalizar.Image")));
+            this.btnLocalizar.Location = new System.Drawing.Point(126, 271);
+            this.btnLocalizar.Name = "btnLocalizar";
+            this.btnLocalizar.Size = new System.Drawing.Size(80, 78);
+            this.btnLocalizar.TabIndex = 7;
+            this.btnLocalizar.UseVisualStyleBackColor = true;
+            this.btnLocalizar.Click += new System.EventHandler(this.btnLocalizar_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -87,11 +97,12 @@
             // btnCancelar
             // 
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(438, 271);
+            this.btnCancelar.Location = new System.Drawing.Point(542, 271);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 78);
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnExcluir
             // 
@@ -116,7 +127,7 @@
             // btnSalvar
             // 
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.Location = new System.Drawing.Point(542, 271);
+            this.btnSalvar.Location = new System.Drawing.Point(438, 271);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(80, 78);
             this.btnSalvar.TabIndex = 5;
@@ -192,21 +203,11 @@
             // 
             // txtIdUsuario
             // 
-            this.txtIdUsuario.Enabled = false;
             this.txtIdUsuario.Location = new System.Drawing.Point(22, 40);
             this.txtIdUsuario.Name = "txtIdUsuario";
-            this.txtIdUsuario.ReadOnly = true;
             this.txtIdUsuario.Size = new System.Drawing.Size(62, 20);
             this.txtIdUsuario.TabIndex = 10;
-            // 
-            // btnLocalizar
-            // 
-            this.btnLocalizar.Image = ((System.Drawing.Image)(resources.GetObject("btnLocalizar.Image")));
-            this.btnLocalizar.Location = new System.Drawing.Point(126, 271);
-            this.btnLocalizar.Name = "btnLocalizar";
-            this.btnLocalizar.Size = new System.Drawing.Size(80, 78);
-            this.btnLocalizar.TabIndex = 7;
-            this.btnLocalizar.UseVisualStyleBackColor = true;
+            this.txtIdUsuario.Validated += new System.EventHandler(this.txtIdUsuario_Validated);
             // 
             // frmCadastroUsuario
             // 

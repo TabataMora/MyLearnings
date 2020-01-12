@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using MyLearnings.AcessoADados;
+using MyLearnings.AcessoADados.AcessoEntidades;
 
 namespace MyLearnings.Desktop
 {
@@ -124,12 +125,11 @@ namespace MyLearnings.Desktop
             try
             {
                 DialogResult d = MessageBox.Show("Deseja excluir o registro?", "Aviso", MessageBoxButtons.YesNo);
-                
+
                 if (d.ToString() == "Yes")
                 {
-                    Conexao cx = new Conexao(ConfiguraConexao.StringDeConexao);
-                    UsuarioRegrasDeNegocio usuarioRegras = new UsuarioRegrasDeNegocio(cx);
-                    usuarioRegras.(Convert.ToInt32(txtCodigo.Text));
+                    UsuarioRegrasDeNegocio usuarioRegrasDeNegocio = new UsuarioRegrasDeNegocio();
+                    usuarioRegrasDeNegocio.Excluir(Convert.ToInt32(txtIdUsuario.Text));
                     this.LimpaTela();
                     this.AlteraBotoes(1);
                 }
@@ -139,6 +139,24 @@ namespace MyLearnings.Desktop
                 MessageBox.Show("Impossível excluir esse registro. \nO registro está sendo utilizado em outro local.");
                 this.AlteraBotoes(3);
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.LimpaTela();
+            this.AlteraBotoes(1);
+        }
+
+        private void txtIdUsuario_Validated(object sender, EventArgs e)
+        {
+#warning LEMBRA DE TIRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR
+            btnExcluir.Enabled = true; 
+        }
+
+        private void btnLocalizar_Click(object sender, EventArgs e)
+        {
+            frmLocalizarUsuario frm = new frmLocalizarUsuario();
+            frm.Show();
         }
     }
 }

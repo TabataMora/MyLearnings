@@ -60,5 +60,15 @@ namespace MyLearnings.Desktop
             }
 #endif
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnEntrar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            btnEntrar_Click(sender, e);
+        }
     }
 }

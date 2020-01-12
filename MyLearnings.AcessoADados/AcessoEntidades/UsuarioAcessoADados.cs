@@ -91,18 +91,70 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                     _conexao.Conectar();
                     cmd.CommandText = "DELETE FROM TB_USUARIO WHERE ID = @ID";
                     cmd.Parameters.AddWithValue("@ID", id);
-                    cmd.ExecuteNonQuery();                 
+                    cmd.ExecuteNonQuery();
                 }
 
-                catch(Exception)
+                catch (Exception)
                 {
                     throw;
+                }
+
+                finally
+                {
+                    _conexao.Desconectar();
+                }
+            }
+        }
+
+        public List<Usuario> BuscarUsuario(Usuario usuario)
+        {
+            string query = string.Empty;
+            List<Usuario> retorno = new List<Usuario>();
+            SqlCommand cmd = new SqlCommand();
+            using (cmd.Connection = _conexao.ObjetoDaConexao)
+            {
+                try
+                {
+                    _conexao.Conectar();
+
+                    if (usuario.Nome.Trim().Length == 0)
+                    {
+                        query = "SELECT * FROM TB_USUARIO";
+                    }
+
+                    else
+                    {
+                        query = "SELECT * FROM TB_USUARIO WHERE NOME LIKE '%" + usuario.Nome + "%'";                       
+                    }
+
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@ID", usuario.Id);
+                    cmd.Parameters.AddWithValue("@NOME", usuario.Nome);
+                    //cmd.Parameters.AddWithValue("@EMAIL", usuario.Email);
+                    //cmd.Parameters.AddWithValue("@SENHA", usuario.Senha);
+
+                    using (cmd)
+                    {
+                        using (DbDataReader dataReader = cmd.ExecuteReader())
+                        {
+                            while (dataReader.Read())
+                            {
+                                Usuario usuarioRetorno = new Usuario();
+                                usuarioRetorno.Id = Convert.ToInt32(dataReader["ID"].ToString());
+                                usuarioRetorno.Nome = dataReader["NOME"].ToString();
+                                //usuarioRetorno.Email = dataReader["EMAIL"].ToString();
+                                //usuarioRetorno.Senha = dataReader["SENHA"].ToString();
+                                retorno.Add(usuarioRetorno);
+                            }
+                        }
+                    }
                 }
                 finally
                 {
                     _conexao.Desconectar();
                 }
             }
+            return retorno;
         }
     }
 }

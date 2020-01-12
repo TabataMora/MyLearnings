@@ -18,3 +18,4 @@ C:\gitRepository\MyLearnings\MyLearnings.Desktop\bin\Debug\MyLearnings.RegrasDeN
 C:\gitRepository\MyLearnings\MyLearnings.Desktop\obj\Debug\MyLearnings.Desktop.frmCadastroTecnica.resources
 C:\gitRepository\MyLearnings\MyLearnings.Desktop\obj\Debug\MyLearnings.Desktop.frmCadastroUsuario.resources
 C:\gitRepository\MyLearnings\MyLearnings.Desktop\obj\Debug\MyLearnings.Desktop.frmPrincipal.resources
+C:\gitRepository\MyLearnings\MyLearnings.Desktop\obj\Debug\MyLearnings.Desktop.frmLocalizarUsuario.resources

@@ -11,7 +11,6 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
 {
     public class UsuarioRegrasDeNegocio
     {
-        private UsuarioAcessoADados conexao;
 
         public int Incluir(Usuario usuario)
         {
@@ -87,7 +86,7 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
                     throw new Exception("Uma senha precisa ser informada!");
                 }
 
-                UsuarioAcessoADados usuarioAcessoADados = new UsuarioAcessoADados(conexao);
+                UsuarioAcessoADados usuarioAcessoADados = new UsuarioAcessoADados();
                 return usuarioAcessoADados.Incluir(usuario);
             }
             catch (Exception)
@@ -98,7 +97,22 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
 
         public void Excluir(int id)
         {
-            UsuarioAcessoADados usuarioAcesso = new UsuarioAcessoADados(conexao);
+            try
+            {
+                UsuarioAcessoADados usuarioAcesso = new UsuarioAcessoADados();
+                usuarioAcesso.Excluir(id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        public List<Usuario> BuscarUsuario(Usuario IdUsuario)
+        {
+            return new UsuarioAcessoADados().BuscarUsuario(IdUsuario);
         }
     }
 }
