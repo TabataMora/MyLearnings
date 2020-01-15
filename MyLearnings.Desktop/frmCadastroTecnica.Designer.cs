@@ -30,30 +30,30 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroTecnica));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.chkPadrao = new System.Windows.Forms.CheckBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblDtAlteracao = new System.Windows.Forms.Label();
+            this.lblDtUsuAlteracao = new System.Windows.Forms.Label();
+            this.lblIdUsuCadastro = new System.Windows.Forms.Label();
+            this.lblDtCadastro = new System.Windows.Forms.Label();
+            this.lblDescLongo = new System.Windows.Forms.Label();
+            this.lblDesCurto = new System.Windows.Forms.Label();
+            this.lblTCiclo = new System.Windows.Forms.Label();
+            this.lblNomeTecnica = new System.Windows.Forms.Label();
+            this.lblIdTenica = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnInserir = new System.Windows.Forms.Button();
-            this.lblIdTenica = new System.Windows.Forms.Label();
-            this.lblNomeTecnica = new System.Windows.Forms.Label();
-            this.lblTCiclo = new System.Windows.Forms.Label();
-            this.lblDesCurto = new System.Windows.Forms.Label();
-            this.lblDescLongo = new System.Windows.Forms.Label();
-            this.lblDtCadastro = new System.Windows.Forms.Label();
-            this.lblIdUsuCadastro = new System.Windows.Forms.Label();
-            this.lblDtUsuAlteracao = new System.Windows.Forms.Label();
-            this.lblDtAlteracao = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.chkPadrao = new System.Windows.Forms.CheckBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,6 +87,161 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(540, 361);
             this.panel1.TabIndex = 0;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(207, 223);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(62, 20);
+            this.textBox9.TabIndex = 37;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(207, 176);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(100, 20);
+            this.textBox8.TabIndex = 36;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(406, 33);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(62, 20);
+            this.textBox7.TabIndex = 35;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(300, 33);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.TabIndex = 34;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(21, 223);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(62, 20);
+            this.textBox5.TabIndex = 33;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(21, 176);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(62, 20);
+            this.textBox4.TabIndex = 32;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(21, 129);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(62, 20);
+            this.textBox3.TabIndex = 31;
+            // 
+            // chkPadrao
+            // 
+            this.chkPadrao.AutoSize = true;
+            this.chkPadrao.Location = new System.Drawing.Point(153, 33);
+            this.chkPadrao.Name = "chkPadrao";
+            this.chkPadrao.Size = new System.Drawing.Size(60, 17);
+            this.chkPadrao.TabIndex = 30;
+            this.chkPadrao.Text = "Padrão";
+            this.chkPadrao.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(21, 76);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(496, 20);
+            this.textBox2.TabIndex = 29;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(21, 33);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(62, 20);
+            this.textBox1.TabIndex = 28;
+            // 
+            // lblDtAlteracao
+            // 
+            this.lblDtAlteracao.AutoSize = true;
+            this.lblDtAlteracao.Location = new System.Drawing.Point(204, 159);
+            this.lblDtAlteracao.Name = "lblDtAlteracao";
+            this.lblDtAlteracao.Size = new System.Drawing.Size(93, 13);
+            this.lblDtAlteracao.TabIndex = 27;
+            this.lblDtAlteracao.Text = "Data de Alteração";
+            // 
+            // lblDtUsuAlteracao
+            // 
+            this.lblDtUsuAlteracao.AutoSize = true;
+            this.lblDtUsuAlteracao.Location = new System.Drawing.Point(204, 206);
+            this.lblDtUsuAlteracao.Name = "lblDtUsuAlteracao";
+            this.lblDtUsuAlteracao.Size = new System.Drawing.Size(118, 13);
+            this.lblDtUsuAlteracao.TabIndex = 26;
+            this.lblDtUsuAlteracao.Text = "Id Usuário de Alteração";
+            // 
+            // lblIdUsuCadastro
+            // 
+            this.lblIdUsuCadastro.AutoSize = true;
+            this.lblIdUsuCadastro.Location = new System.Drawing.Point(403, 16);
+            this.lblIdUsuCadastro.Name = "lblIdUsuCadastro";
+            this.lblIdUsuCadastro.Size = new System.Drawing.Size(115, 13);
+            this.lblIdUsuCadastro.TabIndex = 25;
+            this.lblIdUsuCadastro.Text = "Id Usuário de Cadastro";
+            // 
+            // lblDtCadastro
+            // 
+            this.lblDtCadastro.AutoSize = true;
+            this.lblDtCadastro.Location = new System.Drawing.Point(297, 16);
+            this.lblDtCadastro.Name = "lblDtCadastro";
+            this.lblDtCadastro.Size = new System.Drawing.Size(90, 13);
+            this.lblDtCadastro.TabIndex = 24;
+            this.lblDtCadastro.Text = "Data do Cadastro";
+            // 
+            // lblDescLongo
+            // 
+            this.lblDescLongo.AutoSize = true;
+            this.lblDescLongo.Location = new System.Drawing.Point(18, 206);
+            this.lblDescLongo.Name = "lblDescLongo";
+            this.lblDescLongo.Size = new System.Drawing.Size(124, 13);
+            this.lblDescLongo.TabIndex = 23;
+            this.lblDescLongo.Text = "Tempo Descanso Longo";
+            // 
+            // lblDesCurto
+            // 
+            this.lblDesCurto.AutoSize = true;
+            this.lblDesCurto.Location = new System.Drawing.Point(18, 159);
+            this.lblDesCurto.Name = "lblDesCurto";
+            this.lblDesCurto.Size = new System.Drawing.Size(119, 13);
+            this.lblDesCurto.TabIndex = 22;
+            this.lblDesCurto.Text = "Tempo Descanso Curto";
+            // 
+            // lblTCiclo
+            // 
+            this.lblTCiclo.AutoSize = true;
+            this.lblTCiclo.Location = new System.Drawing.Point(20, 113);
+            this.lblTCiclo.Name = "lblTCiclo";
+            this.lblTCiclo.Size = new System.Drawing.Size(81, 13);
+            this.lblTCiclo.TabIndex = 21;
+            this.lblTCiclo.Text = "Tempo do Ciclo";
+            // 
+            // lblNomeTecnica
+            // 
+            this.lblNomeTecnica.AutoSize = true;
+            this.lblNomeTecnica.Location = new System.Drawing.Point(18, 60);
+            this.lblNomeTecnica.Name = "lblNomeTecnica";
+            this.lblNomeTecnica.Size = new System.Drawing.Size(35, 13);
+            this.lblNomeTecnica.TabIndex = 19;
+            this.lblNomeTecnica.Text = "Nome";
+            // 
+            // lblIdTenica
+            // 
+            this.lblIdTenica.AutoSize = true;
+            this.lblIdTenica.Location = new System.Drawing.Point(18, 16);
+            this.lblIdTenica.Name = "lblIdTenica";
+            this.lblIdTenica.Size = new System.Drawing.Size(16, 13);
+            this.lblIdTenica.TabIndex = 18;
+            this.lblIdTenica.Text = "Id";
             // 
             // btnCancelar
             // 
@@ -132,161 +287,7 @@
             this.btnInserir.Size = new System.Drawing.Size(80, 78);
             this.btnInserir.TabIndex = 13;
             this.btnInserir.UseVisualStyleBackColor = true;
-            // 
-            // lblIdTenica
-            // 
-            this.lblIdTenica.AutoSize = true;
-            this.lblIdTenica.Location = new System.Drawing.Point(18, 16);
-            this.lblIdTenica.Name = "lblIdTenica";
-            this.lblIdTenica.Size = new System.Drawing.Size(16, 13);
-            this.lblIdTenica.TabIndex = 18;
-            this.lblIdTenica.Text = "Id";
-            // 
-            // lblNomeTecnica
-            // 
-            this.lblNomeTecnica.AutoSize = true;
-            this.lblNomeTecnica.Location = new System.Drawing.Point(18, 60);
-            this.lblNomeTecnica.Name = "lblNomeTecnica";
-            this.lblNomeTecnica.Size = new System.Drawing.Size(35, 13);
-            this.lblNomeTecnica.TabIndex = 19;
-            this.lblNomeTecnica.Text = "Nome";
-            // 
-            // lblTCiclo
-            // 
-            this.lblTCiclo.AutoSize = true;
-            this.lblTCiclo.Location = new System.Drawing.Point(20, 113);
-            this.lblTCiclo.Name = "lblTCiclo";
-            this.lblTCiclo.Size = new System.Drawing.Size(81, 13);
-            this.lblTCiclo.TabIndex = 21;
-            this.lblTCiclo.Text = "Tempo do Ciclo";
-            // 
-            // lblDesCurto
-            // 
-            this.lblDesCurto.AutoSize = true;
-            this.lblDesCurto.Location = new System.Drawing.Point(18, 159);
-            this.lblDesCurto.Name = "lblDesCurto";
-            this.lblDesCurto.Size = new System.Drawing.Size(119, 13);
-            this.lblDesCurto.TabIndex = 22;
-            this.lblDesCurto.Text = "Tempo Descanso Curto";
-            // 
-            // lblDescLongo
-            // 
-            this.lblDescLongo.AutoSize = true;
-            this.lblDescLongo.Location = new System.Drawing.Point(18, 206);
-            this.lblDescLongo.Name = "lblDescLongo";
-            this.lblDescLongo.Size = new System.Drawing.Size(124, 13);
-            this.lblDescLongo.TabIndex = 23;
-            this.lblDescLongo.Text = "Tempo Descanso Longo";
-            // 
-            // lblDtCadastro
-            // 
-            this.lblDtCadastro.AutoSize = true;
-            this.lblDtCadastro.Location = new System.Drawing.Point(297, 16);
-            this.lblDtCadastro.Name = "lblDtCadastro";
-            this.lblDtCadastro.Size = new System.Drawing.Size(90, 13);
-            this.lblDtCadastro.TabIndex = 24;
-            this.lblDtCadastro.Text = "Data do Cadastro";
-            // 
-            // lblIdUsuCadastro
-            // 
-            this.lblIdUsuCadastro.AutoSize = true;
-            this.lblIdUsuCadastro.Location = new System.Drawing.Point(403, 16);
-            this.lblIdUsuCadastro.Name = "lblIdUsuCadastro";
-            this.lblIdUsuCadastro.Size = new System.Drawing.Size(115, 13);
-            this.lblIdUsuCadastro.TabIndex = 25;
-            this.lblIdUsuCadastro.Text = "Id Usuário de Cadastro";
-            // 
-            // lblDtUsuAlteracao
-            // 
-            this.lblDtUsuAlteracao.AutoSize = true;
-            this.lblDtUsuAlteracao.Location = new System.Drawing.Point(204, 206);
-            this.lblDtUsuAlteracao.Name = "lblDtUsuAlteracao";
-            this.lblDtUsuAlteracao.Size = new System.Drawing.Size(118, 13);
-            this.lblDtUsuAlteracao.TabIndex = 26;
-            this.lblDtUsuAlteracao.Text = "Id Usuário de Alteração";
-            // 
-            // lblDtAlteracao
-            // 
-            this.lblDtAlteracao.AutoSize = true;
-            this.lblDtAlteracao.Location = new System.Drawing.Point(204, 159);
-            this.lblDtAlteracao.Name = "lblDtAlteracao";
-            this.lblDtAlteracao.Size = new System.Drawing.Size(93, 13);
-            this.lblDtAlteracao.TabIndex = 27;
-            this.lblDtAlteracao.Text = "Data de Alteração";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(21, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(62, 20);
-            this.textBox1.TabIndex = 28;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(21, 76);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(496, 20);
-            this.textBox2.TabIndex = 29;
-            // 
-            // chkPadrao
-            // 
-            this.chkPadrao.AutoSize = true;
-            this.chkPadrao.Location = new System.Drawing.Point(153, 33);
-            this.chkPadrao.Name = "chkPadrao";
-            this.chkPadrao.Size = new System.Drawing.Size(60, 17);
-            this.chkPadrao.TabIndex = 30;
-            this.chkPadrao.Text = "Padrão";
-            this.chkPadrao.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(21, 129);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(62, 20);
-            this.textBox3.TabIndex = 31;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(21, 176);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(62, 20);
-            this.textBox4.TabIndex = 32;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(21, 223);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(62, 20);
-            this.textBox5.TabIndex = 33;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(300, 33);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 34;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(406, 33);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(62, 20);
-            this.textBox7.TabIndex = 35;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(207, 176);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 36;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(207, 223);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(62, 20);
-            this.textBox9.TabIndex = 37;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // frmCadastroTecnica
             // 
@@ -295,6 +296,7 @@
             this.ClientSize = new System.Drawing.Size(564, 385);
             this.Controls.Add(this.panel1);
             this.Name = "frmCadastroTecnica";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro da Técnica";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

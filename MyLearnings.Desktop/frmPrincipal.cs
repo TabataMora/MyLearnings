@@ -16,5 +16,11 @@ namespace MyLearnings.Desktop
         {
             InitializeComponent();
         }
+
+        private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCadastroUsuario frm = new frmCadastroUsuario();
+            frm.Show();
+        }
     }
 }

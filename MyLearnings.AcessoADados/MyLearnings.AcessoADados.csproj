@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcessoEntidades\TecnicaAcessoADados.cs" />
     <Compile Include="AcessoEntidades\UsuarioAcessoADados.cs" />
     <Compile Include="Conexao.cs" />
     <Compile Include="ConfiguraConexao.cs" />

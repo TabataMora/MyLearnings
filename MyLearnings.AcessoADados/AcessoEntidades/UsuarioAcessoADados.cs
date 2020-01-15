@@ -130,8 +130,8 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                     cmd.CommandText = query;
                     cmd.Parameters.AddWithValue("@ID", usuario.Id);
                     cmd.Parameters.AddWithValue("@NOME", usuario.Nome);
-                    //cmd.Parameters.AddWithValue("@EMAIL", usuario.Email);
-                    //cmd.Parameters.AddWithValue("@SENHA", usuario.Senha);
+                    cmd.Parameters.AddWithValue("@EMAIL", usuario.Email);
+                    cmd.Parameters.AddWithValue("@SENHA", usuario.Senha);
 
                     using (cmd)
                     {
@@ -142,8 +142,8 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                                 Usuario usuarioRetorno = new Usuario();
                                 usuarioRetorno.Id = Convert.ToInt32(dataReader["ID"].ToString());
                                 usuarioRetorno.Nome = dataReader["NOME"].ToString();
-                                //usuarioRetorno.Email = dataReader["EMAIL"].ToString();
-                                //usuarioRetorno.Senha = dataReader["SENHA"].ToString();
+                                usuarioRetorno.Email = dataReader["EMAIL"].ToString();
+                                usuarioRetorno.Senha = dataReader["SENHA"].ToString();
                                 retorno.Add(usuarioRetorno);
                             }
                         }

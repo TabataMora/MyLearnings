@@ -28,7 +28,7 @@ namespace MyLearnings.Desktop
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            frmCadastroUsuario frm = new frmCadastroUsuario(); // se for verdadeiro a validação acima, abre o form principal.
+            frmPrincipal frm = new frmPrincipal(); // se for verdadeiro a validação acima, abre o form principal.
 #if DEBUG
             
             frm.Show();

@@ -20,12 +20,10 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
                 {
                     throw new Exception("O nome do usuário precisa ser informado!");
                 }
-
-                if (usuario.Email.Trim().Length < 0)
+                if (usuario.Email.Trim().Length <= 0)
                 {
                     throw new Exception("O e-mail precisa ser informado!");
                 }
-
                 if (usuario.Senha.Trim().Length <= 0)
                 {
                     throw new Exception("Uma senha precisa ser informada!");
@@ -38,7 +36,6 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
             }
             catch (Exception)
             {
-
                 throw;
             }
         }

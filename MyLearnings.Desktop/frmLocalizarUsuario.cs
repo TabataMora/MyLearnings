@@ -14,6 +14,8 @@ namespace MyLearnings.Desktop
 {
     public partial class frmLocalizarUsuario : Form
     {
+        public int codigo = 0;
+
         public frmLocalizarUsuario()
         {
             InitializeComponent();
@@ -39,6 +41,15 @@ namespace MyLearnings.Desktop
             dgvLocalizaUsu.Columns[1].Width = 250;
             dgvLocalizaUsu.Columns[2].Visible = false;
             dgvLocalizaUsu.Columns[3].Visible = false;
+        }
+
+        private void dgvLocalizaUsu_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >= 0)
+            {
+                this.codigo = Convert.ToInt32(dgvLocalizaUsu.Rows[e.RowIndex].Cells[0].Value);
+                this.Close();
+            }
         }
     }
 }

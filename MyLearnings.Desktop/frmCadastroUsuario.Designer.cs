@@ -203,8 +203,10 @@
             // 
             // txtIdUsuario
             // 
+            this.txtIdUsuario.Enabled = false;
             this.txtIdUsuario.Location = new System.Drawing.Point(22, 40);
             this.txtIdUsuario.Name = "txtIdUsuario";
+            this.txtIdUsuario.ReadOnly = true;
             this.txtIdUsuario.Size = new System.Drawing.Size(62, 20);
             this.txtIdUsuario.TabIndex = 10;
             this.txtIdUsuario.Validated += new System.EventHandler(this.txtIdUsuario_Validated);
@@ -216,6 +218,7 @@
             this.ClientSize = new System.Drawing.Size(666, 385);
             this.Controls.Add(this.panel1);
             this.Name = "frmCadastroUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Usuário";
             this.Load += new System.EventHandler(this.frmCadastroUsuario_Load);
             this.panel1.ResumeLayout(false);

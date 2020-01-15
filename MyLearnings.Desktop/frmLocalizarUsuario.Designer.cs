@@ -83,8 +83,10 @@
             this.dgvLocalizaUsu.Location = new System.Drawing.Point(20, 68);
             this.dgvLocalizaUsu.Name = "dgvLocalizaUsu";
             this.dgvLocalizaUsu.ReadOnly = true;
+            this.dgvLocalizaUsu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLocalizaUsu.Size = new System.Drawing.Size(601, 279);
             this.dgvLocalizaUsu.TabIndex = 3;
+            this.dgvLocalizaUsu.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLocalizaUsu_CellContentDoubleClick);
             // 
             // frmLocalizarUsuario
             // 
@@ -93,6 +95,7 @@
             this.ClientSize = new System.Drawing.Size(666, 385);
             this.Controls.Add(this.panel1);
             this.Name = "frmLocalizarUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Localizar Usuário";
             this.Load += new System.EventHandler(this.frmLocalizarUsuario_Load);
             this.panel1.ResumeLayout(false);
