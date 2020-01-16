@@ -39,11 +39,10 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
                 {
                    //throw new Exception 
                 }
-                else
-                {
-                    TecnicaAcessoADados tecnicaAcessoADados = new TecnicaAcessoADados();
-                    return tecnicaAcessoADados.Incluir(tecnica);
-                }
+
+               TecnicaAcessoADados tecnicaAcessoADados = new TecnicaAcessoADados();
+               return tecnicaAcessoADados.Incluir(tecnica);
+                
                 
             }
             catch (Exception)

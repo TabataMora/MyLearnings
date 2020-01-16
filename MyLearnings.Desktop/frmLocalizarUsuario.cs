@@ -13,11 +13,12 @@ using MyLearnings.RegrasDeNegocio.RegrasDeNegocio;
 namespace MyLearnings.Desktop
 {
     public partial class frmLocalizarUsuario : Form
-    {
-        public int codigo = 0;
+    { 
+        public frmCadastroUsuario formQueChamou { get; set; } //paraêmtro para carregar a grid
 
         public frmLocalizarUsuario()
         {
+
             InitializeComponent();
         }
 
@@ -43,13 +44,11 @@ namespace MyLearnings.Desktop
             dgvLocalizaUsu.Columns[3].Visible = false;
         }
 
-        private void dgvLocalizaUsu_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvLocalizaUsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0)
-            {
-                this.codigo = Convert.ToInt32(dgvLocalizaUsu.Rows[e.RowIndex].Cells[0].Value);
-                this.Close();
-            }
+            string id = dgvLocalizaUsu.CurrentRow.Cells["ID"].Value.ToString(); // criando uma variável e passando para ela a grid, lendo a linha atual, da célula ID
+            formQueChamou.txtIdUsuario.Text =  id; // passando para o parâmetro form no campo Id o que contém na variável
+            this.Hide(); //ocultando (?)
         }
     }
 }

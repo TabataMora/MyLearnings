@@ -124,14 +124,11 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
 
                     else
                     {
-                        query = "SELECT * FROM TB_USUARIO WHERE NOME LIKE '%" + usuario.Nome + "%'";                       
+                        query = ("SELECT * FROM TB_USUARIO WHERE NOME LIKE '%" + usuario.Nome + "%';");
+                       
                     }
 
                     cmd.CommandText = query;
-                    cmd.Parameters.AddWithValue("@ID", usuario.Id);
-                    cmd.Parameters.AddWithValue("@NOME", usuario.Nome);
-                    cmd.Parameters.AddWithValue("@EMAIL", usuario.Email);
-                    cmd.Parameters.AddWithValue("@SENHA", usuario.Senha);
 
                     using (cmd)
                     {

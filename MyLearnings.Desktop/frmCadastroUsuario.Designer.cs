@@ -244,8 +244,8 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.TextBox txtIdUsuario;
         private System.Windows.Forms.ToolTip toolTipMeusBotoes;
         private System.Windows.Forms.Button btnLocalizar;
+        public System.Windows.Forms.TextBox txtIdUsuario;
     }
 }

@@ -20,7 +20,19 @@ namespace MyLearnings.Desktop
         private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCadastroUsuario frm = new frmCadastroUsuario();
-            frm.Show();
+            frm.ShowDialog();
+        }
+
+        private void usuárioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmLocalizarUsuario frm = new frmLocalizarUsuario();
+            frm.ShowDialog();
+        }
+
+        private void técnicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCadastroTecnica frm = new frmCadastroTecnica();
+            frm.ShowDialog();
         }
     }
 }

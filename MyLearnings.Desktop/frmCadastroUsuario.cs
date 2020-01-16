@@ -156,7 +156,8 @@ namespace MyLearnings.Desktop
         private void btnLocalizar_Click(object sender, EventArgs e)
         {
             frmLocalizarUsuario frm = new frmLocalizarUsuario();
-            frm.Show();
+            frm.formQueChamou = this; // passando para o form do localizar a consulta
+            frm.ShowDialog();
         }
     }
 }

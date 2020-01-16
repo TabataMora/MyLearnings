@@ -75,7 +75,7 @@
             // usuárioToolStripMenuItem
             // 
             this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.usuárioToolStripMenuItem.Text = "Usuário";
             this.usuárioToolStripMenuItem.Click += new System.EventHandler(this.usuárioToolStripMenuItem_Click);
             // 
@@ -84,23 +84,24 @@
             this.técnicaToolStripMenuItem.Name = "técnicaToolStripMenuItem";
             this.técnicaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.técnicaToolStripMenuItem.Text = "Técnica";
+            this.técnicaToolStripMenuItem.Click += new System.EventHandler(this.técnicaToolStripMenuItem_Click);
             // 
             // cicloToolStripMenuItem
             // 
             this.cicloToolStripMenuItem.Name = "cicloToolStripMenuItem";
-            this.cicloToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cicloToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.cicloToolStripMenuItem.Text = "Ciclo";
             // 
             // itemToolStripMenuItem
             // 
             this.itemToolStripMenuItem.Name = "itemToolStripMenuItem";
-            this.itemToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.itemToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.itemToolStripMenuItem.Text = "Item";
             // 
             // resumoToolStripMenuItem
             // 
             this.resumoToolStripMenuItem.Name = "resumoToolStripMenuItem";
-            this.resumoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resumoToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.resumoToolStripMenuItem.Text = "Resumo";
             // 
             // localizarToolStripMenuItem
@@ -120,6 +121,7 @@
             this.usuárioToolStripMenuItem1.Name = "usuárioToolStripMenuItem1";
             this.usuárioToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.usuárioToolStripMenuItem1.Text = "Usuário";
+            this.usuárioToolStripMenuItem1.Click += new System.EventHandler(this.usuárioToolStripMenuItem1_Click);
             // 
             // ténicaToolStripMenuItem
             // 
@@ -155,7 +157,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(12, 52);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(552, 386);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
