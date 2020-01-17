@@ -84,7 +84,7 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
                 }
 
                 UsuarioAcessoADados usuarioAcessoADados = new UsuarioAcessoADados();
-                return usuarioAcessoADados.Incluir(usuario);
+                return usuarioAcessoADados.Alterar(usuario);
             }
             catch (Exception)
             {

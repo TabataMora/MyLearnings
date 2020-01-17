@@ -49,8 +49,7 @@ namespace MyLearnings.Desktop
 
             if(op == 1)
             {
-                btnInserir.Enabled = true;
-               
+                btnInserir.Enabled = true;              
             }
 
             if(op == 2)
@@ -64,6 +63,8 @@ namespace MyLearnings.Desktop
                 btnExcluir.Enabled = true;
                 btnCancelar.Enabled = true;
                 btnAlterar.Enabled = true;
+                btnCancelar.Enabled = true;
+                btnSalvar.Enabled = true;
             }
         }
 
@@ -158,6 +159,7 @@ namespace MyLearnings.Desktop
             frmLocalizarUsuario frm = new frmLocalizarUsuario();
             frm.formQueChamou = this; // passando para o form do localizar a consulta
             frm.ShowDialog();
+            this.AlteraBotoes(3);
         }
     }
 }

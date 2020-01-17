@@ -241,11 +241,11 @@
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtSenha;
-        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.ToolTip toolTipMeusBotoes;
         private System.Windows.Forms.Button btnLocalizar;
         public System.Windows.Forms.TextBox txtIdUsuario;
+        public System.Windows.Forms.TextBox txtEmail;
+        public System.Windows.Forms.TextBox txtSenha;
+        public System.Windows.Forms.TextBox txtUsuario;
     }
 }

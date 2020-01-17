@@ -87,7 +87,7 @@
             this.dgvLocalizaUsu.Size = new System.Drawing.Size(601, 279);
             this.dgvLocalizaUsu.TabIndex = 3;
             this.dgvLocalizaUsu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLocalizaUsu_CellContentClick);
-            this.dgvLocalizaUsu.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLocalizaUsu_CellContentDoubleClick);
+   
             // 
             // frmLocalizarUsuario
             // 

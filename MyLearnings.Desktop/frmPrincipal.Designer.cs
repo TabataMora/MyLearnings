@@ -36,12 +36,6 @@
             this.cicloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resumoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.localizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuárioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ténicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cicloToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.itemToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.resumoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.históricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
@@ -52,7 +46,6 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
-            this.localizarToolStripMenuItem,
             this.históricoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -82,7 +75,7 @@
             // técnicaToolStripMenuItem
             // 
             this.técnicaToolStripMenuItem.Name = "técnicaToolStripMenuItem";
-            this.técnicaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.técnicaToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.técnicaToolStripMenuItem.Text = "Técnica";
             this.técnicaToolStripMenuItem.Click += new System.EventHandler(this.técnicaToolStripMenuItem_Click);
             // 
@@ -103,49 +96,6 @@
             this.resumoToolStripMenuItem.Name = "resumoToolStripMenuItem";
             this.resumoToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.resumoToolStripMenuItem.Text = "Resumo";
-            // 
-            // localizarToolStripMenuItem
-            // 
-            this.localizarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuárioToolStripMenuItem1,
-            this.ténicaToolStripMenuItem,
-            this.cicloToolStripMenuItem1,
-            this.itemToolStripMenuItem1,
-            this.resumoToolStripMenuItem1});
-            this.localizarToolStripMenuItem.Name = "localizarToolStripMenuItem";
-            this.localizarToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.localizarToolStripMenuItem.Text = "Localizar";
-            // 
-            // usuárioToolStripMenuItem1
-            // 
-            this.usuárioToolStripMenuItem1.Name = "usuárioToolStripMenuItem1";
-            this.usuárioToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.usuárioToolStripMenuItem1.Text = "Usuário";
-            this.usuárioToolStripMenuItem1.Click += new System.EventHandler(this.usuárioToolStripMenuItem1_Click);
-            // 
-            // ténicaToolStripMenuItem
-            // 
-            this.ténicaToolStripMenuItem.Name = "ténicaToolStripMenuItem";
-            this.ténicaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ténicaToolStripMenuItem.Text = "Ténica";
-            // 
-            // cicloToolStripMenuItem1
-            // 
-            this.cicloToolStripMenuItem1.Name = "cicloToolStripMenuItem1";
-            this.cicloToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.cicloToolStripMenuItem1.Text = "Ciclo";
-            // 
-            // itemToolStripMenuItem1
-            // 
-            this.itemToolStripMenuItem1.Name = "itemToolStripMenuItem1";
-            this.itemToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.itemToolStripMenuItem1.Text = "Item";
-            // 
-            // resumoToolStripMenuItem1
-            // 
-            this.resumoToolStripMenuItem1.Name = "resumoToolStripMenuItem1";
-            this.resumoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.resumoToolStripMenuItem1.Text = "Resumo";
             // 
             // históricoToolStripMenuItem
             // 
@@ -192,12 +142,6 @@
         private System.Windows.Forms.ToolStripMenuItem cicloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem itemToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resumoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem localizarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuárioToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem ténicaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cicloToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem itemToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem resumoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem históricoToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

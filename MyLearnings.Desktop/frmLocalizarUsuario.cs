@@ -48,6 +48,12 @@ namespace MyLearnings.Desktop
         {
             string id = dgvLocalizaUsu.CurrentRow.Cells["ID"].Value.ToString(); // criando uma variável e passando para ela a grid, lendo a linha atual, da célula ID
             formQueChamou.txtIdUsuario.Text =  id; // passando para o parâmetro form no campo Id o que contém na variável
+            string nome = dgvLocalizaUsu.CurrentRow.Cells["NOME"].Value.ToString();
+            formQueChamou.txtUsuario.Text = nome;
+            string senha = dgvLocalizaUsu.CurrentRow.Cells["SENHA"].Value.ToString();
+            formQueChamou.txtSenha.Text = senha;
+            string email = dgvLocalizaUsu.CurrentRow.Cells["EMAIL"].Value.ToString();
+            formQueChamou.txtEmail.Text = email;
             this.Hide(); //ocultando (?)
         }
     }
