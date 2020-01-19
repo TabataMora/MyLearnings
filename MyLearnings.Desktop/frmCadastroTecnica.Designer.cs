@@ -30,16 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroTecnica));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtIdUsuAlteracao = new System.Windows.Forms.TextBox();
+            this.txtIdUsuCadastro = new System.Windows.Forms.TextBox();
+            this.txtDescLongo = new System.Windows.Forms.TextBox();
+            this.txtDescCurto = new System.Windows.Forms.TextBox();
+            this.txtTempoCiclo = new System.Windows.Forms.TextBox();
             this.chkPadrao = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNomeTec = new System.Windows.Forms.TextBox();
+            this.txtIdTec = new System.Windows.Forms.TextBox();
             this.lblDtAlteracao = new System.Windows.Forms.Label();
             this.lblDtUsuAlteracao = new System.Windows.Forms.Label();
             this.lblIdUsuCadastro = new System.Windows.Forms.Label();
@@ -49,6 +47,9 @@
             this.lblTCiclo = new System.Windows.Forms.Label();
             this.lblNomeTecnica = new System.Windows.Forms.Label();
             this.lblIdTenica = new System.Windows.Forms.Label();
+            this.mskDataCadastro = new System.Windows.Forms.MaskedTextBox();
+            this.mskDataAlteracao = new System.Windows.Forms.MaskedTextBox();
+            this.btnLocalizar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
@@ -59,16 +60,22 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox9);
-            this.panel1.Controls.Add(this.textBox8);
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.btnLocalizar);
+            this.panel1.Controls.Add(this.btnCancelar);
+            this.panel1.Controls.Add(this.btnExcluir);
+            this.panel1.Controls.Add(this.btnAlterar);
+            this.panel1.Controls.Add(this.btnSalvar);
+            this.panel1.Controls.Add(this.btnInserir);
+            this.panel1.Controls.Add(this.mskDataAlteracao);
+            this.panel1.Controls.Add(this.mskDataCadastro);
+            this.panel1.Controls.Add(this.txtIdUsuAlteracao);
+            this.panel1.Controls.Add(this.txtIdUsuCadastro);
+            this.panel1.Controls.Add(this.txtDescLongo);
+            this.panel1.Controls.Add(this.txtDescCurto);
+            this.panel1.Controls.Add(this.txtTempoCiclo);
             this.panel1.Controls.Add(this.chkPadrao);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtNomeTec);
+            this.panel1.Controls.Add(this.txtIdTec);
             this.panel1.Controls.Add(this.lblDtAlteracao);
             this.panel1.Controls.Add(this.lblDtUsuAlteracao);
             this.panel1.Controls.Add(this.lblIdUsuCadastro);
@@ -78,64 +85,45 @@
             this.panel1.Controls.Add(this.lblTCiclo);
             this.panel1.Controls.Add(this.lblNomeTecnica);
             this.panel1.Controls.Add(this.lblIdTenica);
-            this.panel1.Controls.Add(this.btnCancelar);
-            this.panel1.Controls.Add(this.btnExcluir);
-            this.panel1.Controls.Add(this.btnAlterar);
-            this.panel1.Controls.Add(this.btnSalvar);
-            this.panel1.Controls.Add(this.btnInserir);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(540, 361);
+            this.panel1.Size = new System.Drawing.Size(642, 361);
             this.panel1.TabIndex = 0;
             // 
-            // textBox9
+            // txtIdUsuAlteracao
             // 
-            this.textBox9.Location = new System.Drawing.Point(207, 223);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(62, 20);
-            this.textBox9.TabIndex = 37;
+            this.txtIdUsuAlteracao.Location = new System.Drawing.Point(207, 223);
+            this.txtIdUsuAlteracao.Name = "txtIdUsuAlteracao";
+            this.txtIdUsuAlteracao.Size = new System.Drawing.Size(62, 20);
+            this.txtIdUsuAlteracao.TabIndex = 37;
             // 
-            // textBox8
+            // txtIdUsuCadastro
             // 
-            this.textBox8.Location = new System.Drawing.Point(207, 176);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 36;
+            this.txtIdUsuCadastro.Location = new System.Drawing.Point(406, 33);
+            this.txtIdUsuCadastro.Name = "txtIdUsuCadastro";
+            this.txtIdUsuCadastro.Size = new System.Drawing.Size(62, 20);
+            this.txtIdUsuCadastro.TabIndex = 35;
             // 
-            // textBox7
+            // txtDescLongo
             // 
-            this.textBox7.Location = new System.Drawing.Point(406, 33);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(62, 20);
-            this.textBox7.TabIndex = 35;
+            this.txtDescLongo.Location = new System.Drawing.Point(21, 223);
+            this.txtDescLongo.Name = "txtDescLongo";
+            this.txtDescLongo.Size = new System.Drawing.Size(62, 20);
+            this.txtDescLongo.TabIndex = 33;
             // 
-            // textBox6
+            // txtDescCurto
             // 
-            this.textBox6.Location = new System.Drawing.Point(300, 33);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 34;
+            this.txtDescCurto.Location = new System.Drawing.Point(21, 176);
+            this.txtDescCurto.Name = "txtDescCurto";
+            this.txtDescCurto.Size = new System.Drawing.Size(62, 20);
+            this.txtDescCurto.TabIndex = 32;
             // 
-            // textBox5
+            // txtTempoCiclo
             // 
-            this.textBox5.Location = new System.Drawing.Point(21, 223);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(62, 20);
-            this.textBox5.TabIndex = 33;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(21, 176);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(62, 20);
-            this.textBox4.TabIndex = 32;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(21, 129);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(62, 20);
-            this.textBox3.TabIndex = 31;
+            this.txtTempoCiclo.Location = new System.Drawing.Point(21, 129);
+            this.txtTempoCiclo.Name = "txtTempoCiclo";
+            this.txtTempoCiclo.Size = new System.Drawing.Size(62, 20);
+            this.txtTempoCiclo.TabIndex = 31;
             // 
             // chkPadrao
             // 
@@ -147,20 +135,22 @@
             this.chkPadrao.Text = "Padrão";
             this.chkPadrao.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // txtNomeTec
             // 
-            this.textBox2.Location = new System.Drawing.Point(21, 76);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(496, 20);
-            this.textBox2.TabIndex = 29;
+            this.txtNomeTec.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtNomeTec.Location = new System.Drawing.Point(21, 76);
+            this.txtNomeTec.Name = "txtNomeTec";
+            this.txtNomeTec.Size = new System.Drawing.Size(496, 20);
+            this.txtNomeTec.TabIndex = 29;
             // 
-            // textBox1
+            // txtIdTec
             // 
-            this.textBox1.Location = new System.Drawing.Point(21, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(62, 20);
-            this.textBox1.TabIndex = 28;
+            this.txtIdTec.Enabled = false;
+            this.txtIdTec.Location = new System.Drawing.Point(21, 33);
+            this.txtIdTec.Name = "txtIdTec";
+            this.txtIdTec.ReadOnly = true;
+            this.txtIdTec.Size = new System.Drawing.Size(62, 20);
+            this.txtIdTec.TabIndex = 28;
             // 
             // lblDtAlteracao
             // 
@@ -243,57 +233,83 @@
             this.lblIdTenica.TabIndex = 18;
             this.lblIdTenica.Text = "Id";
             // 
+            // mskDataCadastro
+            // 
+            this.mskDataCadastro.Location = new System.Drawing.Point(300, 32);
+            this.mskDataCadastro.Mask = "00/00/0000";
+            this.mskDataCadastro.Name = "mskDataCadastro";
+            this.mskDataCadastro.Size = new System.Drawing.Size(76, 20);
+            this.mskDataCadastro.TabIndex = 38;
+            this.mskDataCadastro.ValidatingType = typeof(System.DateTime);
+            // 
+            // mskDataAlteracao
+            // 
+            this.mskDataAlteracao.Location = new System.Drawing.Point(207, 176);
+            this.mskDataAlteracao.Mask = "00/00/0000";
+            this.mskDataAlteracao.Name = "mskDataAlteracao";
+            this.mskDataAlteracao.Size = new System.Drawing.Size(73, 20);
+            this.mskDataAlteracao.TabIndex = 39;
+            this.mskDataAlteracao.ValidatingType = typeof(System.DateTime);
+            // 
+            // btnLocalizar
+            // 
+            this.btnLocalizar.Image = ((System.Drawing.Image)(resources.GetObject("btnLocalizar.Image")));
+            this.btnLocalizar.Location = new System.Drawing.Point(124, 271);
+            this.btnLocalizar.Name = "btnLocalizar";
+            this.btnLocalizar.Size = new System.Drawing.Size(80, 78);
+            this.btnLocalizar.TabIndex = 43;
+            this.btnLocalizar.UseVisualStyleBackColor = true;
+            // 
             // btnCancelar
             // 
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(437, 268);
+            this.btnCancelar.Location = new System.Drawing.Point(540, 271);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 78);
-            this.btnCancelar.TabIndex = 17;
+            this.btnCancelar.TabIndex = 42;
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // btnExcluir
             // 
             this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
-            this.btnExcluir.Location = new System.Drawing.Point(332, 268);
+            this.btnExcluir.Location = new System.Drawing.Point(331, 271);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(80, 78);
-            this.btnExcluir.TabIndex = 16;
+            this.btnExcluir.TabIndex = 44;
             this.btnExcluir.UseVisualStyleBackColor = true;
             // 
             // btnAlterar
             // 
             this.btnAlterar.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterar.Image")));
-            this.btnAlterar.Location = new System.Drawing.Point(227, 268);
+            this.btnAlterar.Location = new System.Drawing.Point(226, 271);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(80, 78);
-            this.btnAlterar.TabIndex = 15;
+            this.btnAlterar.TabIndex = 45;
             this.btnAlterar.UseVisualStyleBackColor = true;
             // 
             // btnSalvar
             // 
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.Location = new System.Drawing.Point(123, 268);
+            this.btnSalvar.Location = new System.Drawing.Point(436, 271);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(80, 78);
-            this.btnSalvar.TabIndex = 14;
+            this.btnSalvar.TabIndex = 41;
             this.btnSalvar.UseVisualStyleBackColor = true;
             // 
             // btnInserir
             // 
             this.btnInserir.Image = ((System.Drawing.Image)(resources.GetObject("btnInserir.Image")));
-            this.btnInserir.Location = new System.Drawing.Point(21, 268);
+            this.btnInserir.Location = new System.Drawing.Point(20, 271);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(80, 78);
-            this.btnInserir.TabIndex = 13;
+            this.btnInserir.TabIndex = 40;
             this.btnInserir.UseVisualStyleBackColor = true;
-            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // frmCadastroTecnica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 385);
+            this.ClientSize = new System.Drawing.Size(666, 385);
             this.Controls.Add(this.panel1);
             this.Name = "frmCadastroTecnica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -316,20 +332,21 @@
         private System.Windows.Forms.Label lblTCiclo;
         private System.Windows.Forms.Label lblNomeTecnica;
         private System.Windows.Forms.Label lblIdTenica;
+        private System.Windows.Forms.TextBox txtIdTec;
+        private System.Windows.Forms.TextBox txtIdUsuAlteracao;
+        private System.Windows.Forms.TextBox txtIdUsuCadastro;
+        private System.Windows.Forms.TextBox txtDescLongo;
+        private System.Windows.Forms.TextBox txtDescCurto;
+        private System.Windows.Forms.TextBox txtTempoCiclo;
+        private System.Windows.Forms.CheckBox chkPadrao;
+        private System.Windows.Forms.TextBox txtNomeTec;
+        private System.Windows.Forms.MaskedTextBox mskDataAlteracao;
+        private System.Windows.Forms.MaskedTextBox mskDataCadastro;
+        private System.Windows.Forms.Button btnLocalizar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnInserir;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.CheckBox chkPadrao;
-        private System.Windows.Forms.TextBox textBox2;
     }
 }

@@ -184,6 +184,7 @@
             // 
             this.txtEmail.Location = new System.Drawing.Point(22, 219);
             this.txtEmail.Name = "txtEmail";
+            this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(342, 20);
             this.txtEmail.TabIndex = 2;
             // 
@@ -191,13 +192,16 @@
             // 
             this.txtSenha.Location = new System.Drawing.Point(22, 161);
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.ReadOnly = true;
             this.txtSenha.Size = new System.Drawing.Size(100, 20);
             this.txtSenha.TabIndex = 1;
             // 
             // txtUsuario
             // 
+            this.txtUsuario.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtUsuario.Location = new System.Drawing.Point(22, 102);
             this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.ReadOnly = true;
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
             this.txtUsuario.TabIndex = 0;
             // 

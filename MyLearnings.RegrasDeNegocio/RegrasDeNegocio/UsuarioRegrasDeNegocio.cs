@@ -64,32 +64,13 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
             }
         }
 
-        public int Alterar(Usuario usuario)
+        public void Alterar(int id, string nome)
         {
-            try
-            {
-                if (usuario.Nome.Trim().Length <= 0)
-                {
-                    throw new Exception("O nome do usuário precisa ser informado!");
-                }
-
-                if (usuario.Email.Trim().Length < 0)
-                {
-                    throw new Exception("O e-mail precisa ser informado!");
-                }
-
-                if (usuario.Senha.Trim().Length <= 0)
-                {
-                    throw new Exception("Uma senha precisa ser informada!");
-                }
-
-                UsuarioAcessoADados usuarioAcessoADados = new UsuarioAcessoADados();
-                return usuarioAcessoADados.Alterar(usuario);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            Usuario usuario = new Usuario();
+            usuario.Id = id;
+            usuario.Nome = nome;
+            UsuarioAcessoADados usuarioAcesso = new UsuarioAcessoADados();
+            usuarioAcesso.Alterar(usuario);
         }
 
         public void Excluir(int id)

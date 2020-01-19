@@ -40,7 +40,7 @@ namespace MyLearnings.Desktop
 
         public void AlteraBotoes(int op)
         {
-             
+            
             btnSalvar.Enabled = false;
             btnExcluir.Enabled = false;
             btnAlterar.Enabled = false;
@@ -49,13 +49,16 @@ namespace MyLearnings.Desktop
 
             if(op == 1)
             {
-                btnInserir.Enabled = true;              
+                btnInserir.Enabled = true;
+                btnLocalizar.Enabled = true;
+                
             }
 
             if(op == 2)
             {
                 btnCancelar.Enabled = true;
                 btnSalvar.Enabled = true;
+                btnLocalizar.Enabled = false;
             }
 
             if (op == 3)
@@ -77,46 +80,65 @@ namespace MyLearnings.Desktop
         {
             this.operacao = "Inserir";
             this.AlteraBotoes(2);
+            txtUsuario.ReadOnly = false;
+            txtSenha.ReadOnly = false;
+            txtEmail.ReadOnly = false;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             try
             {
-                Usuario usuario = new Usuario();
-                usuario.Nome = txtUsuario.Text;
-                usuario.Email = txtEmail.Text;
-                usuario.Senha = txtSenha.Text;
-
                 UsuarioRegrasDeNegocio usuarioRegras = new UsuarioRegrasDeNegocio();
-             
-                txtIdUsuario.Text = usuario.Id.ToString();
-
+            
                 if (this.operacao == "Inserir")
                 {
+                    Usuario usuario = new Usuario();
+
+                    usuario.Nome = txtUsuario.Text;
+                    usuario.Email = txtEmail.Text;
+                    usuario.Senha = txtSenha.Text;
                     usuarioRegras.Incluir(usuario);
-                    MessageBox.Show("Cadastro salvo com sucesso!" + usuario.Id.ToString());                  
+
+                    txtIdUsuario.Text = usuario.Id.ToString();
+
+                    MessageBox.Show("Cadastro salvo com sucesso! " + usuario.Id.ToString());
+
+                    txtUsuario.ReadOnly = true;
+                    txtSenha.ReadOnly = true;
+                    txtEmail.ReadOnly = true;
                 }
 
-                else
-                {
-                    //alterar usuário
+                if (this.operacao == "Alterar" && txtIdUsuario.Text != null)
+                {                  
+                    Usuario usuario = new Usuario();
                     usuario.Id = Convert.ToInt32(txtIdUsuario.Text);
-                    usuarioRegras.Alterar(usuario);
+                    usuario.Nome = txtUsuario.Text;
+                    usuario.Email = txtEmail.Text;
+                    usuario.Senha = txtSenha.Text;
+                    //alterar usuário           
+                    usuarioRegras.Alterar(id: Convert.ToInt32(txtIdUsuario.Text), nome: txtUsuario.Text);
                     MessageBox.Show("Cadastro alterado com sucesso!");
-                    
+
+                    txtUsuario.ReadOnly = true;
+                    txtSenha.ReadOnly = true;
+                    txtEmail.ReadOnly = true;
                 }
-                this.LimpaTela();
-                this.AlteraBotoes(1);
             }
             catch (Exception)
             {
                 throw;
             }
+
+            this.LimpaTela();
+            this.AlteraBotoes(1);
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
+            txtUsuario.ReadOnly = false;
+            txtSenha.ReadOnly = false;
+            txtEmail.ReadOnly = false;
             this.operacao = "Alterar";
             this.AlteraBotoes(2);
         }

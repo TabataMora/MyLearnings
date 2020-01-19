@@ -154,7 +154,7 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
             return retorno;
         }
 
-        public int Alterar(Usuario usuario)
+        public void Alterar(Usuario usuario)
         {
             SqlCommand cmd = new SqlCommand();
             using (cmd.Connection = _conexao.ObjetoDaConexao)
@@ -165,13 +165,9 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                     cmd.CommandText = "UPDATE TB_USUARIO SET NOME = @NOME WHERE ID = @ID;";
                     cmd.Parameters.AddWithValue("@NOME", usuario.Nome);
                     cmd.Parameters.AddWithValue("@ID", usuario.Id);
-                 
-                    return usuario.Id;
+                    cmd.ExecuteScalar();
                 }
-                catch (Exception)
-                {
-                    throw;
-                }
+             
                 finally
                 {
                     _conexao.Desconectar();
