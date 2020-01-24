@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -25,22 +26,129 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                 try
                 {
                     _conexao.Conectar();
-                    cmd.CommandText = "INSERT NOME, PADRAO, TEMPO_CICLO, DESC_CURTO, DESC_LONGO, DATA_CADASTRO, ID_USUARIO_CADASTRO, " +
-                        "DATA_ALTERACAO, ID_USUARIO_ALTERACAO " +
-                        "VALUES (@NOME, @PADRAO, @TEMPO, @DESCURTO, @DESCLONGO, @DATACADASTRO, @IDCADASTRO, @DATALTERACAO, @IDALTERACAO); SELECT; @@IDENTITY;";
+                    cmd.CommandText = @"INSERT TB_TECNICA (NOME, PADRAO, TEMPO_CICLO, DESC_CURTO, DESC_LONGO, ID_USUARIO_CADASTRO, DATA_CADASTRO) 
+                                        VALUES (@NOME, @PADRAO, @TEMPO, @DESCURTO, @DESCLONGO, @IDCADASTRO, GETDATE()); SELECT @@IDENTITY;";
                     cmd.Parameters.AddWithValue("@NOME", tecnica.Nome);
                     cmd.Parameters.AddWithValue("@PADRAO", tecnica.Padrao);
                     cmd.Parameters.AddWithValue("@TEMPO", tecnica.TempoCiclo);
                     cmd.Parameters.AddWithValue("@DESCURTO", tecnica.DescCurto);
                     cmd.Parameters.AddWithValue("@DESCLONGO", tecnica.DescLongo);
-                    cmd.Parameters.AddWithValue("@DATACADASTRO", tecnica.DataCadastro);
                     cmd.Parameters.AddWithValue("@IDCADASTRO", tecnica.IdUsuarioCadastro);
-                    cmd.Parameters.AddWithValue("@DATALTERACAO", tecnica.DataAlteracao);
-                    cmd.Parameters.AddWithValue("@IDALTERACAO", tecnica.IdUsuarioAlteracao);
                     tecnica.Id = Convert.ToInt32(cmd.ExecuteScalar());
                     return tecnica.Id;
                 }
                 catch(Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _conexao.Desconectar();
+                }
+            }
+        }
+
+        public void Excluir(int id)
+        {
+            SqlCommand cmd = new SqlCommand();
+            using (cmd.Connection = _conexao.ObjetoDaConexao)
+            {
+                try
+                {
+                    _conexao.Conectar();
+                    cmd.CommandText = "DELETE FROM TB_TECNICA WHERE ID = @ID";
+                    cmd.Parameters.AddWithValue("@ID", id);
+                    cmd.ExecuteNonQuery();
+                }
+
+                catch (Exception)
+                {
+                    throw;
+                }
+
+                finally
+                {
+                    _conexao.Desconectar();
+                }
+            }
+        }
+
+        public List<Tecnica> BuscarTecnica(Tecnica tecnica)
+        {
+            string query = string.Empty;
+            List<Tecnica> retorno = new List<Tecnica>();
+            SqlCommand cmd = new SqlCommand();
+            using (cmd.Connection = _conexao.ObjetoDaConexao)
+            {
+                try
+                {
+                    _conexao.Conectar();
+
+                    if (tecnica.Nome.Trim().Length == 0)
+                    {
+                        query = "SELECT * FROM TB_TECNICA";
+                    }
+
+                    else
+                    {
+                        query = ("SELECT * FROM TB_TECNICA WHERE NOME LIKE '%" + tecnica.Nome + "%';");
+
+                    }
+
+                    cmd.CommandText = query;
+
+                    using (cmd)
+                    {
+                        using (DbDataReader dataReader = cmd.ExecuteReader())
+                        {
+                            while (dataReader.Read())
+                            {
+                                Tecnica tecnicaRetorno = new Tecnica();
+                                tecnicaRetorno.Id = Convert.ToInt32(dataReader["ID"].ToString());
+                                tecnicaRetorno.Nome = dataReader["NOME"].ToString();
+                                tecnicaRetorno.Padrao = dataReader["PADRAO"].ToString();
+                                tecnicaRetorno.IdUsuarioCadastro = Convert.ToInt32(dataReader["ID_USUARIO_CADASTRO"].ToString());
+                                tecnicaRetorno.TempoCiclo = Convert.ToInt32(dataReader["TEMPO_CICLO"].ToString());
+                                tecnicaRetorno.DescCurto = Convert.ToInt32(dataReader["DESC_CURTO"].ToString());
+                                tecnicaRetorno.DescLongo = Convert.ToInt32(dataReader["DESC_LONGO"].ToString());
+                                //tecnicaRetorno.IdUsuarioAlteracao = Convert.ToInt32(dataReader["ID_USUARIO_ALTERACAO"].ToString());
+                                tecnicaRetorno.DataCadastro = Convert.ToDateTime(dataReader["DATA_CADASTRO"].ToString());
+                                //tecnicaRetorno.DataAlteracao = Convert.ToDateTime(dataReader["DATA_ALTERACAO"].ToString());
+                                retorno.Add(tecnicaRetorno);
+                            }
+                        }
+                    }
+                }
+                finally
+                {
+                    _conexao.Desconectar();
+                }
+            }
+            return retorno;
+        }
+
+        public int Alterar(Tecnica tecnica)
+        {
+            SqlCommand cmd = new SqlCommand();
+            using (cmd.Connection = _conexao.ObjetoDaConexao)
+            {
+                try
+                {
+                    _conexao.Conectar();
+                    cmd.CommandText = @"INSERT TB_TECNICA (NOME, PADRAO, TEMPO_CICLO, DESC_CURTO, DESC_LONGO, DATA_CADASTRO, ID_USUARIO_CADASTRO, DATA_ALTERACAO, ID_USUARIO_ALTERACAO) 
+                                        VALUES (@NOME, @PADRAO, @TEMPO, @DESCURTO, @DESCLONGO, GETDATE(), @IDCADASTRO, GETDATE(), @IDALTERACAO); SELECT @@IDENTITY;";
+                    cmd.Parameters.AddWithValue("@NOME", tecnica.Nome);
+                    cmd.Parameters.AddWithValue("@PADRAO", tecnica.Padrao);
+                    cmd.Parameters.AddWithValue("@TEMPO", tecnica.TempoCiclo);
+                    cmd.Parameters.AddWithValue("@DESCURTO", tecnica.DescCurto);
+                    cmd.Parameters.AddWithValue("@DESCLONGO", tecnica.DescLongo);
+                    cmd.Parameters.AddWithValue("@IDCADASTRO", tecnica.IdUsuarioCadastro);
+                    cmd.Parameters.AddWithValue("@IDALTERACAO", tecnica.IdUsuarioAlteracao);
+
+                    tecnica.Id = Convert.ToInt32(cmd.ExecuteScalar());
+                    return tecnica.Id;
+                }
+                catch (Exception)
                 {
                     throw;
                 }

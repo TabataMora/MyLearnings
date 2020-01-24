@@ -27,5 +27,10 @@ namespace MyLearnings.Entidades.Entidades
             this.DescCurto = descurto;
             this.DescLongo = desclongo;
         }
+
+        public Tecnica()
+        {
+
+        }
     }
 }

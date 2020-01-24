@@ -90,7 +90,11 @@ namespace MyLearnings.Desktop
             try
             {
                 UsuarioRegrasDeNegocio usuarioRegras = new UsuarioRegrasDeNegocio();
-            
+
+                txtUsuario.ReadOnly = true;
+                txtSenha.ReadOnly = true;
+                txtEmail.ReadOnly = true;
+
                 if (this.operacao == "Inserir")
                 {
                     Usuario usuario = new Usuario();
@@ -98,15 +102,12 @@ namespace MyLearnings.Desktop
                     usuario.Nome = txtUsuario.Text;
                     usuario.Email = txtEmail.Text;
                     usuario.Senha = txtSenha.Text;
+
                     usuarioRegras.Incluir(usuario);
 
                     txtIdUsuario.Text = usuario.Id.ToString();
 
-                    MessageBox.Show("Cadastro salvo com sucesso! " + usuario.Id.ToString());
-
-                    txtUsuario.ReadOnly = true;
-                    txtSenha.ReadOnly = true;
-                    txtEmail.ReadOnly = true;
+                    MessageBox.Show("Cadastro salvo com sucesso! " + usuario.Id.ToString());                 
                 }
 
                 if (this.operacao == "Alterar" && txtIdUsuario.Text != null)
@@ -118,11 +119,7 @@ namespace MyLearnings.Desktop
                     usuario.Senha = txtSenha.Text;
                     //alterar usuário           
                     usuarioRegras.Alterar(id: Convert.ToInt32(txtIdUsuario.Text), nome: txtUsuario.Text);
-                    MessageBox.Show("Cadastro alterado com sucesso!");
-
-                    txtUsuario.ReadOnly = true;
-                    txtSenha.ReadOnly = true;
-                    txtEmail.ReadOnly = true;
+                    MessageBox.Show("Cadastro alterado com sucesso!");                 
                 }
             }
             catch (Exception)

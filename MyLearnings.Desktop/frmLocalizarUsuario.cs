@@ -18,7 +18,6 @@ namespace MyLearnings.Desktop
 
         public frmLocalizarUsuario()
         {
-
             InitializeComponent();
         }
 

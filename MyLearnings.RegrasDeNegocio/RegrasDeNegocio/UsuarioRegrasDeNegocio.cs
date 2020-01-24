@@ -82,10 +82,8 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
             }
             catch (Exception)
             {
-
                 throw;
             }
-
         }
 
         public List<Usuario> BuscarUsuario(Usuario IdUsuario)

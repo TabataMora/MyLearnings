@@ -64,6 +64,12 @@
     <Compile Include="frmLocalizarUsuario.Designer.cs">
       <DependentUpon>frmLocalizarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLocalizarTecnica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLocalizarTecnica.Designer.cs">
+      <DependentUpon>frmLocalizarTecnica.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadastroUsuario.resx">
       <DependentUpon>frmCadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLocalizarTecnica.resx">
+      <DependentUpon>frmLocalizarTecnica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLocalizarUsuario.resx">
       <DependentUpon>frmLocalizarUsuario.cs</DependentUpon>

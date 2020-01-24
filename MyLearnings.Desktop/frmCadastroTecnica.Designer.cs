@@ -28,8 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroTecnica));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.mskDataAlteracao = new System.Windows.Forms.MaskedTextBox();
+            this.btnLocalizar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnInserir = new System.Windows.Forms.Button();
+            this.mskDataCadastro = new System.Windows.Forms.MaskedTextBox();
             this.txtIdUsuAlteracao = new System.Windows.Forms.TextBox();
             this.txtIdUsuCadastro = new System.Windows.Forms.TextBox();
             this.txtDescLongo = new System.Windows.Forms.TextBox();
@@ -47,26 +56,19 @@
             this.lblTCiclo = new System.Windows.Forms.Label();
             this.lblNomeTecnica = new System.Windows.Forms.Label();
             this.lblIdTenica = new System.Windows.Forms.Label();
-            this.mskDataCadastro = new System.Windows.Forms.MaskedTextBox();
-            this.mskDataAlteracao = new System.Windows.Forms.MaskedTextBox();
-            this.btnLocalizar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnAlterar = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.btnInserir = new System.Windows.Forms.Button();
+            this.toolTipMeusBotoes = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.mskDataAlteracao);
             this.panel1.Controls.Add(this.btnLocalizar);
             this.panel1.Controls.Add(this.btnCancelar);
             this.panel1.Controls.Add(this.btnExcluir);
             this.panel1.Controls.Add(this.btnAlterar);
             this.panel1.Controls.Add(this.btnSalvar);
             this.panel1.Controls.Add(this.btnInserir);
-            this.panel1.Controls.Add(this.mskDataAlteracao);
             this.panel1.Controls.Add(this.mskDataCadastro);
             this.panel1.Controls.Add(this.txtIdUsuAlteracao);
             this.panel1.Controls.Add(this.txtIdUsuCadastro);
@@ -90,17 +92,99 @@
             this.panel1.Size = new System.Drawing.Size(642, 361);
             this.panel1.TabIndex = 0;
             // 
+            // mskDataAlteracao
+            // 
+            this.mskDataAlteracao.Location = new System.Drawing.Point(517, 223);
+            this.mskDataAlteracao.Mask = "00/00/0000 00:00";
+            this.mskDataAlteracao.Name = "mskDataAlteracao";
+            this.mskDataAlteracao.ReadOnly = true;
+            this.mskDataAlteracao.Size = new System.Drawing.Size(98, 20);
+            this.mskDataAlteracao.TabIndex = 47;
+            this.mskDataAlteracao.ValidatingType = typeof(System.DateTime);
+            // 
+            // btnLocalizar
+            // 
+            this.btnLocalizar.Image = ((System.Drawing.Image)(resources.GetObject("btnLocalizar.Image")));
+            this.btnLocalizar.Location = new System.Drawing.Point(124, 271);
+            this.btnLocalizar.Name = "btnLocalizar";
+            this.btnLocalizar.Size = new System.Drawing.Size(80, 78);
+            this.btnLocalizar.TabIndex = 43;
+            this.btnLocalizar.UseVisualStyleBackColor = true;
+            this.btnLocalizar.Click += new System.EventHandler(this.btnLocalizar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.Location = new System.Drawing.Point(540, 271);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(80, 78);
+            this.btnCancelar.TabIndex = 42;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
+            this.btnExcluir.Location = new System.Drawing.Point(331, 271);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(80, 78);
+            this.btnExcluir.TabIndex = 44;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterar.Image")));
+            this.btnAlterar.Location = new System.Drawing.Point(226, 271);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(80, 78);
+            this.btnAlterar.TabIndex = 45;
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
+            this.btnSalvar.Location = new System.Drawing.Point(436, 271);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(80, 78);
+            this.btnSalvar.TabIndex = 41;
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnInserir
+            // 
+            this.btnInserir.Image = ((System.Drawing.Image)(resources.GetObject("btnInserir.Image")));
+            this.btnInserir.Location = new System.Drawing.Point(20, 271);
+            this.btnInserir.Name = "btnInserir";
+            this.btnInserir.Size = new System.Drawing.Size(80, 78);
+            this.btnInserir.TabIndex = 40;
+            this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
+            // 
+            // mskDataCadastro
+            // 
+            this.mskDataCadastro.Location = new System.Drawing.Point(401, 223);
+            this.mskDataCadastro.Mask = "00/00/0000 00:00";
+            this.mskDataCadastro.Name = "mskDataCadastro";
+            this.mskDataCadastro.ReadOnly = true;
+            this.mskDataCadastro.Size = new System.Drawing.Size(103, 20);
+            this.mskDataCadastro.TabIndex = 39;
+            this.mskDataCadastro.ValidatingType = typeof(System.DateTime);
+            // 
             // txtIdUsuAlteracao
             // 
-            this.txtIdUsuAlteracao.Location = new System.Drawing.Point(207, 223);
+            this.txtIdUsuAlteracao.Location = new System.Drawing.Point(165, 223);
             this.txtIdUsuAlteracao.Name = "txtIdUsuAlteracao";
+            this.txtIdUsuAlteracao.ReadOnly = true;
             this.txtIdUsuAlteracao.Size = new System.Drawing.Size(62, 20);
             this.txtIdUsuAlteracao.TabIndex = 37;
             // 
             // txtIdUsuCadastro
             // 
-            this.txtIdUsuCadastro.Location = new System.Drawing.Point(406, 33);
+            this.txtIdUsuCadastro.Location = new System.Drawing.Point(283, 223);
             this.txtIdUsuCadastro.Name = "txtIdUsuCadastro";
+            this.txtIdUsuCadastro.ReadOnly = true;
             this.txtIdUsuCadastro.Size = new System.Drawing.Size(62, 20);
             this.txtIdUsuCadastro.TabIndex = 35;
             // 
@@ -108,6 +192,7 @@
             // 
             this.txtDescLongo.Location = new System.Drawing.Point(21, 223);
             this.txtDescLongo.Name = "txtDescLongo";
+            this.txtDescLongo.ReadOnly = true;
             this.txtDescLongo.Size = new System.Drawing.Size(62, 20);
             this.txtDescLongo.TabIndex = 33;
             // 
@@ -115,6 +200,7 @@
             // 
             this.txtDescCurto.Location = new System.Drawing.Point(21, 176);
             this.txtDescCurto.Name = "txtDescCurto";
+            this.txtDescCurto.ReadOnly = true;
             this.txtDescCurto.Size = new System.Drawing.Size(62, 20);
             this.txtDescCurto.TabIndex = 32;
             // 
@@ -122,6 +208,7 @@
             // 
             this.txtTempoCiclo.Location = new System.Drawing.Point(21, 129);
             this.txtTempoCiclo.Name = "txtTempoCiclo";
+            this.txtTempoCiclo.ReadOnly = true;
             this.txtTempoCiclo.Size = new System.Drawing.Size(62, 20);
             this.txtTempoCiclo.TabIndex = 31;
             // 
@@ -140,6 +227,7 @@
             this.txtNomeTec.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtNomeTec.Location = new System.Drawing.Point(21, 76);
             this.txtNomeTec.Name = "txtNomeTec";
+            this.txtNomeTec.ReadOnly = true;
             this.txtNomeTec.Size = new System.Drawing.Size(496, 20);
             this.txtNomeTec.TabIndex = 29;
             // 
@@ -155,7 +243,7 @@
             // lblDtAlteracao
             // 
             this.lblDtAlteracao.AutoSize = true;
-            this.lblDtAlteracao.Location = new System.Drawing.Point(204, 159);
+            this.lblDtAlteracao.Location = new System.Drawing.Point(514, 206);
             this.lblDtAlteracao.Name = "lblDtAlteracao";
             this.lblDtAlteracao.Size = new System.Drawing.Size(93, 13);
             this.lblDtAlteracao.TabIndex = 27;
@@ -164,7 +252,7 @@
             // lblDtUsuAlteracao
             // 
             this.lblDtUsuAlteracao.AutoSize = true;
-            this.lblDtUsuAlteracao.Location = new System.Drawing.Point(204, 206);
+            this.lblDtUsuAlteracao.Location = new System.Drawing.Point(162, 206);
             this.lblDtUsuAlteracao.Name = "lblDtUsuAlteracao";
             this.lblDtUsuAlteracao.Size = new System.Drawing.Size(118, 13);
             this.lblDtUsuAlteracao.TabIndex = 26;
@@ -173,7 +261,7 @@
             // lblIdUsuCadastro
             // 
             this.lblIdUsuCadastro.AutoSize = true;
-            this.lblIdUsuCadastro.Location = new System.Drawing.Point(403, 16);
+            this.lblIdUsuCadastro.Location = new System.Drawing.Point(280, 206);
             this.lblIdUsuCadastro.Name = "lblIdUsuCadastro";
             this.lblIdUsuCadastro.Size = new System.Drawing.Size(115, 13);
             this.lblIdUsuCadastro.TabIndex = 25;
@@ -182,7 +270,7 @@
             // lblDtCadastro
             // 
             this.lblDtCadastro.AutoSize = true;
-            this.lblDtCadastro.Location = new System.Drawing.Point(297, 16);
+            this.lblDtCadastro.Location = new System.Drawing.Point(398, 206);
             this.lblDtCadastro.Name = "lblDtCadastro";
             this.lblDtCadastro.Size = new System.Drawing.Size(90, 13);
             this.lblDtCadastro.TabIndex = 24;
@@ -233,78 +321,6 @@
             this.lblIdTenica.TabIndex = 18;
             this.lblIdTenica.Text = "Id";
             // 
-            // mskDataCadastro
-            // 
-            this.mskDataCadastro.Location = new System.Drawing.Point(300, 32);
-            this.mskDataCadastro.Mask = "00/00/0000";
-            this.mskDataCadastro.Name = "mskDataCadastro";
-            this.mskDataCadastro.Size = new System.Drawing.Size(76, 20);
-            this.mskDataCadastro.TabIndex = 38;
-            this.mskDataCadastro.ValidatingType = typeof(System.DateTime);
-            // 
-            // mskDataAlteracao
-            // 
-            this.mskDataAlteracao.Location = new System.Drawing.Point(207, 176);
-            this.mskDataAlteracao.Mask = "00/00/0000";
-            this.mskDataAlteracao.Name = "mskDataAlteracao";
-            this.mskDataAlteracao.Size = new System.Drawing.Size(73, 20);
-            this.mskDataAlteracao.TabIndex = 39;
-            this.mskDataAlteracao.ValidatingType = typeof(System.DateTime);
-            // 
-            // btnLocalizar
-            // 
-            this.btnLocalizar.Image = ((System.Drawing.Image)(resources.GetObject("btnLocalizar.Image")));
-            this.btnLocalizar.Location = new System.Drawing.Point(124, 271);
-            this.btnLocalizar.Name = "btnLocalizar";
-            this.btnLocalizar.Size = new System.Drawing.Size(80, 78);
-            this.btnLocalizar.TabIndex = 43;
-            this.btnLocalizar.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(540, 271);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(80, 78);
-            this.btnCancelar.TabIndex = 42;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
-            this.btnExcluir.Location = new System.Drawing.Point(331, 271);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(80, 78);
-            this.btnExcluir.TabIndex = 44;
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            // 
-            // btnAlterar
-            // 
-            this.btnAlterar.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterar.Image")));
-            this.btnAlterar.Location = new System.Drawing.Point(226, 271);
-            this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(80, 78);
-            this.btnAlterar.TabIndex = 45;
-            this.btnAlterar.UseVisualStyleBackColor = true;
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.Location = new System.Drawing.Point(436, 271);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(80, 78);
-            this.btnSalvar.TabIndex = 41;
-            this.btnSalvar.UseVisualStyleBackColor = true;
-            // 
-            // btnInserir
-            // 
-            this.btnInserir.Image = ((System.Drawing.Image)(resources.GetObject("btnInserir.Image")));
-            this.btnInserir.Location = new System.Drawing.Point(20, 271);
-            this.btnInserir.Name = "btnInserir";
-            this.btnInserir.Size = new System.Drawing.Size(80, 78);
-            this.btnInserir.TabIndex = 40;
-            this.btnInserir.UseVisualStyleBackColor = true;
-            // 
             // frmCadastroTecnica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -314,6 +330,7 @@
             this.Name = "frmCadastroTecnica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro da Técnica";
+            this.Load += new System.EventHandler(this.frmCadastroTecnica_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -332,15 +349,7 @@
         private System.Windows.Forms.Label lblTCiclo;
         private System.Windows.Forms.Label lblNomeTecnica;
         private System.Windows.Forms.Label lblIdTenica;
-        private System.Windows.Forms.TextBox txtIdTec;
-        private System.Windows.Forms.TextBox txtIdUsuAlteracao;
-        private System.Windows.Forms.TextBox txtIdUsuCadastro;
-        private System.Windows.Forms.TextBox txtDescLongo;
-        private System.Windows.Forms.TextBox txtDescCurto;
-        private System.Windows.Forms.TextBox txtTempoCiclo;
         private System.Windows.Forms.CheckBox chkPadrao;
-        private System.Windows.Forms.TextBox txtNomeTec;
-        private System.Windows.Forms.MaskedTextBox mskDataAlteracao;
         private System.Windows.Forms.MaskedTextBox mskDataCadastro;
         private System.Windows.Forms.Button btnLocalizar;
         private System.Windows.Forms.Button btnCancelar;
@@ -348,5 +357,14 @@
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnInserir;
+        private System.Windows.Forms.ToolTip toolTipMeusBotoes;
+        private System.Windows.Forms.MaskedTextBox mskDataAlteracao;
+        public System.Windows.Forms.TextBox txtIdTec;
+        public System.Windows.Forms.TextBox txtIdUsuAlteracao;
+        public System.Windows.Forms.TextBox txtIdUsuCadastro;
+        public System.Windows.Forms.TextBox txtDescLongo;
+        public System.Windows.Forms.TextBox txtDescCurto;
+        public System.Windows.Forms.TextBox txtTempoCiclo;
+        public System.Windows.Forms.TextBox txtNomeTec;
     }
 }
