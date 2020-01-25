@@ -169,7 +169,6 @@ namespace MyLearnings.Desktop
 
         private void txtIdUsuario_Validated(object sender, EventArgs e)
         {
-#warning LEMBRA DE TIRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR
             btnExcluir.Enabled = true; 
         }
 

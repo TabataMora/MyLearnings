@@ -68,15 +68,7 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
                 if (tecnica.DataCadastro == null)
                 {
                     throw new Exception("A data do cadastro precisa ser informada!");
-                }
-                if (tecnica.DataAlteracao == null)
-                {
-                    throw new Exception("A data da alteração precisa ser informada!");
-                }
-                if (tecnica.IdUsuarioAlteracao == null)
-                {
-                    throw new Exception("O Id do usuário da alteração precisa ser informado!");
-                }
+                }              
 
                 TecnicaAcessoADados tecnicaAcessoADados = new TecnicaAcessoADados();
                 return tecnicaAcessoADados.Alterar(tecnica);
@@ -102,9 +94,14 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
 
         }
 
-        public List<Tecnica> BuscarTecnica(Tecnica IdTecnica)
+        public List<Tecnica> BuscarTecnicaSalvar(Tecnica IdTecnica)
         {
-            return new TecnicaAcessoADados().BuscarTecnica(IdTecnica);
+            return new TecnicaAcessoADados().BuscarTecnicaSalvar(IdTecnica);
+        }
+
+        public List<Tecnica> BuscarTecnicaAlterar(Tecnica IdTecnica)
+        {
+            return new TecnicaAcessoADados().BuscarTecnicaAlterar(IdTecnica);
         }
     }
 }

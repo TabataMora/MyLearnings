@@ -174,6 +174,7 @@
             // 
             // txtIdUsuAlteracao
             // 
+            this.txtIdUsuAlteracao.Enabled = false;
             this.txtIdUsuAlteracao.Location = new System.Drawing.Point(165, 223);
             this.txtIdUsuAlteracao.Name = "txtIdUsuAlteracao";
             this.txtIdUsuAlteracao.ReadOnly = true;
@@ -350,7 +351,6 @@
         private System.Windows.Forms.Label lblNomeTecnica;
         private System.Windows.Forms.Label lblIdTenica;
         private System.Windows.Forms.CheckBox chkPadrao;
-        private System.Windows.Forms.MaskedTextBox mskDataCadastro;
         private System.Windows.Forms.Button btnLocalizar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnExcluir;
@@ -358,7 +358,6 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.ToolTip toolTipMeusBotoes;
-        private System.Windows.Forms.MaskedTextBox mskDataAlteracao;
         public System.Windows.Forms.TextBox txtIdTec;
         public System.Windows.Forms.TextBox txtIdUsuAlteracao;
         public System.Windows.Forms.TextBox txtIdUsuCadastro;
@@ -366,5 +365,7 @@
         public System.Windows.Forms.TextBox txtDescCurto;
         public System.Windows.Forms.TextBox txtTempoCiclo;
         public System.Windows.Forms.TextBox txtNomeTec;
+        public System.Windows.Forms.MaskedTextBox mskDataCadastro;
+        public System.Windows.Forms.MaskedTextBox mskDataAlteracao;
     }
 }

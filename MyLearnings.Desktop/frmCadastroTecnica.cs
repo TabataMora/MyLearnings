@@ -133,12 +133,11 @@ namespace MyLearnings.Desktop
                     tecnica.TempoCiclo = Convert.ToInt32(txtTempoCiclo.Text);
                     tecnica.DescCurto = Convert.ToInt32(txtDescCurto.Text);
                     tecnica.DescLongo = Convert.ToInt32(txtDescLongo.Text);
-
+                    tecnica.DataAlteracao = Convert.ToDateTime(mskDataAlteracao.Text);
+                    tecnica.Id = Convert.ToInt32(txtIdTec.Text);
                     tecnica.Padrao = chkPadrao.Checked == true ? "S" : "N";
-
+                    tecnica.IdUsuarioAlteracao = IdLogin.IdLogado;
                     tecnicaRegras.Alterar(tecnica);
-
-                    txtIdTec.Text = tecnica.Id.ToString();
 
                     MessageBox.Show("Alteração efetuada com sucesso! " + tecnica.Id.ToString());
                 }
@@ -187,6 +186,8 @@ namespace MyLearnings.Desktop
             txtTempoCiclo.ReadOnly = false;
             txtIdUsuCadastro.ReadOnly = false;
             txtIdUsuAlteracao.ReadOnly = false;
+            txtIdUsuCadastro.Enabled = true;
+            
             this.operacao = "Alterar";
             this.AlteraBotoes(2);
         }

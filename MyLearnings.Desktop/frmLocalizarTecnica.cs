@@ -14,6 +14,8 @@ namespace MyLearnings.Desktop
 {
     public partial class frmLocalizarTecnica : Form
     {
+        public string operacao;
+
         public frmCadastroTecnica formQueChamou { get; set; }
 
         public frmLocalizarTecnica()
@@ -23,23 +25,23 @@ namespace MyLearnings.Desktop
 
         private void btnLocalizaTec_Click(object sender, EventArgs e)
         {
-            Tecnica tecnica = new Tecnica();
-            tecnica.Nome = txtLocalizaTec.Text;
-            TecnicaRegrasDeNegocio tecnicaRegras = new TecnicaRegrasDeNegocio();
-            List<Tecnica> lista = new List<Tecnica>();
+                Tecnica tecnica = new Tecnica();
+                tecnica.Nome = txtLocalizaTec.Text;
+                TecnicaRegrasDeNegocio tecnicaRegras = new TecnicaRegrasDeNegocio();
+                List<Tecnica> lista = new List<Tecnica>();
 
-            lista = tecnicaRegras.BuscarTecnica(tecnica);
+                lista = tecnicaRegras.BuscarTecnicaSalvar(tecnica);
 
-            dgvLocalizaTec.DataSource = lista;
+                dgvLocalizaTec.DataSource = lista;           
         }
 
         private void frmLocalizarTecnica_Load(object sender, EventArgs e)
         {
-            btnLocalizaTec_Click(sender, e);
-            dgvLocalizaTec.Columns[0].Width = 46;
-            dgvLocalizaTec.Columns[1].HeaderText = "Nome Técnica";
-            dgvLocalizaTec.Columns[1].Width = 250;
-            dgvLocalizaTec.Columns[2].Width = 250;
+            //btnLocalizaTec_Click(sender, e);
+            //dgvLocalizaTec.Columns[1].Width = 46;
+            //dgvLocalizaTec.Columns[1].HeaderText = "Nome Técnica";
+            //dgvLocalizaTec.Columns[1].Width = 250;
+            //dgvLocalizaTec.Columns[2].Width = 250;
         }
 
         private void dgvLocalizaTec_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -53,15 +55,15 @@ namespace MyLearnings.Desktop
             string descurto = dgvLocalizaTec.CurrentRow.Cells["DESCCURTO"].Value.ToString();
             formQueChamou.txtDescCurto.Text = descurto;
             string desclongo = dgvLocalizaTec.CurrentRow.Cells["DESCLONGO"].Value.ToString();
-            formQueChamou.txtDescCurto.Text = desclongo;
+            formQueChamou.txtDescLongo.Text = desclongo;
             string datacadastro = dgvLocalizaTec.CurrentRow.Cells["DATACADASTRO"].Value.ToString();
-            formQueChamou.txtDescCurto.Text = datacadastro;
+            formQueChamou.mskDataCadastro.Text = datacadastro;
             string idusucadastro = dgvLocalizaTec.CurrentRow.Cells["IDUSUARIOCADASTRO"].Value?.ToString();
-            formQueChamou.txtDescCurto.Text = idusucadastro;
+            formQueChamou.txtIdUsuCadastro.Text = idusucadastro;
             string idusualteracao = dgvLocalizaTec.CurrentRow.Cells["IDUSUARIOALTERACAO"].Value?.ToString();
-            formQueChamou.txtDescCurto.Text = idusualteracao;
+            formQueChamou.txtIdUsuAlteracao.Text = idusualteracao;
             string dataalteracao = dgvLocalizaTec.CurrentRow.Cells["DATAALTERACAO"].Value?.ToString();
-            formQueChamou.txtDescCurto.Text = dataalteracao;
+            formQueChamou.mskDataAlteracao.Text = dataalteracao;
             this.Hide(); //ocultando (?)
         }
     }
