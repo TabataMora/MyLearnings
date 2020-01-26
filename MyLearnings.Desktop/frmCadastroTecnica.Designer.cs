@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroTecnica));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtNomeUsu = new System.Windows.Forms.TextBox();
             this.mskDataAlteracao = new System.Windows.Forms.MaskedTextBox();
             this.btnLocalizar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -62,6 +63,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtNomeUsu);
             this.panel1.Controls.Add(this.mskDataAlteracao);
             this.panel1.Controls.Add(this.btnLocalizar);
             this.panel1.Controls.Add(this.btnCancelar);
@@ -92,13 +94,23 @@
             this.panel1.Size = new System.Drawing.Size(642, 361);
             this.panel1.TabIndex = 0;
             // 
+            // txtNomeUsu
+            // 
+            this.txtNomeUsu.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtNomeUsu.Location = new System.Drawing.Point(242, 223);
+            this.txtNomeUsu.Name = "txtNomeUsu";
+            this.txtNomeUsu.ReadOnly = true;
+            this.txtNomeUsu.Size = new System.Drawing.Size(105, 20);
+            this.txtNomeUsu.TabIndex = 49;
+            // 
             // mskDataAlteracao
             // 
-            this.mskDataAlteracao.Location = new System.Drawing.Point(517, 223);
+            this.mskDataAlteracao.Enabled = false;
+            this.mskDataAlteracao.Location = new System.Drawing.Point(521, 223);
             this.mskDataAlteracao.Mask = "00/00/0000 00:00";
             this.mskDataAlteracao.Name = "mskDataAlteracao";
             this.mskDataAlteracao.ReadOnly = true;
-            this.mskDataAlteracao.Size = new System.Drawing.Size(98, 20);
+            this.mskDataAlteracao.Size = new System.Drawing.Size(100, 20);
             this.mskDataAlteracao.TabIndex = 47;
             this.mskDataAlteracao.ValidatingType = typeof(System.DateTime);
             // 
@@ -164,18 +176,19 @@
             // 
             // mskDataCadastro
             // 
-            this.mskDataCadastro.Location = new System.Drawing.Point(401, 223);
+            this.mskDataCadastro.Enabled = false;
+            this.mskDataCadastro.Location = new System.Drawing.Point(533, 32);
             this.mskDataCadastro.Mask = "00/00/0000 00:00";
             this.mskDataCadastro.Name = "mskDataCadastro";
             this.mskDataCadastro.ReadOnly = true;
-            this.mskDataCadastro.Size = new System.Drawing.Size(103, 20);
+            this.mskDataCadastro.Size = new System.Drawing.Size(99, 20);
             this.mskDataCadastro.TabIndex = 39;
             this.mskDataCadastro.ValidatingType = typeof(System.DateTime);
             // 
             // txtIdUsuAlteracao
             // 
             this.txtIdUsuAlteracao.Enabled = false;
-            this.txtIdUsuAlteracao.Location = new System.Drawing.Point(165, 223);
+            this.txtIdUsuAlteracao.Location = new System.Drawing.Point(380, 223);
             this.txtIdUsuAlteracao.Name = "txtIdUsuAlteracao";
             this.txtIdUsuAlteracao.ReadOnly = true;
             this.txtIdUsuAlteracao.Size = new System.Drawing.Size(62, 20);
@@ -183,11 +196,13 @@
             // 
             // txtIdUsuCadastro
             // 
-            this.txtIdUsuCadastro.Location = new System.Drawing.Point(283, 223);
+            this.txtIdUsuCadastro.Location = new System.Drawing.Point(174, 223);
             this.txtIdUsuCadastro.Name = "txtIdUsuCadastro";
             this.txtIdUsuCadastro.ReadOnly = true;
             this.txtIdUsuCadastro.Size = new System.Drawing.Size(62, 20);
             this.txtIdUsuCadastro.TabIndex = 35;
+   
+            this.txtIdUsuCadastro.Validated += new System.EventHandler(this.txtIdUsuCadastro_Validated);
             // 
             // txtDescLongo
             // 
@@ -244,7 +259,7 @@
             // lblDtAlteracao
             // 
             this.lblDtAlteracao.AutoSize = true;
-            this.lblDtAlteracao.Location = new System.Drawing.Point(514, 206);
+            this.lblDtAlteracao.Location = new System.Drawing.Point(518, 206);
             this.lblDtAlteracao.Name = "lblDtAlteracao";
             this.lblDtAlteracao.Size = new System.Drawing.Size(93, 13);
             this.lblDtAlteracao.TabIndex = 27;
@@ -253,7 +268,7 @@
             // lblDtUsuAlteracao
             // 
             this.lblDtUsuAlteracao.AutoSize = true;
-            this.lblDtUsuAlteracao.Location = new System.Drawing.Point(162, 206);
+            this.lblDtUsuAlteracao.Location = new System.Drawing.Point(377, 206);
             this.lblDtUsuAlteracao.Name = "lblDtUsuAlteracao";
             this.lblDtUsuAlteracao.Size = new System.Drawing.Size(118, 13);
             this.lblDtUsuAlteracao.TabIndex = 26;
@@ -262,7 +277,7 @@
             // lblIdUsuCadastro
             // 
             this.lblIdUsuCadastro.AutoSize = true;
-            this.lblIdUsuCadastro.Location = new System.Drawing.Point(280, 206);
+            this.lblIdUsuCadastro.Location = new System.Drawing.Point(171, 206);
             this.lblIdUsuCadastro.Name = "lblIdUsuCadastro";
             this.lblIdUsuCadastro.Size = new System.Drawing.Size(115, 13);
             this.lblIdUsuCadastro.TabIndex = 25;
@@ -271,7 +286,7 @@
             // lblDtCadastro
             // 
             this.lblDtCadastro.AutoSize = true;
-            this.lblDtCadastro.Location = new System.Drawing.Point(398, 206);
+            this.lblDtCadastro.Location = new System.Drawing.Point(530, 16);
             this.lblDtCadastro.Name = "lblDtCadastro";
             this.lblDtCadastro.Size = new System.Drawing.Size(90, 13);
             this.lblDtCadastro.TabIndex = 24;
@@ -367,5 +382,6 @@
         public System.Windows.Forms.TextBox txtNomeTec;
         public System.Windows.Forms.MaskedTextBox mskDataCadastro;
         public System.Windows.Forms.MaskedTextBox mskDataAlteracao;
+        public System.Windows.Forms.TextBox txtNomeUsu;
     }
 }

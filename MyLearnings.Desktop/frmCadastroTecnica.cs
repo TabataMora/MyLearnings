@@ -21,10 +21,10 @@ namespace MyLearnings.Desktop
         {
             InitializeComponent();
 
-            toolTipMeusBotoes.SetToolTip(btnInserir, "Inserir Usuário");
-            toolTipMeusBotoes.SetToolTip(btnSalvar, "Salvar Usuário");
-            toolTipMeusBotoes.SetToolTip(btnAlterar, "Alterar Cadastro");
-            toolTipMeusBotoes.SetToolTip(btnExcluir, "Excluir Usuário");
+            toolTipMeusBotoes.SetToolTip(btnInserir, "Inserir Técnica");
+            toolTipMeusBotoes.SetToolTip(btnSalvar, "Salvar Técnica");
+            toolTipMeusBotoes.SetToolTip(btnAlterar, "Alterar Técnica");
+            toolTipMeusBotoes.SetToolTip(btnExcluir, "Excluir Técnica");
             toolTipMeusBotoes.SetToolTip(btnCancelar, "Cancelar Cadastro");
         }
 
@@ -43,8 +43,7 @@ namespace MyLearnings.Desktop
         }
 
         public void AlteraBotoes(int op)
-        {
-
+        {         
             btnSalvar.Enabled = false;
             btnExcluir.Enabled = false;
             btnAlterar.Enabled = false;
@@ -55,6 +54,16 @@ namespace MyLearnings.Desktop
             {
                 btnInserir.Enabled = true;
                 btnLocalizar.Enabled = true;
+                txtNomeTec.ReadOnly = true;
+                txtDescCurto.ReadOnly = true;
+                txtDescLongo.ReadOnly = true;
+                txtTempoCiclo.ReadOnly = true;
+                txtIdUsuCadastro.ReadOnly = true;
+                txtNomeTec.Enabled = false;
+                txtDescCurto.Enabled = false;
+                txtDescLongo.Enabled = false;
+                txtTempoCiclo.Enabled = false;
+                txtIdUsuCadastro.Enabled = false;
 
             }
 
@@ -63,6 +72,11 @@ namespace MyLearnings.Desktop
                 btnCancelar.Enabled = true;
                 btnSalvar.Enabled = true;
                 btnLocalizar.Enabled = false;
+                txtNomeTec.Enabled = true;
+                txtDescCurto.Enabled = true;
+                txtDescLongo.Enabled = true;
+                txtTempoCiclo.Enabled = true;
+                txtIdUsuCadastro.Enabled = true;
             }
 
             if (op == 3)
@@ -85,7 +99,8 @@ namespace MyLearnings.Desktop
         private void btnInserir_Click(object sender, EventArgs e)
         {
             this.operacao = "Inserir";
-            this.AlteraBotoes(2); txtNomeTec.ReadOnly = false;
+            this.AlteraBotoes(2);
+            txtNomeTec.ReadOnly = false;
             txtDescCurto.ReadOnly = false;
             txtDescLongo.ReadOnly = false;
             txtTempoCiclo.ReadOnly = false;
@@ -96,19 +111,14 @@ namespace MyLearnings.Desktop
         {
             try
             {
-                TecnicaRegrasDeNegocio tecnicaRegras = new TecnicaRegrasDeNegocio();
-
-                txtNomeTec.ReadOnly = true;
-                txtDescCurto.ReadOnly = true;
-                txtDescLongo.ReadOnly = true;
-                txtTempoCiclo.ReadOnly = true;
-                txtIdUsuCadastro.ReadOnly = true;           
+                TecnicaRegrasDeNegocio tecnicaRegras = new TecnicaRegrasDeNegocio();         
 
                 if (this.operacao == "Inserir")
                 {
                     Tecnica tecnica = new Tecnica();
 
                     mskDataCadastro.Text = DateTime.Now.ToString();
+                    mskDataAlteracao.Text = DateTime.Now.ToString();
                     tecnica.Nome = txtNomeTec.Text;
                     tecnica.IdUsuarioCadastro = Convert.ToInt32(txtIdUsuCadastro.Text);
                     tecnica.TempoCiclo = Convert.ToInt32(txtTempoCiclo.Text);
@@ -133,10 +143,10 @@ namespace MyLearnings.Desktop
                     tecnica.TempoCiclo = Convert.ToInt32(txtTempoCiclo.Text);
                     tecnica.DescCurto = Convert.ToInt32(txtDescCurto.Text);
                     tecnica.DescLongo = Convert.ToInt32(txtDescLongo.Text);
-                    tecnica.DataAlteracao = Convert.ToDateTime(mskDataAlteracao.Text);
                     tecnica.Id = Convert.ToInt32(txtIdTec.Text);
+                    tecnica.DataAlteracao = Convert.ToDateTime(mskDataAlteracao.Text);
                     tecnica.Padrao = chkPadrao.Checked == true ? "S" : "N";
-                    tecnica.IdUsuarioAlteracao = IdLogin.IdLogado;
+                    tecnica.IdUsuarioAlteracao = IdLogin.IdLogado(IdUsuCadastro: Convert.ToInt32(txtIdUsuAlteracao.Text));
                     tecnicaRegras.Alterar(tecnica);
 
                     MessageBox.Show("Alteração efetuada com sucesso! " + tecnica.Id.ToString());
@@ -186,7 +196,7 @@ namespace MyLearnings.Desktop
             txtTempoCiclo.ReadOnly = false;
             txtIdUsuCadastro.ReadOnly = false;
             txtIdUsuAlteracao.ReadOnly = false;
-            txtIdUsuCadastro.Enabled = true;
+            txtIdUsuCadastro.Enabled = false;
             
             this.operacao = "Alterar";
             this.AlteraBotoes(2);
@@ -199,6 +209,14 @@ namespace MyLearnings.Desktop
             frm.ShowDialog();
             this.AlteraBotoes(3);
         }
+
+        private void txtIdUsuCadastro_Validated(object sender, EventArgs e)
+        {
+            UsuarioRegrasDeNegocio usuarioRegrasDeNegocio = new UsuarioRegrasDeNegocio();
+            var usuario = usuarioRegrasDeNegocio.BuscaUsuarioPorId( Convert.ToInt32(txtIdUsuCadastro.Text));
+
+            txtNomeUsu.Text = usuario.Nome;
+        }   
     }
 }   
 

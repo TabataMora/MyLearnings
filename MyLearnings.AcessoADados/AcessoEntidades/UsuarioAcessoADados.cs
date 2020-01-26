@@ -1,6 +1,7 @@
 ﻿using MyLearnings.Entidades.Entidades;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
@@ -172,6 +173,40 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                 {
                     _conexao.Desconectar();
                 }
+            }
+        }
+
+        public Usuario BuscaUsuarioId(int id)
+        {
+            Usuario usuario = new Usuario();
+            SqlCommand cmd = new SqlCommand();
+            using (cmd.Connection = _conexao.ObjetoDaConexao)
+            {
+                try
+                {
+                    _conexao.Conectar();
+                    cmd.CommandText = "SELECT NOME FROM TB_USUARIO WHERE ID = @ID";
+                    cmd.Parameters.AddWithValue("@ID", id);
+                    using (cmd)
+                    {
+                        using (DbDataReader dbReader = cmd.ExecuteReader())
+                        {
+                            while (dbReader.Read())
+                            {
+                                usuario.Nome = (dbReader["NOME"].ToString());
+                            }
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _conexao.Desconectar();
+                }
+                return usuario;
             }
         }
     }

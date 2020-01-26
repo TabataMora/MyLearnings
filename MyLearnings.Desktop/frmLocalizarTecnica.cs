@@ -30,7 +30,7 @@ namespace MyLearnings.Desktop
                 TecnicaRegrasDeNegocio tecnicaRegras = new TecnicaRegrasDeNegocio();
                 List<Tecnica> lista = new List<Tecnica>();
 
-                lista = tecnicaRegras.BuscarTecnicaSalvar(tecnica);
+                lista = tecnicaRegras.BuscarTecnica(tecnica);
 
                 dgvLocalizaTec.DataSource = lista;           
         }
@@ -62,8 +62,6 @@ namespace MyLearnings.Desktop
             formQueChamou.txtIdUsuCadastro.Text = idusucadastro;
             string idusualteracao = dgvLocalizaTec.CurrentRow.Cells["IDUSUARIOALTERACAO"].Value?.ToString();
             formQueChamou.txtIdUsuAlteracao.Text = idusualteracao;
-            string dataalteracao = dgvLocalizaTec.CurrentRow.Cells["DATAALTERACAO"].Value?.ToString();
-            formQueChamou.mskDataAlteracao.Text = dataalteracao;
             this.Hide(); //ocultando (?)
         }
     }

@@ -90,5 +90,12 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
         {
             return new UsuarioAcessoADados().BuscarUsuario(IdUsuario);
         }
+        
+        public Usuario BuscaUsuarioPorId(int id)
+        {      
+            UsuarioAcessoADados usuarioAcesso = new UsuarioAcessoADados();
+            Usuario usuario = usuarioAcesso.BuscaUsuarioId(id);
+            return usuario;
+        }
     }
 }

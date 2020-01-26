@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
         public int Incluir(Tecnica tecnica)
         {
             SqlCommand cmd = new SqlCommand();
-            using(cmd.Connection = _conexao.ObjetoDaConexao)
+            using (cmd.Connection = _conexao.ObjetoDaConexao)
             {
                 try
                 {
@@ -37,7 +38,7 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                     tecnica.Id = Convert.ToInt32(cmd.ExecuteScalar());
                     return tecnica.Id;
                 }
-                catch(Exception)
+                catch (Exception)
                 {
                     throw;
                 }
@@ -73,13 +74,14 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
             }
         }
 
-        public List<Tecnica> BuscarTecnicaSalvar(Tecnica tecnica)
+        public List<Tecnica> BuscarTecnica(Tecnica tecnica, string nome)
         {
             string query = string.Empty;
             List<Tecnica> retorno = new List<Tecnica>();
             SqlCommand cmd = new SqlCommand();
             using (cmd.Connection = _conexao.ObjetoDaConexao)
             {
+                string filtro = " WHERE ID > 0 ";
                 try
                 {
                     _conexao.Conectar();
@@ -112,9 +114,21 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                                 tecnicaRetorno.DescCurto = Convert.ToInt32(dataReader["DESC_CURTO"].ToString());
                                 tecnicaRetorno.DescLongo = Convert.ToInt32(dataReader["DESC_LONGO"].ToString());
                                 tecnicaRetorno.DataCadastro = Convert.ToDateTime(dataReader["DATA_CADASTRO"].ToString());
-                                if (dataReader["ID_USUARIO_ALTERACAO"].ToString() != string.Empty) {
+
+                                if (dataReader["ID_USUARIO_ALTERACAO"].ToString() != string.Empty)
+                                {
                                     tecnicaRetorno.IdUsuarioAlteracao = Convert.ToInt32(dataReader["ID_USUARIO_ALTERACAO"].ToString());
                                 }
+                                if (dataReader["DATA_ALTERACAO"].ToString() != string.Empty)
+                                {
+                                    tecnicaRetorno.DataCadastro = Convert.ToDateTime(dataReader["DATA_ALTERACAO"].ToString());
+                                }
+                                if (!string.IsNullOrEmpty(nome))
+                                {
+                                    cmd.Parameters.Add("@NOME", SqlDbType.VarChar).Value = $"%{nome}%";
+                                    filtro = filtro + " AND NOME LIKE @NOME ";
+                                }
+
                                 retorno.Add(tecnicaRetorno);
                             }
                         }
@@ -142,9 +156,9 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                                         TEMPO_CICLO = @TEMPO, 
                                         DESC_CURTO = @DESCURTO, 
                                         DESC_LONGO = @DESCLONGO, 
-                                        DATA_ALTERACAO =  GETDATE(), 
+                                        DATA_ALTERACAO = GETDATE(), 
                                         ID_USUARIO_ALTERACAO = @IDALTERACAO
-                                        WHERE ID = @ID";                                       
+                                        WHERE ID = @ID";
                     cmd.Parameters.AddWithValue("@NOME", tecnica.Nome);
                     cmd.Parameters.AddWithValue("@PADRAO", tecnica.Padrao);
                     cmd.Parameters.AddWithValue("@TEMPO", tecnica.TempoCiclo);
@@ -166,59 +180,7 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                 }
             }
         }
-
-        public List<Tecnica> BuscarTecnicaAlterar(Tecnica tecnica)
-        {
-            string query = string.Empty;
-            List<Tecnica> retorno = new List<Tecnica>();
-            SqlCommand cmd = new SqlCommand();
-            using (cmd.Connection = _conexao.ObjetoDaConexao)
-            {
-                try
-                {
-                    _conexao.Conectar();
-
-                    if (tecnica.Nome.Trim().Length == 0)
-                    {
-                        query = "SELECT * FROM TB_TECNICA";
-                    }
-
-                    else
-                    {
-                        query = ("SELECT * FROM TB_TECNICA WHERE NOME LIKE '%" + tecnica.Nome + "%';");
-
-                    }
-
-                    cmd.CommandText = query;
-
-                    using (cmd)
-                    {
-                        using (DbDataReader dataReader = cmd.ExecuteReader())
-                        {
-                            while (dataReader.Read())
-                            {
-                                Tecnica tecnicaRetorno = new Tecnica();
-                                tecnicaRetorno.Id = Convert.ToInt32(dataReader["ID"].ToString());
-                                tecnicaRetorno.Nome = dataReader["NOME"].ToString();
-                                tecnicaRetorno.Padrao = dataReader["PADRAO"].ToString();
-                                tecnicaRetorno.IdUsuarioCadastro = Convert.ToInt32(dataReader["ID_USUARIO_CADASTRO"].ToString());
-                                tecnicaRetorno.TempoCiclo = Convert.ToInt32(dataReader["TEMPO_CICLO"].ToString());
-                                tecnicaRetorno.DescCurto = Convert.ToInt32(dataReader["DESC_CURTO"].ToString());
-                                tecnicaRetorno.DescLongo = Convert.ToInt32(dataReader["DESC_LONGO"].ToString());
-                                tecnicaRetorno.IdUsuarioAlteracao = Convert.ToInt32(dataReader["ID_USUARIO_ALTERACAO"].ToString());
-                                tecnicaRetorno.DataCadastro = Convert.ToDateTime(dataReader["DATA_CADASTRO"].ToString());
-                                tecnicaRetorno.DataAlteracao = Convert.ToDateTime(dataReader["DATA_ALTERACAO"].ToString());
-                                retorno.Add(tecnicaRetorno);
-                            }
-                        }
-                    }
-                }
-                finally
-                {
-                    _conexao.Desconectar();
-                }
-            }
-            return retorno;
-        }
-    }
+    }      
 }
+
+
