@@ -83,17 +83,20 @@ namespace MyLearnings.Desktop
             txtUsuario.ReadOnly = false;
             txtSenha.ReadOnly = false;
             txtEmail.ReadOnly = false;
+            txtUsuario.Enabled = true;
+            txtSenha.Enabled = true;
+            txtEmail.Enabled = true;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
-        {
-            try
             {
-                UsuarioRegrasDeNegocio usuarioRegras = new UsuarioRegrasDeNegocio();
-
                 txtUsuario.ReadOnly = true;
                 txtSenha.ReadOnly = true;
                 txtEmail.ReadOnly = true;
+
+            try
+            {
+                UsuarioRegrasDeNegocio usuarioRegras = new UsuarioRegrasDeNegocio();
 
                 if (this.operacao == "Inserir")
                 {
@@ -119,7 +122,7 @@ namespace MyLearnings.Desktop
                     usuario.Senha = txtSenha.Text;
                     //alterar usuário           
                     usuarioRegras.Alterar(id: Convert.ToInt32(txtIdUsuario.Text), nome: txtUsuario.Text);
-                    MessageBox.Show("Cadastro alterado com sucesso!");                 
+                    MessageBox.Show("Cadastro alterado com sucesso!");
                 }
             }
             catch (Exception)
@@ -136,6 +139,9 @@ namespace MyLearnings.Desktop
             txtUsuario.ReadOnly = false;
             txtSenha.ReadOnly = false;
             txtEmail.ReadOnly = false;
+            txtUsuario.Enabled = true;
+            txtSenha.Enabled = true;
+            txtEmail.Enabled = true;
             this.operacao = "Alterar";
             this.AlteraBotoes(2);
         }
@@ -163,6 +169,9 @@ namespace MyLearnings.Desktop
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            txtUsuario.Enabled = false;
+            txtSenha.Enabled = false;
+            txtEmail.Enabled = false;
             this.LimpaTela();
             this.AlteraBotoes(1);
         }

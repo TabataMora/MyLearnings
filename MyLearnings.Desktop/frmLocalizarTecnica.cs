@@ -37,11 +37,27 @@ namespace MyLearnings.Desktop
 
         private void frmLocalizarTecnica_Load(object sender, EventArgs e)
         {
-            //btnLocalizaTec_Click(sender, e);
-            //dgvLocalizaTec.Columns[1].Width = 46;
-            //dgvLocalizaTec.Columns[1].HeaderText = "Nome Técnica";
-            //dgvLocalizaTec.Columns[1].Width = 250;
-            //dgvLocalizaTec.Columns[2].Width = 250;
+            btnLocalizaTec_Click(sender, e);
+            dgvLocalizaTec.Columns[0].Width = 49;
+            dgvLocalizaTec.Columns[0].HeaderText = "Id Técnica";
+            dgvLocalizaTec.Columns[1].Width = 125;
+            dgvLocalizaTec.Columns[1].HeaderText = "Nome Técnica";
+            dgvLocalizaTec.Columns[2].Width = 46;
+            dgvLocalizaTec.Columns[2].HeaderText = "Padrão";
+            dgvLocalizaTec.Columns[3].Width = 75;
+            dgvLocalizaTec.Columns[3].HeaderText = "Tempo do Ciclo";
+            dgvLocalizaTec.Columns[4].Width = 75;
+            dgvLocalizaTec.Columns[4].HeaderText = "Tempo Descanso Curto";
+            dgvLocalizaTec.Columns[5].Width = 75;
+            dgvLocalizaTec.Columns[5].HeaderText = "Tempo Descanso Longo";
+            dgvLocalizaTec.Columns[6].Width = 100;
+            dgvLocalizaTec.Columns[6].HeaderText = "Data do Cadastro";
+            dgvLocalizaTec.Columns[7].Width = 95;
+            dgvLocalizaTec.Columns[7].HeaderText = "Id do Usuário Cadastro";
+            dgvLocalizaTec.Columns[8].Width = 100;
+            dgvLocalizaTec.Columns[8].HeaderText = "Data da Alteração";
+            dgvLocalizaTec.Columns[9].Width = 95;
+            dgvLocalizaTec.Columns[9].HeaderText = "Id do Usuário Alteração";
         }
 
         private void dgvLocalizaTec_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -60,6 +76,8 @@ namespace MyLearnings.Desktop
             formQueChamou.mskDataCadastro.Text = datacadastro;
             string idusucadastro = dgvLocalizaTec.CurrentRow.Cells["IDUSUARIOCADASTRO"].Value?.ToString();
             formQueChamou.txtIdUsuCadastro.Text = idusucadastro;
+            string datalteracao = dgvLocalizaTec.CurrentRow.Cells["DATAALTERACAO"].Value?.ToString();
+            formQueChamou.mskDataAlteracao.Text = datalteracao;
             string idusualteracao = dgvLocalizaTec.CurrentRow.Cells["IDUSUARIOALTERACAO"].Value?.ToString();
             formQueChamou.txtIdUsuAlteracao.Text = idusualteracao;
             this.Hide(); //ocultando (?)

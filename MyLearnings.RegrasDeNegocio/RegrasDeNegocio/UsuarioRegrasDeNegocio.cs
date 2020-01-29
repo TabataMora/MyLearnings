@@ -16,6 +16,12 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
         {
             try
             {
+                var senhaCri = "";
+
+                senhaCri = new Criptografia().CriptografarSenha(usuario.Senha);
+
+                usuario.Senha = senhaCri;
+
                 if (usuario.Nome.Trim().Length <= 0)
                 {
                     throw new Exception("O nome do usuário precisa ser informado!");
@@ -67,8 +73,14 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
         public void Alterar(int id, string nome)
         {
             Usuario usuario = new Usuario();
+
+            var senhaCri = "";
+
+            senhaCri = new Criptografia().CriptografarSenha(usuario.Senha);
+
             usuario.Id = id;
             usuario.Nome = nome;
+            usuario.Senha = senhaCri;
             UsuarioAcessoADados usuarioAcesso = new UsuarioAcessoADados();
             usuarioAcesso.Alterar(usuario);
         }

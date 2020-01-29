@@ -100,11 +100,13 @@ namespace MyLearnings.Desktop
         {
             this.operacao = "Inserir";
             this.AlteraBotoes(2);
+
             txtNomeTec.ReadOnly = false;
             txtDescCurto.ReadOnly = false;
             txtDescLongo.ReadOnly = false;
             txtTempoCiclo.ReadOnly = false;
             txtIdUsuCadastro.ReadOnly = false;
+            mskDataCadastro.Text = DateTime.Now.ToString();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -118,7 +120,6 @@ namespace MyLearnings.Desktop
                     Tecnica tecnica = new Tecnica();
 
                     mskDataCadastro.Text = DateTime.Now.ToString();
-                    mskDataAlteracao.Text = DateTime.Now.ToString();
                     tecnica.Nome = txtNomeTec.Text;
                     tecnica.IdUsuarioCadastro = Convert.ToInt32(txtIdUsuCadastro.Text);
                     tecnica.TempoCiclo = Convert.ToInt32(txtTempoCiclo.Text);
@@ -138,6 +139,7 @@ namespace MyLearnings.Desktop
                     txtIdUsuAlteracao.ReadOnly = false;
 
                     Tecnica tecnica = new Tecnica();
+                    mskDataAlteracao.Text = DateTime.Now.ToString();
                     tecnica.Nome = txtNomeTec.Text;
                     tecnica.IdUsuarioCadastro = Convert.ToInt32(txtIdUsuCadastro.Text);
                     tecnica.TempoCiclo = Convert.ToInt32(txtTempoCiclo.Text);
@@ -146,7 +148,14 @@ namespace MyLearnings.Desktop
                     tecnica.Id = Convert.ToInt32(txtIdTec.Text);
                     tecnica.DataAlteracao = Convert.ToDateTime(mskDataAlteracao.Text);
                     tecnica.Padrao = chkPadrao.Checked == true ? "S" : "N";
-                    tecnica.IdUsuarioAlteracao = IdLogin.IdLogado(IdUsuCadastro: Convert.ToInt32(txtIdUsuAlteracao.Text));
+                    if (txtIdUsuAlteracao.Text != String.Empty)
+                    {
+                        IdLogin.IdLogado(IdUsuCadastro: Convert.ToInt32(txtIdUsuAlteracao.Text));
+                    }
+                    else
+                    {
+                        txtIdUsuAlteracao.Text = "0";
+                    }
                     tecnicaRegras.Alterar(tecnica);
 
                     MessageBox.Show("Alteração efetuada com sucesso! " + tecnica.Id.ToString());
@@ -190,6 +199,9 @@ namespace MyLearnings.Desktop
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
+            this.operacao = "Alterar";
+            this.AlteraBotoes(2);
+
             txtNomeTec.ReadOnly = false;
             txtDescCurto.ReadOnly = false;
             txtDescLongo.ReadOnly = false;
@@ -197,9 +209,7 @@ namespace MyLearnings.Desktop
             txtIdUsuCadastro.ReadOnly = false;
             txtIdUsuAlteracao.ReadOnly = false;
             txtIdUsuCadastro.Enabled = false;
-            
-            this.operacao = "Alterar";
-            this.AlteraBotoes(2);
+            mskDataAlteracao.Text = DateTime.Now.ToString();
         }
 
         private void btnLocalizar_Click(object sender, EventArgs e)

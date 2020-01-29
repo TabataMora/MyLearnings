@@ -37,8 +37,9 @@ namespace MyLearnings.Desktop
         {
             btnLocalizaUsu_Click(sender, e);
             dgvLocalizaUsu.Columns[0].Width = 46;
-            dgvLocalizaUsu.Columns[1].HeaderText = "Nome Usuário";
-            dgvLocalizaUsu.Columns[1].Width = 250;
+            dgvLocalizaUsu.Columns[0].HeaderText = "Id Usuário";
+            dgvLocalizaUsu.Columns[1].HeaderText = "Nome do Usuário";
+            dgvLocalizaUsu.Columns[1].Width = 200;
             dgvLocalizaUsu.Columns[2].Visible = false;
             dgvLocalizaUsu.Columns[3].Visible = false;
         }
@@ -49,8 +50,8 @@ namespace MyLearnings.Desktop
             formQueChamou.txtIdUsuario.Text =  id; // passando para o parâmetro form no campo Id o que contém na variável
             string nome = dgvLocalizaUsu.CurrentRow.Cells["NOME"].Value.ToString();
             formQueChamou.txtUsuario.Text = nome;
-            string senha = dgvLocalizaUsu.CurrentRow.Cells["SENHA"].Value.ToString();
-            formQueChamou.txtSenha.Text = senha;
+            //string senha = dgvLocalizaUsu.CurrentRow.Cells["SENHA"].Value.ToString();
+            //formQueChamou.txtSenha.Text = senha;
             string email = dgvLocalizaUsu.CurrentRow.Cells["EMAIL"].Value.ToString();
             formQueChamou.txtEmail.Text = email;
             this.Hide(); //ocultando (?)

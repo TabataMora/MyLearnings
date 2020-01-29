@@ -119,10 +119,10 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                                 {
                                     tecnicaRetorno.IdUsuarioAlteracao = Convert.ToInt32(dataReader["ID_USUARIO_ALTERACAO"].ToString());
                                 }
-                                if (dataReader["DATA_ALTERACAO"].ToString() != string.Empty)
-                                {
-                                    tecnicaRetorno.DataCadastro = Convert.ToDateTime(dataReader["DATA_ALTERACAO"].ToString());
-                                }
+                                //if (dataReader["DATA_ALTERACAO"].ToString() != string.Empty)
+                                //{
+                                //    tecnicaRetorno.DataCadastro = Convert.ToDateTime(dataReader["DATA_ALTERACAO"].ToString());
+                                //}
                                 if (!string.IsNullOrEmpty(nome))
                                 {
                                     cmd.Parameters.Add("@NOME", SqlDbType.VarChar).Value = $"%{nome}%";

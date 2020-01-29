@@ -163,9 +163,10 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                 try
                 {
                     _conexao.Conectar();
-                    cmd.CommandText = "UPDATE TB_USUARIO SET NOME = @NOME WHERE ID = @ID;";
+                    cmd.CommandText = "UPDATE TB_USUARIO SET NOME = @NOME, SENHA = @SENHA WHERE ID = @ID;";
                     cmd.Parameters.AddWithValue("@NOME", usuario.Nome);
                     cmd.Parameters.AddWithValue("@ID", usuario.Id);
+                    cmd.Parameters.AddWithValue("@SENHA", usuario.Senha);
                     cmd.ExecuteScalar();
                 }
              
