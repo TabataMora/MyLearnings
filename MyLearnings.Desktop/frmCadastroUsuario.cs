@@ -53,14 +53,12 @@ namespace MyLearnings.Desktop
                 btnLocalizar.Enabled = true;
                 
             }
-
             if(op == 2)
             {
                 btnCancelar.Enabled = true;
                 btnSalvar.Enabled = true;
                 btnLocalizar.Enabled = false;
             }
-
             if (op == 3)
             {
                 btnExcluir.Enabled = true;
@@ -93,7 +91,6 @@ namespace MyLearnings.Desktop
                 txtUsuario.ReadOnly = true;
                 txtSenha.ReadOnly = true;
                 txtEmail.ReadOnly = true;
-
             try
             {
                 UsuarioRegrasDeNegocio usuarioRegras = new UsuarioRegrasDeNegocio();
@@ -112,7 +109,6 @@ namespace MyLearnings.Desktop
 
                     MessageBox.Show("Cadastro salvo com sucesso! " + usuario.Id.ToString());                 
                 }
-
                 if (this.operacao == "Alterar" && txtIdUsuario.Text != null)
                 {                  
                     Usuario usuario = new Usuario();
@@ -121,7 +117,7 @@ namespace MyLearnings.Desktop
                     usuario.Email = txtEmail.Text;
                     usuario.Senha = txtSenha.Text;
                     //alterar usuário           
-                    usuarioRegras.Alterar(id: Convert.ToInt32(txtIdUsuario.Text), nome: txtUsuario.Text);
+                    usuarioRegras.Alterar(usuario/*id: Convert.ToInt32(txtIdUsuario.Text), nome: txtUsuario.Text*/);
                     MessageBox.Show("Cadastro alterado com sucesso!");
                 }
             }

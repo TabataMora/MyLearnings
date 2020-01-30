@@ -70,16 +70,16 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
             }
         }
 
-        public void Alterar(int id, string nome)
+        public void Alterar(Usuario usuario)/*int id, string nome*/
         {
-            Usuario usuario = new Usuario();
+            //Usuario usuario = new Usuario();
 
             var senhaCri = "";
 
             senhaCri = new Criptografia().CriptografarSenha(usuario.Senha);
 
-            usuario.Id = id;
-            usuario.Nome = nome;
+            //usuario.Id = id;
+            //usuario.Nome = nome;
             usuario.Senha = senhaCri;
             UsuarioAcessoADados usuarioAcesso = new UsuarioAcessoADados();
             usuarioAcesso.Alterar(usuario);
