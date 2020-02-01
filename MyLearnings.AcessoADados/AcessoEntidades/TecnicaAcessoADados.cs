@@ -61,12 +61,10 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                     cmd.Parameters.AddWithValue("@ID", id);
                     cmd.ExecuteNonQuery();
                 }
-
                 catch (Exception)
                 {
                     throw;
                 }
-
                 finally
                 {
                     _conexao.Desconectar();
@@ -90,11 +88,9 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                     {
                         query = "SELECT * FROM TB_TECNICA";
                     }
-
                     else
                     {
                         query = ("SELECT * FROM TB_TECNICA WHERE NOME LIKE '%" + tecnica.Nome + "%';");
-
                     }
 
                     cmd.CommandText = query;
@@ -114,15 +110,16 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                                 tecnicaRetorno.DescCurto = Convert.ToInt32(dataReader["DESC_CURTO"].ToString());
                                 tecnicaRetorno.DescLongo = Convert.ToInt32(dataReader["DESC_LONGO"].ToString());
                                 tecnicaRetorno.DataCadastro = Convert.ToDateTime(dataReader["DATA_CADASTRO"].ToString());
+                                //tecnicaRetorno.DataAlteracao = Convert.ToDateTime(dataReader["DATA_ALTERACAO"].ToString());
 
                                 if (dataReader["ID_USUARIO_ALTERACAO"].ToString() != string.Empty)
                                 {
                                     tecnicaRetorno.IdUsuarioAlteracao = Convert.ToInt32(dataReader["ID_USUARIO_ALTERACAO"].ToString());
                                 }
-                                //if (dataReader["DATA_ALTERACAO"].ToString() != string.Empty)
-                                //{
-                                //    tecnicaRetorno.DataCadastro = Convert.ToDateTime(dataReader["DATA_ALTERACAO"].ToString());
-                                //}
+                                if (dataReader["DATA_ALTERACAO"].ToString() != string.Empty)
+                                {
+                                    tecnicaRetorno.DataAlteracao = Convert.ToDateTime(dataReader["DATA_ALTERACAO"].ToString());
+                                }
                                 if (!string.IsNullOrEmpty(nome))
                                 {
                                     cmd.Parameters.Add("@NOME", SqlDbType.VarChar).Value = $"%{nome}%";
@@ -167,12 +164,13 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                     cmd.Parameters.AddWithValue("@IDALTERACAO", tecnica.IdUsuarioAlteracao);
                     cmd.Parameters.AddWithValue("@ID", tecnica.Id);
 
-                    cmd.ExecuteScalar();
-                    return tecnica.Id;
+                    var resultado = cmd.ExecuteNonQuery();
+
+                    return resultado; 
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    throw;
+                    throw ex;
                 }
                 finally
                 {

@@ -40,6 +40,7 @@ namespace MyLearnings.Desktop
             mskDataAlteracao.Clear();
             txtIdUsuCadastro.Clear();
             txtIdUsuAlteracao.Clear();
+            txtNomeUsu.Clear();
         }
 
         public void AlteraBotoes(int op)
@@ -112,7 +113,6 @@ namespace MyLearnings.Desktop
 
                 if (this.operacao == "Inserir")
                 {
-
                     Tecnica tecnica = new Tecnica();
 
                     tecnica.Nome = txtNomeTec.Text;
@@ -121,7 +121,7 @@ namespace MyLearnings.Desktop
                     tecnica.DescCurto = Convert.ToInt32(txtDescCurto.Text);
                     tecnica.DescLongo = Convert.ToInt32(txtDescLongo.Text);
                     tecnica.Padrao = chkPadrao.Checked == true ? "S" : "N";
-
+                   
                     tecnicaRegras.Incluir(tecnica);
 
                     txtIdTec.Text = tecnica.Id.ToString();
@@ -130,8 +130,7 @@ namespace MyLearnings.Desktop
                 }
 
                 if (this.operacao == "Alterar" && txtIdTec.Text != null)
-                {
-
+                {                  
                     txtIdUsuAlteracao.ReadOnly = false;
 
                     Tecnica tecnica = new Tecnica();
@@ -144,19 +143,22 @@ namespace MyLearnings.Desktop
                     tecnica.Id = Convert.ToInt32(txtIdTec.Text);
                     tecnica.DataAlteracao = Convert.ToDateTime(mskDataAlteracao.Text);
                     tecnica.Padrao = chkPadrao.Checked == true ? "S" : "N";
-                    //if (txtIdUsuAlteracao.Text != String.Empty)
-                    //{
-                        IdLogin.IdLogado(IdUsuCadastro: Convert.ToInt32(txtIdUsuAlteracao.Text));
-                        //}
-                        //else
-                        //{
-                        //    txtIdUsuAlteracao.Text = "0";
-                        //}
-                        tecnicaRegras.Alterar(tecnica);
+                    if (txtIdUsuAlteracao.Text != String.Empty)
+                    {
+                        IdLogin.IdLogado(Convert.ToInt32(txtIdUsuAlteracao.Text));
+                        tecnica.IdUsuarioAlteracao = Convert.ToInt32(txtIdUsuAlteracao.Text);
+                    }
+                    else
+                    {
+                        tecnica.IdUsuarioAlteracao = IdLogin.IdLogado(Convert.ToInt32(txtIdUsuCadastro.Text));
+                    //  tecnica.IdUsuarioAlteracao = 1;
+                    }
 
-                        MessageBox.Show("Alteração efetuada com sucesso! " + tecnica.Id.ToString());
-                    //}
+                    tecnicaRegras.Alterar(tecnica);
+
+                    MessageBox.Show("Alteração efetuada com sucesso! " + tecnica.Id.ToString());
                 }
+                
             }
             catch (Exception)
             {

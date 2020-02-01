@@ -88,10 +88,8 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
             }
             catch (Exception)
             {
-
                 throw;
             }
-
         }
 
         public List<Tecnica> BuscarTecnica(Tecnica IdTecnica)

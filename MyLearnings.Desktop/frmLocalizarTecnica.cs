@@ -25,14 +25,14 @@ namespace MyLearnings.Desktop
 
         private void btnLocalizaTec_Click(object sender, EventArgs e)
         {
-                Tecnica tecnica = new Tecnica();
-                tecnica.Nome = txtLocalizaTec.Text;
-                TecnicaRegrasDeNegocio tecnicaRegras = new TecnicaRegrasDeNegocio();
-                List<Tecnica> lista = new List<Tecnica>();
+            Tecnica tecnica = new Tecnica();
+            tecnica.Nome = txtLocalizaTec.Text;
+            TecnicaRegrasDeNegocio tecnicaRegras = new TecnicaRegrasDeNegocio();
+            List<Tecnica> lista = new List<Tecnica>();
 
-                lista = tecnicaRegras.BuscarTecnica(tecnica);
+            lista = tecnicaRegras.BuscarTecnica(tecnica);
 
-                dgvLocalizaTec.DataSource = lista;           
+            dgvLocalizaTec.DataSource = lista;           
         }
 
         private void frmLocalizarTecnica_Load(object sender, EventArgs e)

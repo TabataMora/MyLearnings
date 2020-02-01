@@ -97,6 +97,7 @@
             // txtNomeUsu
             // 
             this.txtNomeUsu.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtNomeUsu.Enabled = false;
             this.txtNomeUsu.Location = new System.Drawing.Point(242, 223);
             this.txtNomeUsu.Name = "txtNomeUsu";
             this.txtNomeUsu.ReadOnly = true;
@@ -201,7 +202,6 @@
             this.txtIdUsuCadastro.ReadOnly = true;
             this.txtIdUsuCadastro.Size = new System.Drawing.Size(62, 20);
             this.txtIdUsuCadastro.TabIndex = 35;
-   
             this.txtIdUsuCadastro.Validated += new System.EventHandler(this.txtIdUsuCadastro_Validated);
             // 
             // txtDescLongo
