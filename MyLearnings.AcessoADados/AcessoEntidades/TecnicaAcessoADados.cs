@@ -72,20 +72,18 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
             }
         }
 
-        public List<Tecnica> BuscarTecnica(Tecnica tecnica, string nome)
+        public List<Tecnica> BuscarTecnica(Tecnica tecnica)
         {
             string query = string.Empty;
             List<Tecnica> retorno = new List<Tecnica>();
             SqlCommand cmd = new SqlCommand();
             using (cmd.Connection = _conexao.ObjetoDaConexao)
             {
-                string filtro = " WHERE ID > 0 ";
                 try
                 {
                     _conexao.Conectar();
 
-                    if (tecnica.Nome.Trim().Length == 0)
-                    {
+                    if (tecnica == null) {
                         query = "SELECT * FROM TB_TECNICA";
                     }
                     else
@@ -120,11 +118,7 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                                 {
                                     tecnicaRetorno.DataAlteracao = Convert.ToDateTime(dataReader["DATA_ALTERACAO"].ToString());
                                 }
-                                if (!string.IsNullOrEmpty(nome))
-                                {
-                                    cmd.Parameters.Add("@NOME", SqlDbType.VarChar).Value = $"%{nome}%";
-                                    filtro = filtro + " AND NOME LIKE @NOME ";
-                                }
+                                
 
                                 retorno.Add(tecnicaRetorno);
                             }

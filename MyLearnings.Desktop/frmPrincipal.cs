@@ -34,5 +34,11 @@ namespace MyLearnings.Desktop
             frmCadastroTecnica frm = new frmCadastroTecnica();
             frm.ShowDialog();
         }
+
+        private void timerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTimer frm = new frmTimer();
+            frm.Show();
+        }
     }
 }
