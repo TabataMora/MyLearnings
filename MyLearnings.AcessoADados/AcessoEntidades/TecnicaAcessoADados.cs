@@ -27,8 +27,14 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                 try
                 {
                     _conexao.Conectar();
-                    cmd.CommandText = @"INSERT TB_TECNICA (NOME, PADRAO, TEMPO_CICLO, DESC_CURTO, DESC_LONGO, ID_USUARIO_CADASTRO, DATA_CADASTRO) 
-                                        VALUES (@NOME, @PADRAO, @TEMPO, @DESCURTO, @DESCLONGO, @IDCADASTRO, GETDATE()); SELECT @@IDENTITY;";
+                    cmd.CommandText = @"INSERT TB_TECNICA (NOME, PADRAO, 
+                                          TEMPO_CICLO, DESC_CURTO, 
+                                          DESC_LONGO, ID_USUARIO_CADASTRO,
+                                          DATA_CADASTRO) 
+                                          VALUES (@NOME, @PADRAO, 
+                                          @TEMPO, @DESCURTO, 
+                                          @DESCLONGO, @IDCADASTRO, GETDATE()); 
+                                          SELECT @@IDENTITY;";
                     cmd.Parameters.AddWithValue("@NOME", tecnica.Nome);
                     cmd.Parameters.AddWithValue("@PADRAO", tecnica.Padrao);
                     cmd.Parameters.AddWithValue("@TEMPO", tecnica.TempoCiclo);
@@ -119,7 +125,6 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                                     tecnicaRetorno.DataAlteracao = Convert.ToDateTime(dataReader["DATA_ALTERACAO"].ToString());
                                 }
                                 
-
                                 retorno.Add(tecnicaRetorno);
                             }
                         }

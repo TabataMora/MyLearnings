@@ -27,7 +27,9 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                 try
                 {
                     _conexao.Conectar();
-                    cmd.CommandText = "INSERT TB_USUARIO(NOME, SENHA, EMAIL) VALUES(@NOME, @SENHA, @EMAIL); SELECT @@IDENTITY;";
+                    cmd.CommandText = "INSERT TB_USUARIO(NOME, SENHA, EMAIL) " +
+                                       "VALUES(@NOME, @SENHA, @EMAIL); " +
+                                       "SELECT @@IDENTITY;";
                     cmd.Parameters.AddWithValue("@NOME", usuario.Nome);
                     cmd.Parameters.AddWithValue("@SENHA", usuario.Senha);
                     cmd.Parameters.AddWithValue("@EMAIL", usuario.Email);
@@ -94,12 +96,10 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                     cmd.Parameters.AddWithValue("@ID", id);
                     cmd.ExecuteNonQuery();
                 }
-
                 catch (Exception)
                 {
                     throw;
                 }
-
                 finally
                 {
                     _conexao.Desconectar();
@@ -122,7 +122,6 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                     {
                         query = "SELECT * FROM TB_USUARIO";
                     }
-
                     else
                     {
                         query = ("SELECT * FROM TB_USUARIO WHERE NOME LIKE '%" + usuario.Nome + "%';");
@@ -163,7 +162,10 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                 try
                 {
                     _conexao.Conectar();
-                    cmd.CommandText = "UPDATE TB_USUARIO SET NOME = @NOME, SENHA = @SENHA, EMAIL = @EMAIL WHERE ID = @ID;";
+                    cmd.CommandText = "UPDATE TB_USUARIO SET " +
+                                      "NOME = @NOME, " +
+                                      "SENHA = @SENHA, " +
+                                      "EMAIL = @EMAIL WHERE ID = @ID;";
                     cmd.Parameters.AddWithValue("@NOME", usuario.Nome);
                     cmd.Parameters.AddWithValue("@ID", usuario.Id);
                     cmd.Parameters.AddWithValue("@SENHA", usuario.Senha);

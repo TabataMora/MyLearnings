@@ -46,7 +46,6 @@ namespace MyLearnings.Entidades.Auxiliares
             var senha = sb.ToString();
             return senha == senhaCadastrada;
         }
-
     }
 }
 

@@ -24,14 +24,12 @@ namespace MyLearnings.Desktop
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             frmPrincipal frm = new frmPrincipal(); // se for verdadeiro a validação acima, abre o form principal.
-
-            
-            frm.Show();
 
             UsuarioRegrasDeNegocio usuarioRegras = new UsuarioRegrasDeNegocio(); //instanciando uma classe para usar o método
             bool validado = false;
@@ -44,17 +42,15 @@ namespace MyLearnings.Desktop
                 else
                 {
                     MessageBox.Show("Usuário e/ou senha inválidos!");
+                    frm.Close();
                 }
-
                 if (validado == true) //testando o retorno da validação
                 {                    
                     frm.Show();
                 }
-
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }

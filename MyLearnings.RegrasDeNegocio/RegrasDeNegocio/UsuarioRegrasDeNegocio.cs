@@ -58,10 +58,10 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
 
                 Criptografia criptografia = new Criptografia(); //instanciando a classe
 
-                // senhaCriptografada = criptografia.CriptografarSenha(senha);
+                //senhaCriptografada = criptografia.CriptografarSenha(senha);
 
                 validado = criptografia.VerificarSenha(senha, usuario.Senha); //validando a criptografia pegando a senha digitada e comparando com a senha salva no banco de dados.
-
+                
                 return true;
             }
             catch (Exception)
@@ -70,7 +70,7 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
             }
         }
 
-        public void Alterar(Usuario usuario)/*int id, string nome*/
+        public void Alterar(Usuario usuario)
         {
             //Usuario usuario = new Usuario();
 
