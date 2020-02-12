@@ -46,6 +46,8 @@
             this.chkTempoCiclo = new System.Windows.Forms.CheckBox();
             this.chkDescLongo = new System.Windows.Forms.CheckBox();
             this.chkDescCurto = new System.Windows.Forms.CheckBox();
+            this.txtIdTec = new System.Windows.Forms.TextBox();
+            this.lblIdTec = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTempoCiclo
@@ -99,11 +101,11 @@
             // 
             this.cmbTecnica.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.cmbTecnica.FormattingEnabled = true;
-            this.cmbTecnica.Location = new System.Drawing.Point(12, 35);
+            this.cmbTecnica.Location = new System.Drawing.Point(13, 33);
             this.cmbTecnica.Name = "cmbTecnica";
             this.cmbTecnica.Size = new System.Drawing.Size(78, 21);
             this.cmbTecnica.TabIndex = 20;
-            this.cmbTecnica.SelectedIndexChanged += new System.EventHandler(this.cmbTecnica_SelectedIndexChanged);
+            this.cmbTecnica.SelectionChangeCommitted += new System.EventHandler(this.cmbTecnica_SelectionChangeCommitted);
             // 
             // timer
             // 
@@ -193,11 +195,29 @@
             this.chkDescCurto.UseVisualStyleBackColor = true;
             this.chkDescCurto.CheckedChanged += new System.EventHandler(this.chkDescCurto_CheckedChanged);
             // 
+            // txtIdTec
+            // 
+            this.txtIdTec.Location = new System.Drawing.Point(97, 33);
+            this.txtIdTec.Name = "txtIdTec";
+            this.txtIdTec.Size = new System.Drawing.Size(37, 20);
+            this.txtIdTec.TabIndex = 10004;
+            // 
+            // lblIdTec
+            // 
+            this.lblIdTec.AutoSize = true;
+            this.lblIdTec.Location = new System.Drawing.Point(97, 17);
+            this.lblIdTec.Name = "lblIdTec";
+            this.lblIdTec.Size = new System.Drawing.Size(16, 13);
+            this.lblIdTec.TabIndex = 10005;
+            this.lblIdTec.Text = "Id";
+            // 
             // frmTimer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(465, 220);
+            this.Controls.Add(this.lblIdTec);
+            this.Controls.Add(this.txtIdTec);
             this.Controls.Add(this.chkDescCurto);
             this.Controls.Add(this.chkDescLongo);
             this.Controls.Add(this.chkTempoCiclo);
@@ -240,5 +260,7 @@
         private System.Windows.Forms.CheckBox chkTempoCiclo;
         private System.Windows.Forms.CheckBox chkDescLongo;
         private System.Windows.Forms.CheckBox chkDescCurto;
+        private System.Windows.Forms.TextBox txtIdTec;
+        private System.Windows.Forms.Label lblIdTec;
     }
 }

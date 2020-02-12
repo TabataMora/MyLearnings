@@ -27,24 +27,25 @@ namespace MyLearnings.Desktop
         public frmTimer()
         {
             InitializeComponent();
- 
+
             btnPause.Enabled = false;
             btnStart.Enabled = true;
             btnStop.Enabled = false;
             timer.Stop();
         }
-   
+
         public List<Tecnica> lista = new List<Tecnica>();
 
         private void frmTimer_Load(object sender, EventArgs e)
         {
             TecnicaRegrasDeNegocio tecnicaRegras = new TecnicaRegrasDeNegocio();
 
-            lista = tecnicaRegras.BuscarTecnica(pTecnica: null);
 
+            lista = tecnicaRegras.BuscarTecnica(null);
             cmbTecnica.DataSource = lista;
             cmbTecnica.DisplayMember = "Nome";
             cmbTecnica.ValueMember = "Id";
+            cmbTecnica.SelectedIndex = -1;
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -159,46 +160,6 @@ namespace MyLearnings.Desktop
             TimerPausadoPeloUsuario();
         }
 
-        private void cmbTecnica_SelectedIndexChanged(object sender, EventArgs e)
-        {
-         
-            cmbTecnica.DataSource = lista;
-            cmbTecnica.DisplayMember = "Nome";
-            cmbTecnica.ValueMember = "Id";
-
-            string nomeDaTecnica = cmbTecnica.Text;
-
-            Tecnica tecnicaSelecionada = lista.Where(x => x.Nome == nomeDaTecnica).FirstOrDefault();
-            txtTempoCiclo.Text = Convert.ToString(tecnicaSelecionada.TempoCiclo);
-            txtDescCurto.Text = Convert.ToString(tecnicaSelecionada.DescCurto);
-            txtDescLongo.Text = Convert.ToString(tecnicaSelecionada.DescLongo);
-
-            if (tecnicaSelecionada != null && chkTempoCiclo.Checked)
-            {
-                segundoselecionado = (int)tecnicaSelecionada.TempoCiclo * 60 ;
-                
-            }
-
-            if (tecnicaSelecionada != null && chkDescCurto.Checked)
-            {
-               
-                segundoselecionado = (int)tecnicaSelecionada.DescCurto * 60;
-                
-            }
-
-            if (tecnicaSelecionada != null && chkDescLongo.Checked)
-            {
-                
-                segundoselecionado = (int)tecnicaSelecionada.DescLongo * 60;
-               
-            }
-
-            else if(tecnicaSelecionada == null)
-            {
-                MessageBox.Show("O tempo não está sendo informado!");
-            }
-        }
-
         private void chkTempoCiclo_CheckedChanged(object sender, EventArgs e)
         {
             chkDescCurto.Checked = false;
@@ -215,6 +176,43 @@ namespace MyLearnings.Desktop
         {
             chkDescCurto.Checked = false;
             chkTempoCiclo.Checked = false;
+        }
+
+        private void cmbTecnica_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+
+            if (cmbTecnica.SelectedIndex >= 0)
+            { 
+                int id_tecnica = (int)cmbTecnica.SelectedValue;
+
+                Tecnica tecnicaSelecionada = lista.Where(x => x.Id == id_tecnica).FirstOrDefault();
+                txtTempoCiclo.Text = Convert.ToString(tecnicaSelecionada.TempoCiclo);
+                txtDescCurto.Text = Convert.ToString(tecnicaSelecionada.DescCurto);
+                txtDescLongo.Text = Convert.ToString(tecnicaSelecionada.DescLongo);
+                txtIdTec.Text = Convert.ToString(tecnicaSelecionada.Id);
+
+                if (chkTempoCiclo.Checked && cmbTecnica.Text != null)
+                {
+                    segundoselecionado = (int)tecnicaSelecionada.TempoCiclo * 60;
+
+                }
+                if (chkDescCurto.Checked && txtIdTec.Text != null)
+                {
+
+                    segundoselecionado = (int)tecnicaSelecionada.DescCurto * 60;
+
+                }
+                if (chkDescLongo.Checked && txtIdTec.Text != null)
+                {
+
+                    segundoselecionado = (int)tecnicaSelecionada.DescLongo * 60;
+
+                }
+                else if (tecnicaSelecionada == null)
+                {
+                    MessageBox.Show("O tempo não está sendo informado!");
+                }
+            }
         }
     }
 }

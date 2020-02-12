@@ -45,7 +45,7 @@ namespace MyLearnings.Desktop
                     frm.Close();
                 }
                 if (validado == true) //testando o retorno da validação
-                {                    
+                {
                     frm.Show();
                 }
             }

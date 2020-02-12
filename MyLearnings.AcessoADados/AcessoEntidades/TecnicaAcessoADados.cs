@@ -89,12 +89,13 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                 {
                     _conexao.Conectar();
 
-                    if (tecnica == null) {
+                    if (tecnica == null)
+                    {
                         query = "SELECT * FROM TB_TECNICA";
                     }
                     else
                     {
-                        query = ("SELECT * FROM TB_TECNICA WHERE NOME LIKE '%" + tecnica.Nome + "%';");
+                        query = ("SELECT NOME, ID FROM TB_TECNICA WHERE NOME LIKE '%" + tecnica.Nome + "%';");
                     }
 
                     cmd.CommandText = query;
