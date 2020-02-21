@@ -82,6 +82,12 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCadastroResumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadastroResumo.Designer.cs">
+      <DependentUpon>frmCadastroResumo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTimer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCadastroResumo.resx">
+      <DependentUpon>frmCadastroResumo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTimer.resx">
       <DependentUpon>frmTimer.cs</DependentUpon>

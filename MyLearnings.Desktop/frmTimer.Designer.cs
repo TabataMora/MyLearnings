@@ -170,6 +170,8 @@
             // 
             // chkTempoCiclo
             // 
+            this.chkTempoCiclo.Checked = true;
+            this.chkTempoCiclo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkTempoCiclo.Location = new System.Drawing.Point(68, 85);
             this.chkTempoCiclo.Name = "chkTempoCiclo";
             this.chkTempoCiclo.Size = new System.Drawing.Size(29, 32);

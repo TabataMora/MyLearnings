@@ -37,8 +37,11 @@
             this.itemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resumoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.históricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.históricoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.cicloToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.resumoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +51,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
             this.históricoToolStripMenuItem,
-            this.timerToolStripMenuItem});
+            this.timerToolStripMenuItem,
+            this.históricoToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(576, 24);
@@ -70,40 +74,56 @@
             // usuárioToolStripMenuItem
             // 
             this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.usuárioToolStripMenuItem.Text = "Usuário";
             this.usuárioToolStripMenuItem.Click += new System.EventHandler(this.usuárioToolStripMenuItem_Click);
             // 
             // técnicaToolStripMenuItem
             // 
             this.técnicaToolStripMenuItem.Name = "técnicaToolStripMenuItem";
-            this.técnicaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.técnicaToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.técnicaToolStripMenuItem.Text = "Técnica";
             this.técnicaToolStripMenuItem.Click += new System.EventHandler(this.técnicaToolStripMenuItem_Click);
             // 
             // cicloToolStripMenuItem
             // 
             this.cicloToolStripMenuItem.Name = "cicloToolStripMenuItem";
-            this.cicloToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cicloToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.cicloToolStripMenuItem.Text = "Ciclo";
             // 
             // itemToolStripMenuItem
             // 
             this.itemToolStripMenuItem.Name = "itemToolStripMenuItem";
-            this.itemToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.itemToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.itemToolStripMenuItem.Text = "Item";
             // 
             // resumoToolStripMenuItem
             // 
             this.resumoToolStripMenuItem.Name = "resumoToolStripMenuItem";
-            this.resumoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resumoToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.resumoToolStripMenuItem.Text = "Resumo";
             // 
             // históricoToolStripMenuItem
             // 
             this.históricoToolStripMenuItem.Name = "históricoToolStripMenuItem";
-            this.históricoToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.históricoToolStripMenuItem.Text = "Histórico";
+            this.históricoToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.históricoToolStripMenuItem.Text = "Resumo";
+            // 
+            // timerToolStripMenuItem
+            // 
+            this.timerToolStripMenuItem.Name = "timerToolStripMenuItem";
+            this.timerToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.timerToolStripMenuItem.Text = "Timer";
+            this.timerToolStripMenuItem.Click += new System.EventHandler(this.timerToolStripMenuItem_Click);
+            // 
+            // históricoToolStripMenuItem1
+            // 
+            this.históricoToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cicloToolStripMenuItem1,
+            this.resumoToolStripMenuItem1});
+            this.históricoToolStripMenuItem1.Name = "históricoToolStripMenuItem1";
+            this.históricoToolStripMenuItem1.Size = new System.Drawing.Size(67, 20);
+            this.históricoToolStripMenuItem1.Text = "Histórico";
             // 
             // pictureBox1
             // 
@@ -116,12 +136,17 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // timerToolStripMenuItem
+            // cicloToolStripMenuItem1
             // 
-            this.timerToolStripMenuItem.Name = "timerToolStripMenuItem";
-            this.timerToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.timerToolStripMenuItem.Text = "Timer";
-            this.timerToolStripMenuItem.Click += new System.EventHandler(this.timerToolStripMenuItem_Click);
+            this.cicloToolStripMenuItem1.Name = "cicloToolStripMenuItem1";
+            this.cicloToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.cicloToolStripMenuItem1.Text = "Ciclo";
+            // 
+            // resumoToolStripMenuItem1
+            // 
+            this.resumoToolStripMenuItem1.Name = "resumoToolStripMenuItem1";
+            this.resumoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.resumoToolStripMenuItem1.Text = "Resumo";
             // 
             // frmPrincipal
             // 
@@ -154,5 +179,8 @@
         private System.Windows.Forms.ToolStripMenuItem históricoToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem timerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem históricoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem cicloToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem resumoToolStripMenuItem1;
     }
 }

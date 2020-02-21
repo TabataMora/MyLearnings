@@ -21,3 +21,4 @@ C:\gitRepository\MyLearnings\MyLearnings.Desktop\obj\Debug\MyLearnings.Desktop.f
 C:\gitRepository\MyLearnings\MyLearnings.Desktop\obj\Debug\MyLearnings.Desktop.frmLocalizarUsuario.resources
 C:\gitRepository\MyLearnings\MyLearnings.Desktop\obj\Debug\MyLearnings.Desktop.frmLocalizarTecnica.resources
 C:\gitRepository\MyLearnings\MyLearnings.Desktop\obj\Debug\MyLearnings.Desktop.frmTimer.resources
+C:\gitRepository\MyLearnings\MyLearnings.Desktop\obj\Debug\MyLearnings.Desktop.frmCadastroResumo.resources

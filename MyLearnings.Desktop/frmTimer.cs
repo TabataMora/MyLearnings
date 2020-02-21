@@ -103,8 +103,6 @@ namespace MyLearnings.Desktop
 
         private void InicioTimer(int psegundos)
         {
-            Tecnica tecnica = new Tecnica();
-
             Minutos = psegundos / 60;
             Segundos = psegundos % 60;
 
@@ -146,7 +144,7 @@ namespace MyLearnings.Desktop
         }
 
         private void btnStart_Click(object sender, EventArgs e)
-        {
+        {         
             InicioTimer(psegundos: segundoselecionado);
         }
 
@@ -158,31 +156,42 @@ namespace MyLearnings.Desktop
         private void btnStop_Click(object sender, EventArgs e)
         {
             TimerPausadoPeloUsuario();
+            InicioTimer(psegundos: 0);
         }
 
         private void chkTempoCiclo_CheckedChanged(object sender, EventArgs e)
         {
             chkDescCurto.Checked = false;
             chkDescLongo.Checked = false;
+
+            HoraQueAComboEChamado();
         }
 
         private void chkDescCurto_CheckedChanged(object sender, EventArgs e)
-        {
+        {        
             chkTempoCiclo.Checked = false;
             chkDescLongo.Checked = false;
+
+            HoraQueAComboEChamado();
         }
 
         private void chkDescLongo_CheckedChanged(object sender, EventArgs e)
         {
             chkDescCurto.Checked = false;
             chkTempoCiclo.Checked = false;
+
+            HoraQueAComboEChamado();
         }
 
         private void cmbTecnica_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            HoraQueAComboEChamado();
+        }
 
+        private void HoraQueAComboEChamado()
+        {
             if (cmbTecnica.SelectedIndex >= 0)
-            { 
+            {
                 int id_tecnica = (int)cmbTecnica.SelectedValue;
 
                 Tecnica tecnicaSelecionada = lista.Where(x => x.Id == id_tecnica).FirstOrDefault();
@@ -191,18 +200,18 @@ namespace MyLearnings.Desktop
                 txtDescLongo.Text = Convert.ToString(tecnicaSelecionada.DescLongo);
                 txtIdTec.Text = Convert.ToString(tecnicaSelecionada.Id);
 
-                if (chkTempoCiclo.Checked && cmbTecnica.Text != null)
+                if (chkTempoCiclo.Checked /*&& cmbTecnica != null*/)
                 {
                     segundoselecionado = (int)tecnicaSelecionada.TempoCiclo * 60;
 
                 }
-                if (chkDescCurto.Checked && txtIdTec.Text != null)
+                if (chkDescCurto.Checked/* && cmbTecnica != null*/)
                 {
 
                     segundoselecionado = (int)tecnicaSelecionada.DescCurto * 60;
 
                 }
-                if (chkDescLongo.Checked && txtIdTec.Text != null)
+                if (chkDescLongo.Checked/* && cmbTecnica != null*/)
                 {
 
                     segundoselecionado = (int)tecnicaSelecionada.DescLongo * 60;
