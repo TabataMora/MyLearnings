@@ -40,5 +40,17 @@ namespace MyLearnings.Desktop
             frmTimer frm = new frmTimer();
             frm.Show();
         }
+
+        private void cicloToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmCadastroCiclo frm = new frmCadastroCiclo();
+            frm.Show();
+        }
+
+        private void resumoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmCadastroResumo frm = new frmCadastroResumo();
+            frm.Show();
+        }
     }
 }

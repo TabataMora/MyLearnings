@@ -157,8 +157,7 @@ namespace MyLearnings.Desktop
                     tecnicaRegras.Alterar(tecnica);
 
                     MessageBox.Show("Alteração efetuada com sucesso! " + tecnica.Id.ToString());
-                }
-                
+                }               
             }
             catch (Exception)
             {

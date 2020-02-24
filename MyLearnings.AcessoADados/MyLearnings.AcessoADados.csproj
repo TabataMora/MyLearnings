@@ -42,9 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcessoEntidades\CicloAcessoADados.cs" />
     <Compile Include="AcessoEntidades\ResumoAcessoADados.cs" />
     <Compile Include="AcessoEntidades\TecnicaAcessoADados.cs" />
     <Compile Include="AcessoEntidades\UsuarioAcessoADados.cs" />
+    <Compile Include="AcessoEntidades\CicloEventoAcessoADados.cs" />
     <Compile Include="Conexao.cs" />
     <Compile Include="ConfiguraConexao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

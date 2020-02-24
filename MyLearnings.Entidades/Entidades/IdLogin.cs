@@ -8,8 +8,19 @@ namespace MyLearnings.Entidades.Entidades
 {
     public static class IdLogin
     {
-        public static int IdLogado(int IdUsuCadastro)
+        private static int IdUsuCadastro { get; set; }
+
+        public static int IdLogado(int pUsuarioLogado)
         {
+            IdUsuCadastro = pUsuarioLogado;
+            return pUsuarioLogado;
+        }
+
+        public static int ObterIdLogado()
+        {
+#if DEBUG
+            return 1;
+#endif 
             return IdUsuCadastro;
         }
     }

@@ -36,12 +36,11 @@
             this.cicloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resumoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.históricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.históricoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cicloToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.resumoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +49,6 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
-            this.históricoToolStripMenuItem,
             this.timerToolStripMenuItem,
             this.históricoToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -103,12 +101,6 @@
             this.resumoToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.resumoToolStripMenuItem.Text = "Resumo";
             // 
-            // históricoToolStripMenuItem
-            // 
-            this.históricoToolStripMenuItem.Name = "históricoToolStripMenuItem";
-            this.históricoToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
-            this.históricoToolStripMenuItem.Text = "Resumo";
-            // 
             // timerToolStripMenuItem
             // 
             this.timerToolStripMenuItem.Name = "timerToolStripMenuItem";
@@ -125,6 +117,20 @@
             this.históricoToolStripMenuItem1.Size = new System.Drawing.Size(67, 20);
             this.históricoToolStripMenuItem1.Text = "Histórico";
             // 
+            // cicloToolStripMenuItem1
+            // 
+            this.cicloToolStripMenuItem1.Name = "cicloToolStripMenuItem1";
+            this.cicloToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.cicloToolStripMenuItem1.Text = "Ciclo";
+            this.cicloToolStripMenuItem1.Click += new System.EventHandler(this.cicloToolStripMenuItem1_Click);
+            // 
+            // resumoToolStripMenuItem1
+            // 
+            this.resumoToolStripMenuItem1.Name = "resumoToolStripMenuItem1";
+            this.resumoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.resumoToolStripMenuItem1.Text = "Resumo";
+            this.resumoToolStripMenuItem1.Click += new System.EventHandler(this.resumoToolStripMenuItem1_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -135,18 +141,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
-            // 
-            // cicloToolStripMenuItem1
-            // 
-            this.cicloToolStripMenuItem1.Name = "cicloToolStripMenuItem1";
-            this.cicloToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.cicloToolStripMenuItem1.Text = "Ciclo";
-            // 
-            // resumoToolStripMenuItem1
-            // 
-            this.resumoToolStripMenuItem1.Name = "resumoToolStripMenuItem1";
-            this.resumoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.resumoToolStripMenuItem1.Text = "Resumo";
             // 
             // frmPrincipal
             // 
@@ -176,7 +170,6 @@
         private System.Windows.Forms.ToolStripMenuItem cicloToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem itemToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resumoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem históricoToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem timerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem históricoToolStripMenuItem1;

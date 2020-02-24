@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RegrasDeNegocio\CicloEventoRegrasDeNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegrasDeNegocio\CicloRegrasDeNegocio.cs" />
+    <Compile Include="RegrasDeNegocio\ResumoRegrasDeNegocio.cs" />
     <Compile Include="RegrasDeNegocio\TecnicaRegrasDeNegocio.cs" />
     <Compile Include="RegrasDeNegocio\UsuarioRegrasDeNegocio.cs" />
   </ItemGroup>

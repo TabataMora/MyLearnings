@@ -10,11 +10,18 @@ using System.Windows.Forms;
 using MyLearnings.Entidades.Entidades;
 using MyLearnings.RegrasDeNegocio.RegrasDeNegocio;
 using System.Timers;
+using MyLearnings.Entidades;
+using MyLearnings.RegrasDeNegocio;
 
 namespace MyLearnings.Desktop
 {
     public partial class frmTimer : Form
     {
+
+        int IdCicloAtual = 0;
+        int id_tecnica = 0;
+        DateTime inicio;
+
         int TempoTotalEmSegundos;
         int contador;
         int Horas;
@@ -54,11 +61,14 @@ namespace MyLearnings.Desktop
             {
                 if (Finalizado == 1)
                 {
+                    
                     return;
                 }
-                else
+                else if (contador == 0)
                 {
+                    AlterarCicloEventoNoBanco();
                     TimerFinalizado();
+        
                     return;
                 }
             }
@@ -68,12 +78,12 @@ namespace MyLearnings.Desktop
             TimeSpan OutputTime = TimeSpan.FromSeconds(contador);
 
             string CompleteOutput = OutputTime.ToString(@"hh\:mm\:ss");
-            Tempo_Total.Text = CompleteOutput;
+            txtTempoTotal.Text = CompleteOutput;
         }
 
         private void TimerPausadoPeloUsuario()
         {
-            Tempo_Total.Visible = false;
+            txtTempoTotal.Visible = false;
 
             btnStop.Enabled = false;
             btnPause.Enabled = false;
@@ -90,7 +100,7 @@ namespace MyLearnings.Desktop
         {
             Finalizado = 1;
 
-            Tempo_Total.Visible = false;
+            txtTempoTotal.Visible = false;
 
             btnStop.Enabled = false;
             btnPause.Enabled = false;
@@ -116,13 +126,17 @@ namespace MyLearnings.Desktop
 
             TempoTotalEmSegundos = ((Horas * 60 * 60) + (Minutos * 60) + Segundos);
 
-            Tempo_Total.Visible = true;
+#if DEBUG 
+            TempoTotalEmSegundos = 5;
+#endif 
+
+            txtTempoTotal.Visible = true;
             contador = TempoTotalEmSegundos;
 
             TimeSpan OutputTime = TimeSpan.FromSeconds(TempoTotalEmSegundos);
 
             string CompleteOutput = OutputTime.ToString(@"hh\:mm\:ss");
-            Tempo_Total.Text = CompleteOutput;
+            txtTempoTotal.Text = CompleteOutput;
             Finalizado = 0;
             timer.Start();
             btnStop.Enabled = true;
@@ -143,9 +157,67 @@ namespace MyLearnings.Desktop
             }
         }
 
+        private int InserirCicloNoBanco()
+        {
+            Ciclo ciclo = new Ciclo(id_tecnica, IdLogin.ObterIdLogado(), DateTime.Now, "EM ANDAMENTO");
+
+            CicloRegrasDeNegocio cicloRegrasDeNegocio = new CicloRegrasDeNegocio();
+            IdCicloAtual = cicloRegrasDeNegocio.Incluir(ciclo);
+
+            return IdCicloAtual;
+        }
+
+        private int InserirCicloEvento()
+        {
+            CicloEvento cicloEvento = new CicloEvento(IdCicloAtual, 1, DateTime.Now);
+            if (chkTempoCiclo.Checked)
+            {
+                cicloEvento.IdEvento = 1;
+            }
+            if (chkDescCurto.Checked)
+            {
+                cicloEvento.IdEvento = 2;
+            }
+            if (chkDescLongo.Checked)
+            {
+                cicloEvento.IdEvento = 3;
+            }
+            if (chkResumo.Checked)
+            {
+                cicloEvento.IdEvento = 4;
+            }
+
+            CicloEventoRegrasDeNegocio cicloEventoRegras = new CicloEventoRegrasDeNegocio();
+
+            var retorno = cicloEventoRegras.Incluir(cicloEvento);
+
+            return IdCicloAtual;
+        }
+
+        public int AlterarCicloEventoNoBanco()
+        {
+            CicloEvento cicloEvento = new CicloEvento(DateTime.Now);           
+
+            CicloEventoRegrasDeNegocio cicloEventoRegras = new CicloEventoRegrasDeNegocio();
+
+            var retorno = cicloEventoRegras.Alterar(cicloEvento);
+
+            return IdCicloAtual;
+        }
+
         private void btnStart_Click(object sender, EventArgs e)
-        {         
+        {
             InicioTimer(psegundos: segundoselecionado);
+
+            if (IdCicloAtual == 0)
+            {
+                InserirCicloNoBanco();
+            }
+
+            if (IdCicloAtual > 0)
+            {
+                InserirCicloEvento();
+            }
         }
 
         private void btnPause_Click(object sender, EventArgs e)
@@ -168,7 +240,7 @@ namespace MyLearnings.Desktop
         }
 
         private void chkDescCurto_CheckedChanged(object sender, EventArgs e)
-        {        
+        {
             chkTempoCiclo.Checked = false;
             chkDescLongo.Checked = false;
 
@@ -192,7 +264,7 @@ namespace MyLearnings.Desktop
         {
             if (cmbTecnica.SelectedIndex >= 0)
             {
-                int id_tecnica = (int)cmbTecnica.SelectedValue;
+                id_tecnica = (int)cmbTecnica.SelectedValue;
 
                 Tecnica tecnicaSelecionada = lista.Where(x => x.Id == id_tecnica).FirstOrDefault();
                 txtTempoCiclo.Text = Convert.ToString(tecnicaSelecionada.TempoCiclo);
@@ -222,6 +294,12 @@ namespace MyLearnings.Desktop
                     MessageBox.Show("O tempo não está sendo informado!");
                 }
             }
+        }
+
+        private void chkResumo_CheckedChanged(object sender, EventArgs e)
+        {
+            frmCadastroResumo frm = new frmCadastroResumo();
+            frm.Show();
         }
     }
 }

@@ -21,5 +21,10 @@ namespace MyLearnings.Entidades.Entidades
             this.Subassunto = subassunto;
             this.Texto = texto;
         }
-    }
+
+        public Resumo()
+        {
+
+        }
+    }  
 }

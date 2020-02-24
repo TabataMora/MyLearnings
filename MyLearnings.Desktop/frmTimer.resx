@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnStart.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -131,14 +134,11 @@
         7mdyRL8b/VtBCFc30+JkQeOd1gAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="btnPause.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7O
-        HOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAAwQAA
-        AMEB4jA9ugAAAAFiS0dENKmx6f0AAAAldEVYdGRhdGU6Y3JlYXRlADIwMTctMDItMDVUMjE6Mzg6MDIr
+        HOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAAuwAA
+        ALsBnVmCYQAAAAFiS0dENKmx6f0AAAAldEVYdGRhdGU6Y3JlYXRlADIwMTctMDItMDVUMjE6Mzg6MDIr
         MDE6MDCIo/f5AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE3LTAyLTA1VDIxOjM4OjAyKzAxOjAw+f5PRQAA
         AEZ0RVh0c29mdHdhcmUASW1hZ2VNYWdpY2sgNi43LjgtOSAyMDE2LTA2LTE2IFExNiBodHRwOi8vd3d3
         LmltYWdlbWFnaWNrLm9yZ+a/NLYAAAAYdEVYdFRodW1iOjpEb2N1bWVudDo6UGFnZXMAMaf/uy8AAAAY
@@ -157,7 +157,7 @@
   <data name="btnStop.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAFzUkdCAK7O
-        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAA6+AAAOvgHqQrHAAAAAdElEQVRoQ+3ZPQqAMADF4N7/
+        HOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAA68AAAOvAGVvHJJAAAAdElEQVRoQ+3ZPQqAMADF4N7/
         Znoofzq4uQSCVMgHGVv65o4kWdZ+dyzSdofNg+dCYQ2QwxoghzVADmuAHNYAOawBclgD5LAGyGENkMMa
         IIc1QA5rgBzWADmsAXJYA+SwBshhvx/wfDG9XfZl8w3zLUmynDEuFjsKIUnf+UYAAAAASUVORK5CYII=
 </value>

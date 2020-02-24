@@ -14,12 +14,19 @@ namespace MyLearnings.Entidades.Entidades
         public DateTime Inicio { get; set; }
         public string StatusCiclo { get; set; }
         public DateTime? Termino { get; set; }
+        public decimal? TempoCicloTermino { get; set; }
 
-        public Ciclo(int idtecnica, int idusuario, string statusciclo)
+        public Ciclo()
         {
-            this.IdTecnica = idtecnica;
-            this.IdUsuario = idusuario;
-            this.StatusCiclo = statusciclo;
+
+        }
+
+        public Ciclo(int idTecnica, int idUsuario, DateTime inicio, string statusCiclo)
+        {
+            IdTecnica = idTecnica;
+            IdUsuario = idUsuario;
+            Inicio = inicio;
+            StatusCiclo = statusCiclo;
         }
     }
 }

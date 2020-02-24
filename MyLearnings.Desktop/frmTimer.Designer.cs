@@ -30,25 +30,44 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTimer));
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.btnStart = new System.Windows.Forms.Button();
             this.lblTempoCiclo = new System.Windows.Forms.Label();
             this.lblDescCurto = new System.Windows.Forms.Label();
             this.lblDescLongo = new System.Windows.Forms.Label();
             this.lblIdTecnica = new System.Windows.Forms.Label();
-            this.btnStart = new System.Windows.Forms.Button();
             this.cmbTecnica = new System.Windows.Forms.ComboBox();
-            this.timer = new System.Windows.Forms.Timer(this.components);
             this.txtTempoCiclo = new System.Windows.Forms.TextBox();
             this.btnPause = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.txtDescLongo = new System.Windows.Forms.TextBox();
             this.txtDescCurto = new System.Windows.Forms.TextBox();
-            this.Tempo_Total = new System.Windows.Forms.TextBox();
+            this.txtTempoTotal = new System.Windows.Forms.TextBox();
             this.chkTempoCiclo = new System.Windows.Forms.CheckBox();
             this.chkDescLongo = new System.Windows.Forms.CheckBox();
             this.chkDescCurto = new System.Windows.Forms.CheckBox();
             this.txtIdTec = new System.Windows.Forms.TextBox();
             this.lblIdTec = new System.Windows.Forms.Label();
+            this.chkResumo = new System.Windows.Forms.CheckBox();
+            this.txtResumo = new System.Windows.Forms.TextBox();
+            this.lblResumo = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // btnStart
+            // 
+            this.btnStart.Image = ((System.Drawing.Image)(resources.GetObject("btnStart.Image")));
+            this.btnStart.Location = new System.Drawing.Point(157, 120);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
+            this.btnStart.Size = new System.Drawing.Size(85, 53);
+            this.btnStart.TabIndex = 13;
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // lblTempoCiclo
             // 
@@ -86,17 +105,6 @@
             this.lblIdTecnica.TabIndex = 6;
             this.lblIdTecnica.Text = "Técnica";
             // 
-            // btnStart
-            // 
-            this.btnStart.Image = ((System.Drawing.Image)(resources.GetObject("btnStart.Image")));
-            this.btnStart.Location = new System.Drawing.Point(157, 120);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.btnStart.Size = new System.Drawing.Size(85, 53);
-            this.btnStart.TabIndex = 13;
-            this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
-            // 
             // cmbTecnica
             // 
             this.cmbTecnica.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -106,11 +114,6 @@
             this.cmbTecnica.Size = new System.Drawing.Size(78, 21);
             this.cmbTecnica.TabIndex = 20;
             this.cmbTecnica.SelectionChangeCommitted += new System.EventHandler(this.cmbTecnica_SelectionChangeCommitted);
-            // 
-            // timer
-            // 
-            this.timer.Interval = 1000;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // txtTempoCiclo
             // 
@@ -156,17 +159,17 @@
             this.txtDescCurto.Size = new System.Drawing.Size(43, 20);
             this.txtDescCurto.TabIndex = 25;
             // 
-            // Tempo_Total
+            // txtTempoTotal
             // 
-            this.Tempo_Total.BackColor = System.Drawing.SystemColors.Control;
-            this.Tempo_Total.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Tempo_Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tempo_Total.Location = new System.Drawing.Point(144, 33);
-            this.Tempo_Total.Name = "Tempo_Total";
-            this.Tempo_Total.ReadOnly = true;
-            this.Tempo_Total.Size = new System.Drawing.Size(313, 61);
-            this.Tempo_Total.TabIndex = 10000;
-            this.Tempo_Total.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTempoTotal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtTempoTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTempoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTempoTotal.Location = new System.Drawing.Point(140, 18);
+            this.txtTempoTotal.Name = "txtTempoTotal";
+            this.txtTempoTotal.ReadOnly = true;
+            this.txtTempoTotal.Size = new System.Drawing.Size(313, 61);
+            this.txtTempoTotal.TabIndex = 10000;
+            this.txtTempoTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // chkTempoCiclo
             // 
@@ -199,6 +202,7 @@
             // 
             // txtIdTec
             // 
+            this.txtIdTec.Enabled = false;
             this.txtIdTec.Location = new System.Drawing.Point(97, 33);
             this.txtIdTec.Name = "txtIdTec";
             this.txtIdTec.Size = new System.Drawing.Size(37, 20);
@@ -213,17 +217,46 @@
             this.lblIdTec.TabIndex = 10005;
             this.lblIdTec.Text = "Id";
             // 
+            // chkResumo
+            // 
+            this.chkResumo.Location = new System.Drawing.Point(68, 228);
+            this.chkResumo.Name = "chkResumo";
+            this.chkResumo.Size = new System.Drawing.Size(29, 24);
+            this.chkResumo.TabIndex = 10008;
+            this.chkResumo.UseVisualStyleBackColor = true;
+            this.chkResumo.CheckedChanged += new System.EventHandler(this.chkResumo_CheckedChanged);
+            // 
+            // txtResumo
+            // 
+            this.txtResumo.Enabled = false;
+            this.txtResumo.Location = new System.Drawing.Point(11, 228);
+            this.txtResumo.Name = "txtResumo";
+            this.txtResumo.Size = new System.Drawing.Size(43, 20);
+            this.txtResumo.TabIndex = 10007;
+            // 
+            // lblResumo
+            // 
+            this.lblResumo.AutoSize = true;
+            this.lblResumo.Location = new System.Drawing.Point(8, 212);
+            this.lblResumo.Name = "lblResumo";
+            this.lblResumo.Size = new System.Drawing.Size(46, 13);
+            this.lblResumo.TabIndex = 10006;
+            this.lblResumo.Text = "Resumo";
+            // 
             // frmTimer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(465, 220);
+            this.ClientSize = new System.Drawing.Size(465, 277);
+            this.Controls.Add(this.chkResumo);
+            this.Controls.Add(this.txtResumo);
+            this.Controls.Add(this.lblResumo);
             this.Controls.Add(this.lblIdTec);
             this.Controls.Add(this.txtIdTec);
             this.Controls.Add(this.chkDescCurto);
             this.Controls.Add(this.chkDescLongo);
             this.Controls.Add(this.chkTempoCiclo);
-            this.Controls.Add(this.Tempo_Total);
+            this.Controls.Add(this.txtTempoTotal);
             this.Controls.Add(this.txtDescCurto);
             this.Controls.Add(this.txtDescLongo);
             this.Controls.Add(this.btnStop);
@@ -245,24 +278,26 @@
         }
 
         #endregion
-
+        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Label lblTempoCiclo;
         private System.Windows.Forms.Label lblDescCurto;
         private System.Windows.Forms.Label lblDescLongo;
         private System.Windows.Forms.Label lblIdTecnica;
-        private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.ComboBox cmbTecnica;
-        private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.TextBox txtTempoCiclo;
         private System.Windows.Forms.Button btnPause;
         private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.TextBox txtDescLongo;
         private System.Windows.Forms.TextBox txtDescCurto;
-        private System.Windows.Forms.TextBox Tempo_Total;
+        private System.Windows.Forms.TextBox txtTempoTotal;
         private System.Windows.Forms.CheckBox chkTempoCiclo;
         private System.Windows.Forms.CheckBox chkDescLongo;
         private System.Windows.Forms.CheckBox chkDescCurto;
         private System.Windows.Forms.TextBox txtIdTec;
         private System.Windows.Forms.Label lblIdTec;
+        private System.Windows.Forms.CheckBox chkResumo;
+        private System.Windows.Forms.TextBox txtResumo;
+        private System.Windows.Forms.Label lblResumo;
     }
 }

@@ -115,7 +115,6 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                                 tecnicaRetorno.DescCurto = Convert.ToInt32(dataReader["DESC_CURTO"].ToString());
                                 tecnicaRetorno.DescLongo = Convert.ToInt32(dataReader["DESC_LONGO"].ToString());
                                 tecnicaRetorno.DataCadastro = Convert.ToDateTime(dataReader["DATA_CADASTRO"].ToString());
-                                //tecnicaRetorno.DataAlteracao = Convert.ToDateTime(dataReader["DATA_ALTERACAO"].ToString());
 
                                 if (dataReader["ID_USUARIO_ALTERACAO"].ToString() != string.Empty)
                                 {
