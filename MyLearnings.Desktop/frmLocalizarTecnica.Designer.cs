@@ -46,7 +46,7 @@
             this.panel1.Controls.Add(this.lblLocalizaTec);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(642, 361);
+            this.panel1.Size = new System.Drawing.Size(914, 361);
             this.panel1.TabIndex = 4;
             // 
             // dgvLocalizaTec
@@ -58,7 +58,7 @@
             this.dgvLocalizaTec.Name = "dgvLocalizaTec";
             this.dgvLocalizaTec.ReadOnly = true;
             this.dgvLocalizaTec.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLocalizaTec.Size = new System.Drawing.Size(601, 279);
+            this.dgvLocalizaTec.Size = new System.Drawing.Size(873, 279);
             this.dgvLocalizaTec.TabIndex = 3;
             this.dgvLocalizaTec.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLocalizaTec_CellContentClick);
             // 
@@ -66,13 +66,13 @@
             // 
             this.txtLocalizaTec.Location = new System.Drawing.Point(20, 31);
             this.txtLocalizaTec.Name = "txtLocalizaTec";
-            this.txtLocalizaTec.Size = new System.Drawing.Size(530, 20);
+            this.txtLocalizaTec.Size = new System.Drawing.Size(800, 20);
             this.txtLocalizaTec.TabIndex = 1;
             // 
             // btnLocalizaTec
             // 
             this.btnLocalizaTec.Image = ((System.Drawing.Image)(resources.GetObject("btnLocalizaTec.Image")));
-            this.btnLocalizaTec.Location = new System.Drawing.Point(578, 19);
+            this.btnLocalizaTec.Location = new System.Drawing.Point(850, 19);
             this.btnLocalizaTec.Name = "btnLocalizaTec";
             this.btnLocalizaTec.Size = new System.Drawing.Size(43, 43);
             this.btnLocalizaTec.TabIndex = 2;
@@ -84,17 +84,18 @@
             this.lblLocalizaTec.AutoSize = true;
             this.lblLocalizaTec.Location = new System.Drawing.Point(17, 15);
             this.lblLocalizaTec.Name = "lblLocalizaTec";
-            this.lblLocalizaTec.Size = new System.Drawing.Size(46, 13);
+            this.lblLocalizaTec.Size = new System.Drawing.Size(145, 13);
             this.lblLocalizaTec.TabIndex = 0;
-            this.lblLocalizaTec.Text = "Técnica";
+            this.lblLocalizaTec.Text = "Pesquisar Técnica Por Nome";
             // 
             // frmLocalizarTecnica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 385);
+            this.ClientSize = new System.Drawing.Size(938, 385);
             this.Controls.Add(this.panel1);
             this.Name = "frmLocalizarTecnica";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Localizar Técnica";
             this.Load += new System.EventHandler(this.frmLocalizarTecnica_Load);
             this.panel1.ResumeLayout(false);

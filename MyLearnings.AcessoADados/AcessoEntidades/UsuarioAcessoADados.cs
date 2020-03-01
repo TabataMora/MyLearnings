@@ -118,14 +118,17 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                 {
                     _conexao.Conectar();
 
-                    if (usuario.Nome.Trim().Length == 0)
+                    query = @"SELECT * FROM TB_USUARIO WHERE ID > 0 ";
+
+                    if (!string.IsNullOrWhiteSpace(usuario.Nome))
                     {
-                        query = "SELECT * FROM TB_USUARIO";
+                        query = query + ("AND NOME LIKE '%" + usuario.Nome + "%';");                       
                     }
-                    else
+
+                    if (usuario.Id > 0)
                     {
-                        query = ("SELECT * FROM TB_USUARIO WHERE NOME LIKE '%" + usuario.Nome + "%';");
-                       
+                        query = query + ("AND ID = @ID");
+                        cmd.Parameters.AddWithValue("@ID", usuario.Id);
                     }
 
                     cmd.CommandText = query;
@@ -179,7 +182,7 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
             }
         }
 
-        public Usuario BuscaUsuarioId(int id)
+        public Usuario BuscaUsuarioPorId(int id)
         {
             Usuario usuario = new Usuario();
             SqlCommand cmd = new SqlCommand();

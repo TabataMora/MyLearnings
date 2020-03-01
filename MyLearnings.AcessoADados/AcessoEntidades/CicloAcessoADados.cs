@@ -69,38 +69,6 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                     _conexao.Desconectar();
                 }
             }
-        }
-
-        //public int Alterar(Ciclo ciclo)
-        //{
-        //    SqlCommand cmd = new SqlCommand();
-        //    using (cmd.Connection = _conexao.ObjetoDaConexao)
-        //    {
-        //        try
-        //        {
-        //            _conexao.Conectar();
-        //            cmd.CommandText = @"UPDATE TB_CICLO SET
-        //                                STATUS_CICLO = @STATUS,
-        //                                TERMINO = @GETDATE(),
-        //                                TEMPO_CICLO_TERMINO = @TERMINO
-        //                                WHERE ID = @ID";
-        //            cmd.Parameters.AddWithValue("@STATUS", ciclo.StatusCiclo);
-        //            cmd.Parameters.AddWithValue("@TEMPOTERMINO", ciclo.TempoCicloTermino);
-        //            cmd.Parameters.AddWithValue("@ID", ciclo.Id);
-
-        //            var resultado = cmd.ExecuteNonQuery();
-
-        //            return resultado;
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            throw ex;
-        //        }
-        //        finally
-        //        {
-        //            _conexao.Desconectar();
-        //        }
-        //    }
-        //}
+        }       
     }
 }

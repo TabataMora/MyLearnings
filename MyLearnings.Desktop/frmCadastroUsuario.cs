@@ -39,8 +39,7 @@ namespace MyLearnings.Desktop
         }
 
         public void AlteraBotoes(int op)
-        {
-            
+        {           
             btnSalvar.Enabled = false;
             btnExcluir.Enabled = false;
             btnAlterar.Enabled = false;
@@ -154,6 +153,8 @@ namespace MyLearnings.Desktop
                     usuarioRegrasDeNegocio.Excluir(Convert.ToInt32(txtIdUsuario.Text));
                     this.LimpaTela();
                     this.AlteraBotoes(1);
+
+                    MessageBox.Show("Registro excluído com sucesso!");
                 }
             }
             catch

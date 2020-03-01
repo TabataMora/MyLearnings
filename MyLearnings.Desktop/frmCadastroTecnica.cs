@@ -128,7 +128,6 @@ namespace MyLearnings.Desktop
 
                     MessageBox.Show("Cadastro efetuado com sucesso! " + tecnica.Id.ToString());                  
                 }
-
                 if (this.operacao == "Alterar" && txtIdTec.Text != null)
                 {                  
                     txtIdUsuAlteracao.ReadOnly = false;
@@ -150,8 +149,7 @@ namespace MyLearnings.Desktop
                     }
                     else
                     {
-                        tecnica.IdUsuarioAlteracao = IdLogin.IdLogado(Convert.ToInt32(txtIdUsuCadastro.Text));
-                    //  tecnica.IdUsuarioAlteracao = 1;
+                        tecnica.IdUsuarioAlteracao = IdLogin.IdLogado(Convert.ToInt32(txtIdUsuCadastro.Text));     
                     }
 
                     tecnicaRegras.Alterar(tecnica);
@@ -180,6 +178,8 @@ namespace MyLearnings.Desktop
                     tecnicaRegrasDeNegocio.Excluir(Convert.ToInt32(txtIdTec.Text));
                     this.LimpaTela();
                     this.AlteraBotoes(1);
+
+                    MessageBox.Show("Registro excluído com sucesso!");
                 }
             }
             catch
@@ -213,7 +213,7 @@ namespace MyLearnings.Desktop
         private void btnLocalizar_Click(object sender, EventArgs e)
         {
             frmLocalizarTecnica frm = new frmLocalizarTecnica();
-            frm.formQueChamou = this; // passando para o form do localizar a consulta
+            frm.formQueChamouTecnica = this; // passando para o form do localizar a consulta
             frm.ShowDialog();
             this.AlteraBotoes(3);
         }
@@ -221,7 +221,7 @@ namespace MyLearnings.Desktop
         private void txtIdUsuCadastro_Validated(object sender, EventArgs e)
         {
             UsuarioRegrasDeNegocio usuarioRegrasDeNegocio = new UsuarioRegrasDeNegocio();
-            var usuario = usuarioRegrasDeNegocio.BuscaUsuarioPorId( Convert.ToInt32(txtIdUsuCadastro.Text));
+            var usuario = usuarioRegrasDeNegocio.BuscaUsuarioPorId(Convert.ToInt32(txtIdUsuCadastro.Text));
 
             txtNomeUsu.Text = usuario.Nome;
         }   

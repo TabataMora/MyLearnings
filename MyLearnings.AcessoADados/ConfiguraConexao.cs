@@ -13,7 +13,7 @@ namespace MyLearnings.AcessoADados
         private static string Base;
         private static string Senha;
         private static string Usuario;
-        //
+        
         public static string StringConexao()
         {
             Servidor = ConfigurationManager.AppSettings["servidor"];

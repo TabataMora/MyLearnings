@@ -92,9 +92,16 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
             }
         }
 
-        public List<Tecnica> BuscarTecnica(Tecnica pTecnica)
+        public List<Tecnica> BuscarTecnica(Tecnica tecnica)
         {
-            return new TecnicaAcessoADados().BuscarTecnica(pTecnica);
+            return new TecnicaAcessoADados().BuscarTecnica(tecnica);
         }
+
+        //public Tecnica BuscaTecnicaPorId(int id)
+        //{
+        //    TecnicaAcessoADados tecnicaAcesso = new TecnicaAcessoADados();
+        //    Tecnica tecnica = tecnicaAcesso.BuscaTecnicaId(id);
+        //    return tecnica;
+        //}
     }
 }

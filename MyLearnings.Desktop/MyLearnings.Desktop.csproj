@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmCadastroCiclo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCadastroCiclo.Designer.cs">
-      <DependentUpon>frmCadastroCiclo.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmCadastroTecnica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +57,12 @@
     </Compile>
     <Compile Include="frmCadastroUsuario.Designer.cs">
       <DependentUpon>frmCadastroUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLocalizarResumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLocalizarResumo.Designer.cs">
+      <DependentUpon>frmLocalizarResumo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLocalizarUsuario.cs">
       <SubType>Form</SubType>
@@ -102,14 +102,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmCadastroCiclo.resx">
-      <DependentUpon>frmCadastroCiclo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmCadastroTecnica.resx">
       <DependentUpon>frmCadastroTecnica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadastroUsuario.resx">
       <DependentUpon>frmCadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLocalizarResumo.resx">
+      <DependentUpon>frmLocalizarResumo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLocalizarTecnica.resx">
       <DependentUpon>frmLocalizarTecnica.cs</DependentUpon>

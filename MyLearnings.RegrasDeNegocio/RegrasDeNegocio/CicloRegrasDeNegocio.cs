@@ -22,18 +22,5 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
                 throw;
             }
         }
-
-        //public int Alterar(Cil ciclo)
-        //{
-        //    try
-        //    {
-        //        CicloAcessoADados cicloAcessoADados = new CicloAcessoADados();
-        //        return cicloAcessoADados.Alterar(ciclo);
-        //    }
-        //    catch (Exception)
-        //    {
-        //        throw;
-        //    }
-        //}
     }
 }

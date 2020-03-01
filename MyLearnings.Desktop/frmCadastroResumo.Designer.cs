@@ -82,6 +82,7 @@
             this.btnLocalizar.Size = new System.Drawing.Size(80, 78);
             this.btnLocalizar.TabIndex = 42;
             this.btnLocalizar.UseVisualStyleBackColor = true;
+            this.btnLocalizar.Click += new System.EventHandler(this.btnLocalizar_Click);
             // 
             // btnCancelar
             // 
@@ -121,6 +122,7 @@
             this.btnSalvar.Size = new System.Drawing.Size(80, 78);
             this.btnSalvar.TabIndex = 40;
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnInserir
             // 
@@ -130,6 +132,7 @@
             this.btnInserir.Size = new System.Drawing.Size(80, 78);
             this.btnInserir.TabIndex = 39;
             this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // lblSubAssunto
             // 
@@ -180,6 +183,7 @@
             // 
             this.txtSubAssunto.Location = new System.Drawing.Point(500, 29);
             this.txtSubAssunto.Name = "txtSubAssunto";
+            this.txtSubAssunto.ReadOnly = true;
             this.txtSubAssunto.Size = new System.Drawing.Size(290, 20);
             this.txtSubAssunto.TabIndex = 33;
             // 
@@ -187,28 +191,35 @@
             // 
             this.txtAssunto.Location = new System.Drawing.Point(204, 29);
             this.txtAssunto.Name = "txtAssunto";
+            this.txtAssunto.ReadOnly = true;
             this.txtAssunto.Size = new System.Drawing.Size(290, 20);
             this.txtAssunto.TabIndex = 32;
             // 
             // txtlIdCiclo
             // 
+            this.txtlIdCiclo.Enabled = false;
             this.txtlIdCiclo.Location = new System.Drawing.Point(136, 29);
             this.txtlIdCiclo.Name = "txtlIdCiclo";
+            this.txtlIdCiclo.ReadOnly = true;
             this.txtlIdCiclo.Size = new System.Drawing.Size(62, 20);
             this.txtlIdCiclo.TabIndex = 31;
             // 
             // txtIdResumo
             // 
+            this.txtIdResumo.Enabled = false;
             this.txtIdResumo.Location = new System.Drawing.Point(68, 29);
             this.txtIdResumo.Name = "txtIdResumo";
+            this.txtIdResumo.ReadOnly = true;
             this.txtIdResumo.Size = new System.Drawing.Size(62, 20);
             this.txtIdResumo.TabIndex = 30;
             // 
             // txtResumo
             // 
+            this.txtResumo.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtResumo.Location = new System.Drawing.Point(10, 66);
             this.txtResumo.Multiline = true;
             this.txtResumo.Name = "txtResumo";
+            this.txtResumo.ReadOnly = true;
             this.txtResumo.Size = new System.Drawing.Size(780, 366);
             this.txtResumo.TabIndex = 29;
             // 
@@ -219,7 +230,7 @@
             this.ClientSize = new System.Drawing.Size(810, 534);
             this.Controls.Add(this.panel1);
             this.Name = "frmCadastroResumo";
-            this.Text = "Cadastro Resumo";
+            this.Text = "Resumo";
             this.Load += new System.EventHandler(this.frmCadastroResumo_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -241,10 +252,10 @@
         private System.Windows.Forms.Label lblIdCiclo;
         private System.Windows.Forms.Label lblIdResumo;
         private System.Windows.Forms.Label lblResumo;
-        private System.Windows.Forms.TextBox txtSubAssunto;
-        private System.Windows.Forms.TextBox txtAssunto;
-        private System.Windows.Forms.TextBox txtlIdCiclo;
-        private System.Windows.Forms.TextBox txtIdResumo;
-        private System.Windows.Forms.TextBox txtResumo;
+        public System.Windows.Forms.TextBox txtSubAssunto;
+        public System.Windows.Forms.TextBox txtAssunto;
+        public System.Windows.Forms.TextBox txtlIdCiclo;
+        public System.Windows.Forms.TextBox txtIdResumo;
+        public System.Windows.Forms.TextBox txtResumo;
     }
 }

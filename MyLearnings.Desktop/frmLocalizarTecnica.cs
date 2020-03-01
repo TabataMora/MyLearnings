@@ -16,7 +16,7 @@ namespace MyLearnings.Desktop
     {
         public string operacao;
 
-        public frmCadastroTecnica formQueChamou { get; set; }
+        public frmCadastroTecnica formQueChamouTecnica { get; set; }
 
         public frmLocalizarTecnica()
         {
@@ -63,23 +63,23 @@ namespace MyLearnings.Desktop
         private void dgvLocalizaTec_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string id = dgvLocalizaTec.CurrentRow.Cells["ID"].Value.ToString(); // criando uma variável e passando para ela a grid, lendo a linha atual, da célula ID
-            formQueChamou.txtIdTec.Text = id; // passando para o parâmetro form no campo Id o que contém na variável
+            formQueChamouTecnica.txtIdTec.Text = id; // passando para o parâmetro form no campo Id o que contém na variável
             string nome = dgvLocalizaTec.CurrentRow.Cells["NOME"].Value.ToString();
-            formQueChamou.txtNomeTec.Text = nome;
+            formQueChamouTecnica.txtNomeTec.Text = nome;
             string tempociclo = dgvLocalizaTec.CurrentRow.Cells["TEMPOCICLO"].Value.ToString();
-            formQueChamou.txtTempoCiclo.Text = tempociclo;
+            formQueChamouTecnica.txtTempoCiclo.Text = tempociclo;
             string descurto = dgvLocalizaTec.CurrentRow.Cells["DESCCURTO"].Value.ToString();
-            formQueChamou.txtDescCurto.Text = descurto;
+            formQueChamouTecnica.txtDescCurto.Text = descurto;
             string desclongo = dgvLocalizaTec.CurrentRow.Cells["DESCLONGO"].Value.ToString();
-            formQueChamou.txtDescLongo.Text = desclongo;
+            formQueChamouTecnica.txtDescLongo.Text = desclongo;
             string datacadastro = dgvLocalizaTec.CurrentRow.Cells["DATACADASTRO"].Value.ToString();
-            formQueChamou.mskDataCadastro.Text = datacadastro;
+            formQueChamouTecnica.mskDataCadastro.Text = datacadastro;
             string idusucadastro = dgvLocalizaTec.CurrentRow.Cells["IDUSUARIOCADASTRO"].Value?.ToString();
-            formQueChamou.txtIdUsuCadastro.Text = idusucadastro;
+            formQueChamouTecnica.txtIdUsuCadastro.Text = idusucadastro;
             string datalteracao = dgvLocalizaTec.CurrentRow.Cells["DATAALTERACAO"].Value?.ToString();
-            formQueChamou.mskDataAlteracao.Text = datalteracao;
+            formQueChamouTecnica.mskDataAlteracao.Text = datalteracao;
             string idusualteracao = dgvLocalizaTec.CurrentRow.Cells["IDUSUARIOALTERACAO"].Value?.ToString();
-            formQueChamou.txtIdUsuAlteracao.Text = idusualteracao;
+            formQueChamouTecnica.txtIdUsuAlteracao.Text = idusualteracao;
             this.Hide(); //ocultando (?)
         }
     }

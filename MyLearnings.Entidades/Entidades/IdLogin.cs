@@ -18,9 +18,7 @@ namespace MyLearnings.Entidades.Entidades
 
         public static int ObterIdLogado()
         {
-#if DEBUG
             return 1;
-#endif 
             return IdUsuCadastro;
         }
     }

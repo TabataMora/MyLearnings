@@ -47,7 +47,7 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
                 }
 
                 ResumoAcessoADados resumoAcessoADados = new ResumoAcessoADados();
-                return resumoAcessoADados.Incluir(resumo);
+                return resumoAcessoADados.Alterar(resumo);
 
             }
             catch (Exception)
@@ -67,6 +67,11 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
             {
                 throw;
             }
+        }
+
+        public List<Resumo> BuscarResumo(Resumo pResumo)
+        {
+            return new ResumoAcessoADados().BuscarResumo(pResumo);
         }
     }
 }

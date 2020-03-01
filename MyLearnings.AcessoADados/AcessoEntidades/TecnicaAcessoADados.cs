@@ -89,14 +89,16 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                 {
                     _conexao.Conectar();
 
-                    if (tecnica == null)
+                    query = "SELECT* FROM TB_TECNICA WHERE ID > 0 ";
+
+                    if (!string.IsNullOrWhiteSpace(tecnica?.Nome))
                     {
-                        query = "SELECT * FROM TB_TECNICA";
+                        query += " AND NOME LIKE '%" + tecnica.Nome + "%';";
                     }
-                    else
-                    {
-                        query = ("SELECT NOME, ID FROM TB_TECNICA WHERE NOME LIKE '%" + tecnica.Nome + "%';");
-                    }
+                    //if (!string.IsNullOrWhiteSpace(Convert.ToString(tecnica?.Id)))
+                    //{
+                    //    query += " AND ID LIKE '%" + tecnica.Id + "%';";
+                    //}
 
                     cmd.CommandText = query;
 
@@ -109,7 +111,6 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                                 Tecnica tecnicaRetorno = new Tecnica();
                                 tecnicaRetorno.Id = Convert.ToInt32(dataReader["ID"].ToString());
                                 tecnicaRetorno.Nome = dataReader["NOME"].ToString();
-                                tecnicaRetorno.Padrao = dataReader["PADRAO"].ToString();
                                 tecnicaRetorno.IdUsuarioCadastro = Convert.ToInt32(dataReader["ID_USUARIO_CADASTRO"].ToString());
                                 tecnicaRetorno.TempoCiclo = Convert.ToInt32(dataReader["TEMPO_CICLO"].ToString());
                                 tecnicaRetorno.DescCurto = Convert.ToInt32(dataReader["DESC_CURTO"].ToString());
@@ -124,7 +125,10 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                                 {
                                     tecnicaRetorno.DataAlteracao = Convert.ToDateTime(dataReader["DATA_ALTERACAO"].ToString());
                                 }
-                                
+                                if (dataReader["PADRAO"].ToString() != string.Empty)
+                                {
+                                    tecnicaRetorno.Padrao = dataReader["PADRAO"].ToString();
+                                }
                                 retorno.Add(tecnicaRetorno);
                             }
                         }
@@ -165,7 +169,7 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
 
                     var resultado = cmd.ExecuteNonQuery();
 
-                    return resultado; 
+                    return resultado;
                 }
                 catch (Exception ex)
                 {
@@ -177,7 +181,41 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                 }
             }
         }
-    }      
+
+        public Tecnica BuscaTecnicaId(int id)
+        {
+            Tecnica tecnica = new Tecnica();
+            SqlCommand cmd = new SqlCommand();
+            using (cmd.Connection = _conexao.ObjetoDaConexao)
+            {
+                try
+                {
+                    _conexao.Conectar();
+                    cmd.CommandText = "SELECT NOME FROM TB_TECNICA WHERE ID = @ID";
+                    cmd.Parameters.AddWithValue("@ID", id);
+                    using (cmd)
+                    {
+                        using (DbDataReader dbReader = cmd.ExecuteReader())
+                        {
+                            while (dbReader.Read())
+                            {
+                                tecnica.Nome = (dbReader["NOME"].ToString());
+                            }
+                        }
+                    }
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    _conexao.Desconectar();
+                }
+                return tecnica;
+            }
+        }
+    }
 }
 
 

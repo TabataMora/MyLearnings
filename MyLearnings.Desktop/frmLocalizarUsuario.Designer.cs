@@ -43,9 +43,9 @@
             this.lblLocalizaUsu.AutoSize = true;
             this.lblLocalizaUsu.Location = new System.Drawing.Point(17, 15);
             this.lblLocalizaUsu.Name = "lblLocalizaUsu";
-            this.lblLocalizaUsu.Size = new System.Drawing.Size(43, 13);
+            this.lblLocalizaUsu.Size = new System.Drawing.Size(142, 13);
             this.lblLocalizaUsu.TabIndex = 0;
-            this.lblLocalizaUsu.Text = "Usuário";
+            this.lblLocalizaUsu.Text = "Pesquisar Usuário Por Nome";
             // 
             // txtLocalizaUsu
             // 
@@ -87,7 +87,6 @@
             this.dgvLocalizaUsu.Size = new System.Drawing.Size(601, 279);
             this.dgvLocalizaUsu.TabIndex = 3;
             this.dgvLocalizaUsu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLocalizaUsu_CellContentClick);
-   
             // 
             // frmLocalizarUsuario
             // 

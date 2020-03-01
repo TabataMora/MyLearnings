@@ -17,19 +17,21 @@ namespace MyLearnings.Desktop
 {
     public partial class frmTimer : Form
     {
-
+        #region VARIAVEIS PUBLICAS QUE EU USO PARA COMPARTILHAR VALORES
         int IdCicloAtual = 0;
         int id_tecnica = 0;
-        DateTime inicio;
+        int retornoDoIdEvento;
+        int segundoselecionado = 0;
+        #endregion
 
+        #region VARIAVEIS DO FULKANO DE PATAL  PARA LTAL COISA
         int TempoTotalEmSegundos;
         int contador;
         int Horas;
         int Minutos;
         int Segundos;
         int Finalizado;
-
-        int segundoselecionado = 0;
+        #endregion
 
         public frmTimer()
         {
@@ -47,7 +49,6 @@ namespace MyLearnings.Desktop
         {
             TecnicaRegrasDeNegocio tecnicaRegras = new TecnicaRegrasDeNegocio();
 
-
             lista = tecnicaRegras.BuscarTecnica(null);
             cmbTecnica.DataSource = lista;
             cmbTecnica.DisplayMember = "Nome";
@@ -60,15 +61,13 @@ namespace MyLearnings.Desktop
             if (contador == 0)
             {
                 if (Finalizado == 1)
-                {
-                    
+                {                   
                     return;
                 }
-                else if (contador == 0)
-                {
-                    AlterarCicloEventoNoBanco();
+                if (contador == 0)
+                {                   
                     TimerFinalizado();
-        
+                    AlterarCicloEventoNoBanco();
                     return;
                 }
             }
@@ -126,10 +125,6 @@ namespace MyLearnings.Desktop
 
             TempoTotalEmSegundos = ((Horas * 60 * 60) + (Minutos * 60) + Segundos);
 
-#if DEBUG 
-            TempoTotalEmSegundos = 5;
-#endif 
-
             txtTempoTotal.Visible = true;
             contador = TempoTotalEmSegundos;
 
@@ -170,6 +165,7 @@ namespace MyLearnings.Desktop
         private int InserirCicloEvento()
         {
             CicloEvento cicloEvento = new CicloEvento(IdCicloAtual, 1, DateTime.Now);
+
             if (chkTempoCiclo.Checked)
             {
                 cicloEvento.IdEvento = 1;
@@ -189,20 +185,24 @@ namespace MyLearnings.Desktop
 
             CicloEventoRegrasDeNegocio cicloEventoRegras = new CicloEventoRegrasDeNegocio();
 
-            var retorno = cicloEventoRegras.Incluir(cicloEvento);
+            retornoDoIdEvento = cicloEventoRegras.Incluir(cicloEvento);
 
-            return IdCicloAtual;
+            return retornoDoIdEvento;
         }
 
         public int AlterarCicloEventoNoBanco()
         {
-            CicloEvento cicloEvento = new CicloEvento(DateTime.Now);           
+            CicloEvento cicloEvento = new CicloEvento(DateTime.Now);
 
-            CicloEventoRegrasDeNegocio cicloEventoRegras = new CicloEventoRegrasDeNegocio();
+            cicloEvento.Id = retornoDoIdEvento;
+            if (cicloEvento.Id != 0)
+            {
+                CicloEventoRegrasDeNegocio cicloEventoRegras = new CicloEventoRegrasDeNegocio();
 
-            var retorno = cicloEventoRegras.Alterar(cicloEvento);
-
-            return IdCicloAtual;
+                var retorno = cicloEventoRegras.Alterar(cicloEvento);
+            }           
+            
+            return cicloEvento.Id;
         }
 
         private void btnStart_Click(object sender, EventArgs e)
@@ -213,7 +213,6 @@ namespace MyLearnings.Desktop
             {
                 InserirCicloNoBanco();
             }
-
             if (IdCicloAtual > 0)
             {
                 InserirCicloEvento();
@@ -235,6 +234,7 @@ namespace MyLearnings.Desktop
         {
             chkDescCurto.Checked = false;
             chkDescLongo.Checked = false;
+            chkTempoCiclo.Checked = false;
 
             HoraQueAComboEChamado();
         }
@@ -243,6 +243,7 @@ namespace MyLearnings.Desktop
         {
             chkTempoCiclo.Checked = false;
             chkDescLongo.Checked = false;
+            chkTempoCiclo.Checked = false;
 
             HoraQueAComboEChamado();
         }
@@ -250,6 +251,7 @@ namespace MyLearnings.Desktop
         private void chkDescLongo_CheckedChanged(object sender, EventArgs e)
         {
             chkDescCurto.Checked = false;
+            chkTempoCiclo.Checked = false;
             chkTempoCiclo.Checked = false;
 
             HoraQueAComboEChamado();
@@ -275,19 +277,14 @@ namespace MyLearnings.Desktop
                 if (chkTempoCiclo.Checked /*&& cmbTecnica != null*/)
                 {
                     segundoselecionado = (int)tecnicaSelecionada.TempoCiclo * 60;
-
                 }
                 if (chkDescCurto.Checked/* && cmbTecnica != null*/)
-                {
-
+                { 
                     segundoselecionado = (int)tecnicaSelecionada.DescCurto * 60;
-
                 }
                 if (chkDescLongo.Checked/* && cmbTecnica != null*/)
                 {
-
                     segundoselecionado = (int)tecnicaSelecionada.DescLongo * 60;
-
                 }
                 else if (tecnicaSelecionada == null)
                 {
@@ -298,7 +295,10 @@ namespace MyLearnings.Desktop
 
         private void chkResumo_CheckedChanged(object sender, EventArgs e)
         {
-            frmCadastroResumo frm = new frmCadastroResumo();
+            chkDescCurto.Checked = false;
+            chkDescLongo.Checked = false;
+            chkTempoCiclo.Checked = false;
+            frmCadastroResumo frm = new frmCadastroResumo(IdCicloAtual);
             frm.Show();
         }
     }

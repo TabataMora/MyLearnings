@@ -15,8 +15,19 @@ namespace MyLearnings.Desktop
     public partial class frmCadastroResumo : Form
     {
         public string operacao;
-
+      
         public frmCadastroResumo()
+        {
+            InicializadorDoForm();
+        }
+
+        public frmCadastroResumo(int id)
+        {
+            InicializadorDoForm();
+            txtlIdCiclo.Text = Convert.ToString(id);
+        }
+
+        private void InicializadorDoForm()
         {
             InitializeComponent();
 
@@ -33,6 +44,7 @@ namespace MyLearnings.Desktop
             txtResumo.Clear();
             txtSubAssunto.Clear();
             txtAssunto.Clear();
+            txtlIdCiclo.Clear();
         }
 
         public void AlteraBotoes(int op)
@@ -71,12 +83,6 @@ namespace MyLearnings.Desktop
             this.AlteraBotoes(1);
         }
 
-        private void btnInserir_Click(object sender, EventArgs e)
-        {
-            this.operacao = "Inserir";
-            this.AlteraBotoes(2);
-        }
-
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             ResumoRegrasDeNegocio resumoRegras = new ResumoRegrasDeNegocio();
@@ -88,14 +94,16 @@ namespace MyLearnings.Desktop
                 resumo.Subassunto = txtSubAssunto.Text;
                 resumo.Assunto = txtAssunto.Text;
                 resumo.Texto = txtResumo.Text;
+                resumo.IdCicloResumo = Convert.ToInt32(txtlIdCiclo?.Text);
 
                 resumoRegras.Incluir(resumo);
 
                 txtIdResumo.Text = resumo.Id.ToString();
-
+              
                 MessageBox.Show("Cadastro efetuado com sucesso! " + resumo.Id.ToString());
-            }
 
+                LimpaTela();
+            }
             if (this.operacao == "Alterar" && txtIdResumo.Text != null)
             {
                 Resumo resumo = new Resumo();
@@ -103,19 +111,13 @@ namespace MyLearnings.Desktop
                 resumo.Subassunto = txtSubAssunto.Text;
                 resumo.Assunto = txtAssunto.Text;
                 resumo.Texto = txtResumo.Text;
+                resumo.IdCicloResumo = Convert.ToInt32(txtIdResumo.Text);
+                resumo.Id = Convert.ToInt32(txtIdResumo.Text);
 
-                //if (txtIdUsuAlteracao.Text != String.Empty)
-                //{
-                //    IdLogin.IdLogado(Convert.ToInt32(txtIdUsuAlteracao.Text));
-                //    tecnica.IdUsuarioAlteracao = Convert.ToInt32(txtIdUsuAlteracao.Text);
-                //}
-                //else
-                //{
-                //    tecnica.IdUsuarioAlteracao = IdLogin.IdLogado(Convert.ToInt32(txtIdUsuCadastro.Text));
-                //    //  tecnica.IdUsuarioAlteracao = 1;
-                //}
+                resumoRegras.Alterar(resumo);
+
+                MessageBox.Show("Alteração efetuada com sucesso! " + resumo.Id.ToString());
             }
-
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -130,6 +132,8 @@ namespace MyLearnings.Desktop
                     resumoRegrasDeNegocio.Excluir(Convert.ToInt32(txtIdResumo.Text));
                     this.LimpaTela();
                     this.AlteraBotoes(1);
+
+                    MessageBox.Show("Registro excluído com sucesso!");
                 }
             }
             catch
@@ -139,16 +143,48 @@ namespace MyLearnings.Desktop
             }
         }
 
+        private void btnInserir_Click(object sender, EventArgs e)
+        {
+            this.operacao = "Inserir";
+            this.AlteraBotoes(2);
+
+            txtAssunto.Enabled = true;
+            txtSubAssunto.Enabled = true;
+            txtResumo.Enabled = true;
+            txtAssunto.ReadOnly = false;
+            txtSubAssunto.ReadOnly = false;
+            txtResumo.ReadOnly = false;
+        }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.LimpaTela();
             this.AlteraBotoes(1);
+
+            txtAssunto.Enabled = true;
+            txtResumo.Enabled = true;
+            txtSubAssunto.Enabled = true;
+            txtResumo.ReadOnly = true;
+            txtAssunto.ReadOnly = true;
+            txtSubAssunto.ReadOnly = true;
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             this.operacao = "Alterar";
             this.AlteraBotoes(2);
+
+            txtAssunto.ReadOnly = false;
+            txtResumo.ReadOnly = false;
+            txtSubAssunto.ReadOnly = false;
+        }
+
+        private void btnLocalizar_Click(object sender, EventArgs e)
+        {
+            frmLocalizarResumo frm = new frmLocalizarResumo();
+            frm.formQueChamouResumo = this; // passando para o form do localizar a consulta
+            frm.ShowDialog();
+            this.AlteraBotoes(3);
         }
     }
 }

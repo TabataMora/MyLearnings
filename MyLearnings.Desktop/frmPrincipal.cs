@@ -41,15 +41,15 @@ namespace MyLearnings.Desktop
             frm.Show();
         }
 
-        private void cicloToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void resumoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCadastroCiclo frm = new frmCadastroCiclo();
+            frmCadastroResumo frm = new frmCadastroResumo();
             frm.Show();
         }
 
-        private void resumoToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void resumoToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            frmCadastroResumo frm = new frmCadastroResumo();
+            frmLocalizarResumo frm = new frmLocalizarResumo();
             frm.Show();
         }
     }
