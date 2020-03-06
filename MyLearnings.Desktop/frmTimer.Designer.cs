@@ -72,36 +72,40 @@
             // lblTempoCiclo
             // 
             this.lblTempoCiclo.AutoSize = true;
+            this.lblTempoCiclo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTempoCiclo.Location = new System.Drawing.Point(8, 71);
             this.lblTempoCiclo.Name = "lblTempoCiclo";
-            this.lblTempoCiclo.Size = new System.Drawing.Size(81, 13);
+            this.lblTempoCiclo.Size = new System.Drawing.Size(95, 13);
             this.lblTempoCiclo.TabIndex = 0;
             this.lblTempoCiclo.Text = "Tempo do Ciclo";
             // 
             // lblDescCurto
             // 
             this.lblDescCurto.AutoSize = true;
+            this.lblDescCurto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescCurto.Location = new System.Drawing.Point(8, 120);
             this.lblDescCurto.Name = "lblDescCurto";
-            this.lblDescCurto.Size = new System.Drawing.Size(83, 13);
+            this.lblDescCurto.Size = new System.Drawing.Size(97, 13);
             this.lblDescCurto.TabIndex = 1;
             this.lblDescCurto.Text = "Descanso Curto";
             // 
             // lblDescLongo
             // 
             this.lblDescLongo.AutoSize = true;
+            this.lblDescLongo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescLongo.Location = new System.Drawing.Point(8, 168);
             this.lblDescLongo.Name = "lblDescLongo";
-            this.lblDescLongo.Size = new System.Drawing.Size(88, 13);
+            this.lblDescLongo.Size = new System.Drawing.Size(102, 13);
             this.lblDescLongo.TabIndex = 2;
             this.lblDescLongo.Text = "Descanso Longo";
             // 
             // lblIdTecnica
             // 
             this.lblIdTecnica.AutoSize = true;
+            this.lblIdTecnica.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIdTecnica.Location = new System.Drawing.Point(8, 18);
             this.lblIdTecnica.Name = "lblIdTecnica";
-            this.lblIdTecnica.Size = new System.Drawing.Size(46, 13);
+            this.lblIdTecnica.Size = new System.Drawing.Size(53, 13);
             this.lblIdTecnica.TabIndex = 6;
             this.lblIdTecnica.Text = "Técnica";
             // 
@@ -161,7 +165,7 @@
             // 
             // txtTempoTotal
             // 
-            this.txtTempoTotal.BackColor = System.Drawing.SystemColors.Control;
+            this.txtTempoTotal.BackColor = System.Drawing.Color.LightSteelBlue;
             this.txtTempoTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTempoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTempoTotal.Location = new System.Drawing.Point(140, 18);
@@ -211,9 +215,10 @@
             // lblIdTec
             // 
             this.lblIdTec.AutoSize = true;
+            this.lblIdTec.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIdTec.Location = new System.Drawing.Point(97, 17);
             this.lblIdTec.Name = "lblIdTec";
-            this.lblIdTec.Size = new System.Drawing.Size(16, 13);
+            this.lblIdTec.Size = new System.Drawing.Size(18, 13);
             this.lblIdTec.TabIndex = 10005;
             this.lblIdTec.Text = "Id";
             // 
@@ -237,9 +242,10 @@
             // lblResumo
             // 
             this.lblResumo.AutoSize = true;
+            this.lblResumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblResumo.Location = new System.Drawing.Point(8, 212);
             this.lblResumo.Name = "lblResumo";
-            this.lblResumo.Size = new System.Drawing.Size(46, 13);
+            this.lblResumo.Size = new System.Drawing.Size(52, 13);
             this.lblResumo.TabIndex = 10006;
             this.lblResumo.Text = "Resumo";
             // 
@@ -247,7 +253,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(465, 277);
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.ClientSize = new System.Drawing.Size(465, 255);
             this.Controls.Add(this.chkResumo);
             this.Controls.Add(this.txtResumo);
             this.Controls.Add(this.lblResumo);
@@ -268,6 +275,7 @@
             this.Controls.Add(this.lblDescCurto);
             this.Controls.Add(this.lblTempoCiclo);
             this.Controls.Add(this.btnStart);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "frmTimer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Temporizador";

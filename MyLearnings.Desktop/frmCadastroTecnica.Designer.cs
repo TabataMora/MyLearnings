@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroTecnica));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtNomeUsu = new System.Windows.Forms.TextBox();
             this.mskDataAlteracao = new System.Windows.Forms.MaskedTextBox();
             this.btnLocalizar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -63,7 +62,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txtNomeUsu);
+            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel1.Controls.Add(this.mskDataAlteracao);
             this.panel1.Controls.Add(this.btnLocalizar);
             this.panel1.Controls.Add(this.btnCancelar);
@@ -91,23 +90,13 @@
             this.panel1.Controls.Add(this.lblIdTenica);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(642, 361);
+            this.panel1.Size = new System.Drawing.Size(566, 361);
             this.panel1.TabIndex = 0;
-            // 
-            // txtNomeUsu
-            // 
-            this.txtNomeUsu.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtNomeUsu.Enabled = false;
-            this.txtNomeUsu.Location = new System.Drawing.Point(242, 223);
-            this.txtNomeUsu.Name = "txtNomeUsu";
-            this.txtNomeUsu.ReadOnly = true;
-            this.txtNomeUsu.Size = new System.Drawing.Size(105, 20);
-            this.txtNomeUsu.TabIndex = 49;
             // 
             // mskDataAlteracao
             // 
             this.mskDataAlteracao.Enabled = false;
-            this.mskDataAlteracao.Location = new System.Drawing.Point(521, 223);
+            this.mskDataAlteracao.Location = new System.Drawing.Point(450, 223);
             this.mskDataAlteracao.Mask = "00/00/0000 00:00";
             this.mskDataAlteracao.Name = "mskDataAlteracao";
             this.mskDataAlteracao.ReadOnly = true;
@@ -118,7 +107,7 @@
             // btnLocalizar
             // 
             this.btnLocalizar.Image = ((System.Drawing.Image)(resources.GetObject("btnLocalizar.Image")));
-            this.btnLocalizar.Location = new System.Drawing.Point(124, 271);
+            this.btnLocalizar.Location = new System.Drawing.Point(101, 271);
             this.btnLocalizar.Name = "btnLocalizar";
             this.btnLocalizar.Size = new System.Drawing.Size(80, 78);
             this.btnLocalizar.TabIndex = 43;
@@ -128,7 +117,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(540, 271);
+            this.btnCancelar.Location = new System.Drawing.Point(477, 271);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 78);
             this.btnCancelar.TabIndex = 42;
@@ -138,7 +127,7 @@
             // btnExcluir
             // 
             this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
-            this.btnExcluir.Location = new System.Drawing.Point(331, 271);
+            this.btnExcluir.Location = new System.Drawing.Point(287, 271);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(80, 78);
             this.btnExcluir.TabIndex = 44;
@@ -148,7 +137,7 @@
             // btnAlterar
             // 
             this.btnAlterar.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterar.Image")));
-            this.btnAlterar.Location = new System.Drawing.Point(226, 271);
+            this.btnAlterar.Location = new System.Drawing.Point(194, 271);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(80, 78);
             this.btnAlterar.TabIndex = 45;
@@ -158,7 +147,7 @@
             // btnSalvar
             // 
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.Location = new System.Drawing.Point(436, 271);
+            this.btnSalvar.Location = new System.Drawing.Point(381, 271);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(80, 78);
             this.btnSalvar.TabIndex = 41;
@@ -168,7 +157,7 @@
             // btnInserir
             // 
             this.btnInserir.Image = ((System.Drawing.Image)(resources.GetObject("btnInserir.Image")));
-            this.btnInserir.Location = new System.Drawing.Point(20, 271);
+            this.btnInserir.Location = new System.Drawing.Point(10, 271);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(80, 78);
             this.btnInserir.TabIndex = 40;
@@ -178,7 +167,7 @@
             // mskDataCadastro
             // 
             this.mskDataCadastro.Enabled = false;
-            this.mskDataCadastro.Location = new System.Drawing.Point(533, 32);
+            this.mskDataCadastro.Location = new System.Drawing.Point(447, 32);
             this.mskDataCadastro.Mask = "00/00/0000 00:00";
             this.mskDataCadastro.Name = "mskDataCadastro";
             this.mskDataCadastro.ReadOnly = true;
@@ -189,51 +178,52 @@
             // txtIdUsuAlteracao
             // 
             this.txtIdUsuAlteracao.Enabled = false;
-            this.txtIdUsuAlteracao.Location = new System.Drawing.Point(380, 223);
+            this.txtIdUsuAlteracao.Location = new System.Drawing.Point(309, 223);
             this.txtIdUsuAlteracao.Name = "txtIdUsuAlteracao";
             this.txtIdUsuAlteracao.ReadOnly = true;
-            this.txtIdUsuAlteracao.Size = new System.Drawing.Size(62, 20);
+            this.txtIdUsuAlteracao.Size = new System.Drawing.Size(135, 20);
             this.txtIdUsuAlteracao.TabIndex = 37;
             // 
             // txtIdUsuCadastro
             // 
-            this.txtIdUsuCadastro.Location = new System.Drawing.Point(174, 223);
+            this.txtIdUsuCadastro.Location = new System.Drawing.Point(163, 223);
             this.txtIdUsuCadastro.Name = "txtIdUsuCadastro";
             this.txtIdUsuCadastro.ReadOnly = true;
-            this.txtIdUsuCadastro.Size = new System.Drawing.Size(62, 20);
+            this.txtIdUsuCadastro.Size = new System.Drawing.Size(134, 20);
             this.txtIdUsuCadastro.TabIndex = 35;
             this.txtIdUsuCadastro.Validated += new System.EventHandler(this.txtIdUsuCadastro_Validated);
             // 
             // txtDescLongo
             // 
-            this.txtDescLongo.Location = new System.Drawing.Point(21, 223);
+            this.txtDescLongo.Location = new System.Drawing.Point(10, 223);
             this.txtDescLongo.Name = "txtDescLongo";
             this.txtDescLongo.ReadOnly = true;
-            this.txtDescLongo.Size = new System.Drawing.Size(62, 20);
+            this.txtDescLongo.Size = new System.Drawing.Size(141, 20);
             this.txtDescLongo.TabIndex = 33;
             // 
             // txtDescCurto
             // 
-            this.txtDescCurto.Location = new System.Drawing.Point(21, 176);
+            this.txtDescCurto.Location = new System.Drawing.Point(10, 176);
             this.txtDescCurto.Name = "txtDescCurto";
             this.txtDescCurto.ReadOnly = true;
-            this.txtDescCurto.Size = new System.Drawing.Size(62, 20);
+            this.txtDescCurto.Size = new System.Drawing.Size(136, 20);
             this.txtDescCurto.TabIndex = 32;
             // 
             // txtTempoCiclo
             // 
-            this.txtTempoCiclo.Location = new System.Drawing.Point(21, 129);
+            this.txtTempoCiclo.Location = new System.Drawing.Point(10, 129);
             this.txtTempoCiclo.Name = "txtTempoCiclo";
             this.txtTempoCiclo.ReadOnly = true;
-            this.txtTempoCiclo.Size = new System.Drawing.Size(62, 20);
+            this.txtTempoCiclo.Size = new System.Drawing.Size(136, 20);
             this.txtTempoCiclo.TabIndex = 31;
             // 
             // chkPadrao
             // 
             this.chkPadrao.AutoSize = true;
-            this.chkPadrao.Location = new System.Drawing.Point(153, 33);
+            this.chkPadrao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkPadrao.Location = new System.Drawing.Point(260, 32);
             this.chkPadrao.Name = "chkPadrao";
-            this.chkPadrao.Size = new System.Drawing.Size(60, 17);
+            this.chkPadrao.Size = new System.Drawing.Size(66, 17);
             this.chkPadrao.TabIndex = 30;
             this.chkPadrao.Text = "Padrão";
             this.chkPadrao.UseVisualStyleBackColor = true;
@@ -241,99 +231,108 @@
             // txtNomeTec
             // 
             this.txtNomeTec.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtNomeTec.Location = new System.Drawing.Point(21, 76);
+            this.txtNomeTec.Location = new System.Drawing.Point(10, 76);
             this.txtNomeTec.Name = "txtNomeTec";
             this.txtNomeTec.ReadOnly = true;
-            this.txtNomeTec.Size = new System.Drawing.Size(496, 20);
+            this.txtNomeTec.Size = new System.Drawing.Size(540, 20);
             this.txtNomeTec.TabIndex = 29;
             // 
             // txtIdTec
             // 
             this.txtIdTec.Enabled = false;
-            this.txtIdTec.Location = new System.Drawing.Point(21, 33);
+            this.txtIdTec.Location = new System.Drawing.Point(10, 33);
             this.txtIdTec.Name = "txtIdTec";
             this.txtIdTec.ReadOnly = true;
-            this.txtIdTec.Size = new System.Drawing.Size(62, 20);
+            this.txtIdTec.Size = new System.Drawing.Size(136, 20);
             this.txtIdTec.TabIndex = 28;
             // 
             // lblDtAlteracao
             // 
             this.lblDtAlteracao.AutoSize = true;
-            this.lblDtAlteracao.Location = new System.Drawing.Point(518, 206);
+            this.lblDtAlteracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDtAlteracao.Location = new System.Drawing.Point(447, 206);
             this.lblDtAlteracao.Name = "lblDtAlteracao";
-            this.lblDtAlteracao.Size = new System.Drawing.Size(93, 13);
+            this.lblDtAlteracao.Size = new System.Drawing.Size(110, 13);
             this.lblDtAlteracao.TabIndex = 27;
             this.lblDtAlteracao.Text = "Data de Alteração";
             // 
             // lblDtUsuAlteracao
             // 
             this.lblDtUsuAlteracao.AutoSize = true;
-            this.lblDtUsuAlteracao.Location = new System.Drawing.Point(377, 206);
+            this.lblDtUsuAlteracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDtUsuAlteracao.Location = new System.Drawing.Point(306, 206);
             this.lblDtUsuAlteracao.Name = "lblDtUsuAlteracao";
-            this.lblDtUsuAlteracao.Size = new System.Drawing.Size(118, 13);
+            this.lblDtUsuAlteracao.Size = new System.Drawing.Size(141, 13);
             this.lblDtUsuAlteracao.TabIndex = 26;
             this.lblDtUsuAlteracao.Text = "Id Usuário de Alteração";
             // 
             // lblIdUsuCadastro
             // 
             this.lblIdUsuCadastro.AutoSize = true;
-            this.lblIdUsuCadastro.Location = new System.Drawing.Point(171, 206);
+            this.lblIdUsuCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdUsuCadastro.Location = new System.Drawing.Point(160, 206);
             this.lblIdUsuCadastro.Name = "lblIdUsuCadastro";
-            this.lblIdUsuCadastro.Size = new System.Drawing.Size(115, 13);
+            this.lblIdUsuCadastro.Size = new System.Drawing.Size(137, 13);
             this.lblIdUsuCadastro.TabIndex = 25;
             this.lblIdUsuCadastro.Text = "Id Usuário de Cadastro";
             // 
             // lblDtCadastro
             // 
             this.lblDtCadastro.AutoSize = true;
-            this.lblDtCadastro.Location = new System.Drawing.Point(530, 16);
+            this.lblDtCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDtCadastro.Location = new System.Drawing.Point(444, 16);
             this.lblDtCadastro.Name = "lblDtCadastro";
-            this.lblDtCadastro.Size = new System.Drawing.Size(90, 13);
+            this.lblDtCadastro.Size = new System.Drawing.Size(106, 13);
             this.lblDtCadastro.TabIndex = 24;
             this.lblDtCadastro.Text = "Data do Cadastro";
             // 
             // lblDescLongo
             // 
             this.lblDescLongo.AutoSize = true;
-            this.lblDescLongo.Location = new System.Drawing.Point(18, 206);
+            this.lblDescLongo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescLongo.Location = new System.Drawing.Point(7, 206);
             this.lblDescLongo.Name = "lblDescLongo";
-            this.lblDescLongo.Size = new System.Drawing.Size(124, 13);
+            this.lblDescLongo.Size = new System.Drawing.Size(144, 13);
             this.lblDescLongo.TabIndex = 23;
             this.lblDescLongo.Text = "Tempo Descanso Longo";
             // 
             // lblDesCurto
             // 
             this.lblDesCurto.AutoSize = true;
-            this.lblDesCurto.Location = new System.Drawing.Point(18, 159);
+            this.lblDesCurto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesCurto.Location = new System.Drawing.Point(7, 159);
             this.lblDesCurto.Name = "lblDesCurto";
-            this.lblDesCurto.Size = new System.Drawing.Size(119, 13);
+            this.lblDesCurto.Size = new System.Drawing.Size(139, 13);
             this.lblDesCurto.TabIndex = 22;
             this.lblDesCurto.Text = "Tempo Descanso Curto";
             // 
             // lblTCiclo
             // 
             this.lblTCiclo.AutoSize = true;
-            this.lblTCiclo.Location = new System.Drawing.Point(20, 113);
+            this.lblTCiclo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTCiclo.Location = new System.Drawing.Point(9, 113);
             this.lblTCiclo.Name = "lblTCiclo";
-            this.lblTCiclo.Size = new System.Drawing.Size(81, 13);
+            this.lblTCiclo.Size = new System.Drawing.Size(95, 13);
             this.lblTCiclo.TabIndex = 21;
             this.lblTCiclo.Text = "Tempo do Ciclo";
             // 
             // lblNomeTecnica
             // 
             this.lblNomeTecnica.AutoSize = true;
-            this.lblNomeTecnica.Location = new System.Drawing.Point(18, 60);
+            this.lblNomeTecnica.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeTecnica.Location = new System.Drawing.Point(7, 60);
             this.lblNomeTecnica.Name = "lblNomeTecnica";
-            this.lblNomeTecnica.Size = new System.Drawing.Size(35, 13);
+            this.lblNomeTecnica.Size = new System.Drawing.Size(39, 13);
             this.lblNomeTecnica.TabIndex = 19;
             this.lblNomeTecnica.Text = "Nome";
             // 
             // lblIdTenica
             // 
             this.lblIdTenica.AutoSize = true;
-            this.lblIdTenica.Location = new System.Drawing.Point(18, 16);
+            this.lblIdTenica.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdTenica.Location = new System.Drawing.Point(7, 16);
             this.lblIdTenica.Name = "lblIdTenica";
-            this.lblIdTenica.Size = new System.Drawing.Size(16, 13);
+            this.lblIdTenica.Size = new System.Drawing.Size(18, 13);
             this.lblIdTenica.TabIndex = 18;
             this.lblIdTenica.Text = "Id";
             // 
@@ -341,7 +340,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 385);
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.ClientSize = new System.Drawing.Size(588, 385);
             this.Controls.Add(this.panel1);
             this.Name = "frmCadastroTecnica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -382,6 +382,5 @@
         public System.Windows.Forms.TextBox txtNomeTec;
         public System.Windows.Forms.MaskedTextBox mskDataCadastro;
         public System.Windows.Forms.MaskedTextBox mskDataAlteracao;
-        public System.Windows.Forms.TextBox txtNomeUsu;
     }
 }

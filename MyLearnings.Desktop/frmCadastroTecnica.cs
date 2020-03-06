@@ -40,7 +40,7 @@ namespace MyLearnings.Desktop
             mskDataAlteracao.Clear();
             txtIdUsuCadastro.Clear();
             txtIdUsuAlteracao.Clear();
-            txtNomeUsu.Clear();
+            //txtNomeUsu.Clear();
         }
 
         public void AlteraBotoes(int op)
@@ -223,7 +223,7 @@ namespace MyLearnings.Desktop
             UsuarioRegrasDeNegocio usuarioRegrasDeNegocio = new UsuarioRegrasDeNegocio();
             var usuario = usuarioRegrasDeNegocio.BuscaUsuarioPorId(Convert.ToInt32(txtIdUsuCadastro.Text));
 
-            txtNomeUsu.Text = usuario.Nome;
+            //txtNomeUsu.Text = usuario.Nome;
         }   
     }
 }   

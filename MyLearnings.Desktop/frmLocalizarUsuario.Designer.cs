@@ -41,23 +41,24 @@
             // lblLocalizaUsu
             // 
             this.lblLocalizaUsu.AutoSize = true;
-            this.lblLocalizaUsu.Location = new System.Drawing.Point(17, 15);
+            this.lblLocalizaUsu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocalizaUsu.Location = new System.Drawing.Point(6, 5);
             this.lblLocalizaUsu.Name = "lblLocalizaUsu";
-            this.lblLocalizaUsu.Size = new System.Drawing.Size(142, 13);
+            this.lblLocalizaUsu.Size = new System.Drawing.Size(168, 13);
             this.lblLocalizaUsu.TabIndex = 0;
             this.lblLocalizaUsu.Text = "Pesquisar Usuário Por Nome";
             // 
             // txtLocalizaUsu
             // 
-            this.txtLocalizaUsu.Location = new System.Drawing.Point(20, 31);
+            this.txtLocalizaUsu.Location = new System.Drawing.Point(9, 21);
             this.txtLocalizaUsu.Name = "txtLocalizaUsu";
-            this.txtLocalizaUsu.Size = new System.Drawing.Size(530, 20);
+            this.txtLocalizaUsu.Size = new System.Drawing.Size(552, 20);
             this.txtLocalizaUsu.TabIndex = 1;
             // 
             // btnLocalizaUsu
             // 
             this.btnLocalizaUsu.Image = ((System.Drawing.Image)(resources.GetObject("btnLocalizaUsu.Image")));
-            this.btnLocalizaUsu.Location = new System.Drawing.Point(578, 19);
+            this.btnLocalizaUsu.Location = new System.Drawing.Point(567, 9);
             this.btnLocalizaUsu.Name = "btnLocalizaUsu";
             this.btnLocalizaUsu.Size = new System.Drawing.Size(43, 43);
             this.btnLocalizaUsu.TabIndex = 2;
@@ -70,17 +71,18 @@
             this.panel1.Controls.Add(this.txtLocalizaUsu);
             this.panel1.Controls.Add(this.btnLocalizaUsu);
             this.panel1.Controls.Add(this.lblLocalizaUsu);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(7, 8);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(642, 361);
+            this.panel1.Size = new System.Drawing.Size(619, 344);
             this.panel1.TabIndex = 3;
             // 
             // dgvLocalizaUsu
             // 
             this.dgvLocalizaUsu.AllowUserToAddRows = false;
             this.dgvLocalizaUsu.AllowUserToDeleteRows = false;
+            this.dgvLocalizaUsu.BackgroundColor = System.Drawing.Color.White;
             this.dgvLocalizaUsu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLocalizaUsu.Location = new System.Drawing.Point(20, 68);
+            this.dgvLocalizaUsu.Location = new System.Drawing.Point(9, 58);
             this.dgvLocalizaUsu.Name = "dgvLocalizaUsu";
             this.dgvLocalizaUsu.ReadOnly = true;
             this.dgvLocalizaUsu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -92,7 +94,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 385);
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.ClientSize = new System.Drawing.Size(626, 354);
             this.Controls.Add(this.panel1);
             this.Name = "frmLocalizarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

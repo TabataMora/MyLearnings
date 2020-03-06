@@ -48,7 +48,6 @@ namespace MyLearnings.RegrasDeNegocio.RegrasDeNegocio
 
                 ResumoAcessoADados resumoAcessoADados = new ResumoAcessoADados();
                 return resumoAcessoADados.Alterar(resumo);
-
             }
             catch (Exception)
             {

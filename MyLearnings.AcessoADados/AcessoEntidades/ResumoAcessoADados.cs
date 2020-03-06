@@ -142,14 +142,12 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                     cmd.CommandText = @"UPDATE TB_RESUMO SET
                                           ASSUNTO = @ASSUNTO,
                                           SUBASSUNTO = @SUBASSUNTO,
-                                          RESUMO = @RESUMO,
-                                          ID_CICLO_RESUMO = @IDCICLORESUMO
+                                          RESUMO = @RESUMO                                    
                                           WHERE ID = @ID
                                           SELECT @@IDENTITY;";
                     cmd.Parameters.AddWithValue("@ASSUNTO", resumo.Assunto);
                     cmd.Parameters.AddWithValue("@SUBASSUNTO", resumo.Subassunto);
-                    cmd.Parameters.AddWithValue("@RESUMO", resumo.Texto);
-                    cmd.Parameters.AddWithValue("@IDCICLORESUMO", resumo.IdCicloResumo);
+                    cmd.Parameters.AddWithValue("@RESUMO", resumo.Texto);         
                     cmd.Parameters.AddWithValue("@ID", resumo.Id);
   
                     var resultado = cmd.ExecuteNonQuery();

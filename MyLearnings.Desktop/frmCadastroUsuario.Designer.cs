@@ -53,6 +53,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel1.Controls.Add(this.btnLocalizar);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.btnCancelar);
@@ -70,13 +71,13 @@
             this.panel1.Controls.Add(this.txtIdUsuario);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(642, 361);
+            this.panel1.Size = new System.Drawing.Size(526, 317);
             this.panel1.TabIndex = 0;
             // 
             // btnLocalizar
             // 
             this.btnLocalizar.Image = ((System.Drawing.Image)(resources.GetObject("btnLocalizar.Image")));
-            this.btnLocalizar.Location = new System.Drawing.Point(126, 271);
+            this.btnLocalizar.Location = new System.Drawing.Point(94, 230);
             this.btnLocalizar.Name = "btnLocalizar";
             this.btnLocalizar.Size = new System.Drawing.Size(80, 78);
             this.btnLocalizar.TabIndex = 7;
@@ -86,10 +87,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(310, 24);
+            this.pictureBox1.Location = new System.Drawing.Point(166, 9);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(256, 166);
+            this.pictureBox1.Size = new System.Drawing.Size(332, 166);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
@@ -97,7 +98,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(542, 271);
+            this.btnCancelar.Location = new System.Drawing.Point(438, 230);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(80, 78);
             this.btnCancelar.TabIndex = 6;
@@ -107,7 +108,7 @@
             // btnExcluir
             // 
             this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
-            this.btnExcluir.Location = new System.Drawing.Point(333, 271);
+            this.btnExcluir.Location = new System.Drawing.Point(266, 230);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(80, 78);
             this.btnExcluir.TabIndex = 8;
@@ -117,7 +118,7 @@
             // btnAlterar
             // 
             this.btnAlterar.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterar.Image")));
-            this.btnAlterar.Location = new System.Drawing.Point(228, 271);
+            this.btnAlterar.Location = new System.Drawing.Point(180, 230);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(80, 78);
             this.btnAlterar.TabIndex = 9;
@@ -127,7 +128,7 @@
             // btnSalvar
             // 
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.Location = new System.Drawing.Point(438, 271);
+            this.btnSalvar.Location = new System.Drawing.Point(352, 230);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(80, 78);
             this.btnSalvar.TabIndex = 5;
@@ -137,7 +138,7 @@
             // btnInserir
             // 
             this.btnInserir.Image = ((System.Drawing.Image)(resources.GetObject("btnInserir.Image")));
-            this.btnInserir.Location = new System.Drawing.Point(22, 271);
+            this.btnInserir.Location = new System.Drawing.Point(8, 230);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(80, 78);
             this.btnInserir.TabIndex = 4;
@@ -147,50 +148,54 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(19, 203);
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(3, 188);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEmail.Size = new System.Drawing.Size(37, 13);
             this.lblEmail.TabIndex = 7;
             this.lblEmail.Text = "Email";
             // 
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(19, 145);
+            this.lblSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSenha.Location = new System.Drawing.Point(3, 130);
             this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(38, 13);
+            this.lblSenha.Size = new System.Drawing.Size(43, 13);
             this.lblSenha.TabIndex = 6;
             this.lblSenha.Text = "Senha";
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(19, 86);
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.Location = new System.Drawing.Point(3, 71);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(43, 13);
+            this.lblUsuario.Size = new System.Drawing.Size(50, 13);
             this.lblUsuario.TabIndex = 5;
             this.lblUsuario.Text = "Usuário";
             // 
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(19, 24);
+            this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.Location = new System.Drawing.Point(3, 9);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(16, 13);
+            this.lblId.Size = new System.Drawing.Size(18, 13);
             this.lblId.TabIndex = 4;
             this.lblId.Text = "Id";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(22, 219);
+            this.txtEmail.Location = new System.Drawing.Point(6, 204);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
-            this.txtEmail.Size = new System.Drawing.Size(342, 20);
+            this.txtEmail.Size = new System.Drawing.Size(510, 20);
             this.txtEmail.TabIndex = 2;
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(22, 161);
+            this.txtSenha.Location = new System.Drawing.Point(6, 146);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.ReadOnly = true;
             this.txtSenha.Size = new System.Drawing.Size(100, 20);
@@ -199,7 +204,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Cursor = System.Windows.Forms.Cursors.Default;
-            this.txtUsuario.Location = new System.Drawing.Point(22, 102);
+            this.txtUsuario.Location = new System.Drawing.Point(6, 87);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.ReadOnly = true;
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
@@ -208,7 +213,7 @@
             // txtIdUsuario
             // 
             this.txtIdUsuario.Enabled = false;
-            this.txtIdUsuario.Location = new System.Drawing.Point(22, 40);
+            this.txtIdUsuario.Location = new System.Drawing.Point(6, 25);
             this.txtIdUsuario.Name = "txtIdUsuario";
             this.txtIdUsuario.ReadOnly = true;
             this.txtIdUsuario.Size = new System.Drawing.Size(62, 20);
@@ -219,7 +224,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 385);
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.ClientSize = new System.Drawing.Size(548, 333);
             this.Controls.Add(this.panel1);
             this.Name = "frmCadastroUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

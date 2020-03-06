@@ -12,6 +12,7 @@ using MyLearnings.RegrasDeNegocio.RegrasDeNegocio;
 using System.Timers;
 using MyLearnings.Entidades;
 using MyLearnings.RegrasDeNegocio;
+using System.Media;
 
 namespace MyLearnings.Desktop
 {
@@ -44,6 +45,8 @@ namespace MyLearnings.Desktop
         }
 
         public List<Tecnica> lista = new List<Tecnica>();
+
+        private SoundPlayer Player = new SoundPlayer();
 
         private void frmTimer_Load(object sender, EventArgs e)
         {
@@ -228,13 +231,24 @@ namespace MyLearnings.Desktop
         {
             TimerPausadoPeloUsuario();
             InicioTimer(psegundos: 0);
+
+            try
+            {
+                this.Player.SoundLocation = @"C:\gitRepository\MyLearnings\MyLearnings.Desktop\Songs\alerta.wav";
+                this.Player.PlayLooping();
+                DialogResult d = MessageBox.Show("Tempo finalizado!", "Alerta", MessageBoxButtons.OK);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error playing sound");
+            }
         }
 
         private void chkTempoCiclo_CheckedChanged(object sender, EventArgs e)
         {
             chkDescCurto.Checked = false;
             chkDescLongo.Checked = false;
-            chkTempoCiclo.Checked = false;
+            chkResumo.Checked = false;
 
             HoraQueAComboEChamado();
         }
@@ -244,6 +258,7 @@ namespace MyLearnings.Desktop
             chkTempoCiclo.Checked = false;
             chkDescLongo.Checked = false;
             chkTempoCiclo.Checked = false;
+            chkResumo.Checked = false;
 
             HoraQueAComboEChamado();
         }
@@ -253,6 +268,7 @@ namespace MyLearnings.Desktop
             chkDescCurto.Checked = false;
             chkTempoCiclo.Checked = false;
             chkTempoCiclo.Checked = false;
+            chkResumo.Checked = false;
 
             HoraQueAComboEChamado();
         }

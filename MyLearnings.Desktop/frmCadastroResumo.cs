@@ -58,8 +58,7 @@ namespace MyLearnings.Desktop
             if (op == 1)
             {
                 btnInserir.Enabled = true;
-                btnLocalizar.Enabled = true;
-                
+                btnLocalizar.Enabled = true;              
             }
             if (op == 2)
             {
@@ -115,6 +114,8 @@ namespace MyLearnings.Desktop
                 resumo.Id = Convert.ToInt32(txtIdResumo.Text);
 
                 resumoRegras.Alterar(resumo);
+                btnLocalizar.Enabled = true;
+                btnCancelar.Enabled = true;
 
                 MessageBox.Show("Alteração efetuada com sucesso! " + resumo.Id.ToString());
             }

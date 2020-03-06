@@ -40,39 +40,41 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel1.Controls.Add(this.dgvLocalizaTec);
             this.panel1.Controls.Add(this.txtLocalizaTec);
             this.panel1.Controls.Add(this.btnLocalizaTec);
             this.panel1.Controls.Add(this.lblLocalizaTec);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(914, 361);
+            this.panel1.Size = new System.Drawing.Size(496, 351);
             this.panel1.TabIndex = 4;
             // 
             // dgvLocalizaTec
             // 
             this.dgvLocalizaTec.AllowUserToAddRows = false;
             this.dgvLocalizaTec.AllowUserToDeleteRows = false;
+            this.dgvLocalizaTec.BackgroundColor = System.Drawing.Color.White;
             this.dgvLocalizaTec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLocalizaTec.Location = new System.Drawing.Point(20, 68);
+            this.dgvLocalizaTec.Location = new System.Drawing.Point(10, 64);
             this.dgvLocalizaTec.Name = "dgvLocalizaTec";
             this.dgvLocalizaTec.ReadOnly = true;
             this.dgvLocalizaTec.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLocalizaTec.Size = new System.Drawing.Size(873, 279);
+            this.dgvLocalizaTec.Size = new System.Drawing.Size(476, 279);
             this.dgvLocalizaTec.TabIndex = 3;
             this.dgvLocalizaTec.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLocalizaTec_CellContentClick);
             // 
             // txtLocalizaTec
             // 
-            this.txtLocalizaTec.Location = new System.Drawing.Point(20, 31);
+            this.txtLocalizaTec.Location = new System.Drawing.Point(10, 27);
             this.txtLocalizaTec.Name = "txtLocalizaTec";
-            this.txtLocalizaTec.Size = new System.Drawing.Size(800, 20);
+            this.txtLocalizaTec.Size = new System.Drawing.Size(427, 20);
             this.txtLocalizaTec.TabIndex = 1;
             // 
             // btnLocalizaTec
             // 
             this.btnLocalizaTec.Image = ((System.Drawing.Image)(resources.GetObject("btnLocalizaTec.Image")));
-            this.btnLocalizaTec.Location = new System.Drawing.Point(850, 19);
+            this.btnLocalizaTec.Location = new System.Drawing.Point(443, 11);
             this.btnLocalizaTec.Name = "btnLocalizaTec";
             this.btnLocalizaTec.Size = new System.Drawing.Size(43, 43);
             this.btnLocalizaTec.TabIndex = 2;
@@ -82,9 +84,10 @@
             // lblLocalizaTec
             // 
             this.lblLocalizaTec.AutoSize = true;
-            this.lblLocalizaTec.Location = new System.Drawing.Point(17, 15);
+            this.lblLocalizaTec.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocalizaTec.Location = new System.Drawing.Point(7, 11);
             this.lblLocalizaTec.Name = "lblLocalizaTec";
-            this.lblLocalizaTec.Size = new System.Drawing.Size(145, 13);
+            this.lblLocalizaTec.Size = new System.Drawing.Size(171, 13);
             this.lblLocalizaTec.TabIndex = 0;
             this.lblLocalizaTec.Text = "Pesquisar Técnica Por Nome";
             // 
@@ -92,7 +95,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(938, 385);
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.ClientSize = new System.Drawing.Size(520, 371);
             this.Controls.Add(this.panel1);
             this.Name = "frmLocalizarTecnica";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
