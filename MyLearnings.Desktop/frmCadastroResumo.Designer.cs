@@ -236,6 +236,7 @@
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(579, 450);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCadastroResumo";
             this.Text = "Resumo";
             this.Load += new System.EventHandler(this.frmCadastroResumo_Load);

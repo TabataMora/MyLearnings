@@ -276,6 +276,7 @@
             this.Controls.Add(this.lblTempoCiclo);
             this.Controls.Add(this.btnStart);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmTimer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Temporizador";

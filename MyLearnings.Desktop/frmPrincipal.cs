@@ -12,6 +12,12 @@ namespace MyLearnings.Desktop
 {
     public partial class frmPrincipal : Form
     {
+        public void FecharLogin()
+        {
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.Close();
+        }
+
         public frmPrincipal()
         {
             InitializeComponent();

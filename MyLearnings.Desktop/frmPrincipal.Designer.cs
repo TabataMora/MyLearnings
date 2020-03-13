@@ -72,27 +72,27 @@
             // usuárioToolStripMenuItem
             // 
             this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.usuárioToolStripMenuItem.Text = "Usuário";
             this.usuárioToolStripMenuItem.Click += new System.EventHandler(this.usuárioToolStripMenuItem_Click);
             // 
             // técnicaToolStripMenuItem
             // 
             this.técnicaToolStripMenuItem.Name = "técnicaToolStripMenuItem";
-            this.técnicaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.técnicaToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.técnicaToolStripMenuItem.Text = "Técnica";
             this.técnicaToolStripMenuItem.Click += new System.EventHandler(this.técnicaToolStripMenuItem_Click);
             // 
             // itemToolStripMenuItem
             // 
             this.itemToolStripMenuItem.Name = "itemToolStripMenuItem";
-            this.itemToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.itemToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.itemToolStripMenuItem.Text = "Item";
             // 
             // resumoToolStripMenuItem
             // 
             this.resumoToolStripMenuItem.Name = "resumoToolStripMenuItem";
-            this.resumoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resumoToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.resumoToolStripMenuItem.Text = "Pesquisar Resumo";
             this.resumoToolStripMenuItem.Click += new System.EventHandler(this.resumoToolStripMenuItem_Click_1);
             // 
@@ -130,6 +130,7 @@
             this.ClientSize = new System.Drawing.Size(576, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

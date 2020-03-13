@@ -23,37 +23,43 @@ namespace MyLearnings.Desktop
             InitializeComponent();
         }
 
+        public void Esconder()
+        {
+            this.WindowState = FormWindowState.Minimized;
+            Hide();
+        }
+
         private void frmLogin_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            frmPrincipal frm = new frmPrincipal(); // se for verdadeiro a validação acima, abre o form principal.
-
-            //UsuarioRegrasDeNegocio usuarioRegras = new UsuarioRegrasDeNegocio(); //instanciando uma classe para usar o método
-            //bool validado = false;
-            //try
-            //{
-            //    if (txtUsuario.Text != string.Empty || txtSenha.Text != string.Empty) //validando se a variável está vazia, se não for vazia
-            //    {
-            //        validado = usuarioRegras.ValidaUsuario(txtUsuario.Text, senha: txtSenha.Text); // passando para a variável validado o que tem no usuário e senha digitados pelo usuário.
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Usuário e/ou senha inválidos!");
-            //        frm.Close();
-            //    }
-            //    if (validado == true) //testando o retorno da validação
-            //    {
-            frm.Show();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+            frmPrincipal frm = new frmPrincipal(); // se for verdadeiro a validação acima, abre o form principal
+            UsuarioRegrasDeNegocio usuarioRegras = new UsuarioRegrasDeNegocio(); //instanciando uma classe para usar o método
+            bool validado = false;
+            try
+                {
+                if (txtUsuario.Text != string.Empty || txtSenha.Text != string.Empty) //validando se a variável está vazia, se não for vazia
+                {
+                    validado = usuarioRegras.ValidaUsuario(txtUsuario.Text, senha: txtSenha.Text); // passando para a variável validado o que tem no usuário e senha digitados pelo usuário.
+                }
+                else
+                {
+                    MessageBox.Show("Usuário e/ou senha inválidos!");
+                    frm.Close();
+                }
+                if (validado == true) //testando o retorno da validação
+                {
+                    frm.Show();
+                    Esconder();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
