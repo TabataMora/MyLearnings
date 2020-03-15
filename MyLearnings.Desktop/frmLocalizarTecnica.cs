@@ -27,12 +27,18 @@ namespace MyLearnings.Desktop
         {
             Tecnica tecnica = new Tecnica();
             tecnica.Nome = txtLocalizaTec.Text;
+            int id;
+            int.TryParse(txtLocalizarTecId.Text, out id); //tentando converter, se não converter mantém o valor atual
+            tecnica.Id = id;
             TecnicaRegrasDeNegocio tecnicaRegras = new TecnicaRegrasDeNegocio();
             List<Tecnica> lista = new List<Tecnica>();
 
             lista = tecnicaRegras.BuscarTecnica(tecnica);
 
-            dgvLocalizaTec.DataSource = lista;           
+            dgvLocalizaTec.DataSource = lista;
+
+            txtLocalizarTecId.Clear();
+            txtLocalizaTec.Clear();
         }
 
         private void frmLocalizarTecnica_Load(object sender, EventArgs e)

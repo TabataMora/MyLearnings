@@ -49,7 +49,6 @@
     <Compile Include="AcessoEntidades\CicloEventoAcessoADados.cs" />
     <Compile Include="Conexao.cs" />
     <Compile Include="ConfiguraConexao.cs" />
-    <Compile Include="HistoricoAcessoADados.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -50,13 +50,21 @@ namespace MyLearnings.Desktop
             {
                 btnInserir.Enabled = true;
                 btnLocalizar.Enabled = true;
-                
+                txtEmail.Enabled = false;
+                txtSenha.Enabled = false;
+                txtUsuario.Enabled = false;
             }
             if(op == 2)
             {
                 btnCancelar.Enabled = true;
                 btnSalvar.Enabled = true;
                 btnLocalizar.Enabled = false;
+                txtUsuario.ReadOnly = false;
+                txtSenha.ReadOnly = false;
+                txtEmail.ReadOnly = false;
+                txtSenha.Enabled = true;
+                txtEmail.Enabled = true;
+                txtUsuario.Enabled = true;
             }
             if (op == 3)
             {
@@ -77,19 +85,13 @@ namespace MyLearnings.Desktop
         {
             this.operacao = "Inserir";
             this.AlteraBotoes(2);
-            txtUsuario.ReadOnly = false;
-            txtSenha.ReadOnly = false;
-            txtEmail.ReadOnly = false;
-            txtUsuario.Enabled = true;
-            txtSenha.Enabled = true;
-            txtEmail.Enabled = true;
+
+            txtUsuario.Focus();
+
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
-            {
-                txtUsuario.ReadOnly = true;
-                txtSenha.ReadOnly = true;
-                txtEmail.ReadOnly = true;
+        {
             try
             {
                 UsuarioRegrasDeNegocio usuarioRegras = new UsuarioRegrasDeNegocio();
@@ -130,15 +132,11 @@ namespace MyLearnings.Desktop
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
-        {
-            txtUsuario.ReadOnly = false;
-            txtSenha.ReadOnly = false;
-            txtEmail.ReadOnly = false;
-            txtUsuario.Enabled = true;
-            txtSenha.Enabled = true;
-            txtEmail.Enabled = true;
+        {         
             this.operacao = "Alterar";
             this.AlteraBotoes(2);
+
+            txtUsuario.Focus();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -166,9 +164,6 @@ namespace MyLearnings.Desktop
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            txtUsuario.Enabled = false;
-            txtSenha.Enabled = false;
-            txtEmail.Enabled = false;
             this.LimpaTela();
             this.AlteraBotoes(1);
         }

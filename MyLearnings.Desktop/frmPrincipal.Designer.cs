@@ -33,11 +33,9 @@
             this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.técnicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.itemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resumoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.históricoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pesquisarResumoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +47,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroToolStripMenuItem,
             this.timerToolStripMenuItem,
-            this.históricoToolStripMenuItem});
+            this.pesquisarResumoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -61,9 +59,7 @@
             // 
             this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuárioToolStripMenuItem,
-            this.técnicaToolStripMenuItem,
-            this.itemToolStripMenuItem,
-            this.resumoToolStripMenuItem});
+            this.técnicaToolStripMenuItem});
             this.cadastroToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
@@ -72,29 +68,16 @@
             // usuárioToolStripMenuItem
             // 
             this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usuárioToolStripMenuItem.Text = "Usuário";
             this.usuárioToolStripMenuItem.Click += new System.EventHandler(this.usuárioToolStripMenuItem_Click);
             // 
             // técnicaToolStripMenuItem
             // 
             this.técnicaToolStripMenuItem.Name = "técnicaToolStripMenuItem";
-            this.técnicaToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.técnicaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.técnicaToolStripMenuItem.Text = "Técnica";
             this.técnicaToolStripMenuItem.Click += new System.EventHandler(this.técnicaToolStripMenuItem_Click);
-            // 
-            // itemToolStripMenuItem
-            // 
-            this.itemToolStripMenuItem.Name = "itemToolStripMenuItem";
-            this.itemToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.itemToolStripMenuItem.Text = "Item";
-            // 
-            // resumoToolStripMenuItem
-            // 
-            this.resumoToolStripMenuItem.Name = "resumoToolStripMenuItem";
-            this.resumoToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
-            this.resumoToolStripMenuItem.Text = "Pesquisar Resumo";
-            this.resumoToolStripMenuItem.Click += new System.EventHandler(this.resumoToolStripMenuItem_Click_1);
             // 
             // timerToolStripMenuItem
             // 
@@ -103,13 +86,6 @@
             this.timerToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.timerToolStripMenuItem.Text = "Timer";
             this.timerToolStripMenuItem.Click += new System.EventHandler(this.timerToolStripMenuItem_Click);
-            // 
-            // históricoToolStripMenuItem
-            // 
-            this.históricoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.históricoToolStripMenuItem.Name = "históricoToolStripMenuItem";
-            this.históricoToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.históricoToolStripMenuItem.Text = "Histórico";
             // 
             // pictureBox1
             // 
@@ -122,6 +98,14 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // pesquisarResumoToolStripMenuItem
+            // 
+            this.pesquisarResumoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pesquisarResumoToolStripMenuItem.Name = "pesquisarResumoToolStripMenuItem";
+            this.pesquisarResumoToolStripMenuItem.Size = new System.Drawing.Size(119, 20);
+            this.pesquisarResumoToolStripMenuItem.Text = "Pesquisar Resumo";
+            this.pesquisarResumoToolStripMenuItem.Click += new System.EventHandler(this.pesquisarResumoToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -149,10 +133,8 @@
         private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuárioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem técnicaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem itemToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem timerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem resumoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem históricoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pesquisarResumoToolStripMenuItem;
     }
 }

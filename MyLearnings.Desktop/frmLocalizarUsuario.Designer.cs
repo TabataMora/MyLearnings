@@ -33,6 +33,8 @@
             this.txtLocalizaUsu = new System.Windows.Forms.TextBox();
             this.btnLocalizaUsu = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblLocalizarId = new System.Windows.Forms.Label();
+            this.txtLocalizarId = new System.Windows.Forms.TextBox();
             this.dgvLocalizaUsu = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalizaUsu)).BeginInit();
@@ -42,7 +44,7 @@
             // 
             this.lblLocalizaUsu.AutoSize = true;
             this.lblLocalizaUsu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocalizaUsu.Location = new System.Drawing.Point(6, 5);
+            this.lblLocalizaUsu.Location = new System.Drawing.Point(6, 9);
             this.lblLocalizaUsu.Name = "lblLocalizaUsu";
             this.lblLocalizaUsu.Size = new System.Drawing.Size(168, 13);
             this.lblLocalizaUsu.TabIndex = 0;
@@ -50,9 +52,9 @@
             // 
             // txtLocalizaUsu
             // 
-            this.txtLocalizaUsu.Location = new System.Drawing.Point(9, 21);
+            this.txtLocalizaUsu.Location = new System.Drawing.Point(9, 25);
             this.txtLocalizaUsu.Name = "txtLocalizaUsu";
-            this.txtLocalizaUsu.Size = new System.Drawing.Size(552, 20);
+            this.txtLocalizaUsu.Size = new System.Drawing.Size(353, 20);
             this.txtLocalizaUsu.TabIndex = 1;
             // 
             // btnLocalizaUsu
@@ -67,6 +69,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblLocalizarId);
+            this.panel1.Controls.Add(this.txtLocalizarId);
             this.panel1.Controls.Add(this.dgvLocalizaUsu);
             this.panel1.Controls.Add(this.txtLocalizaUsu);
             this.panel1.Controls.Add(this.btnLocalizaUsu);
@@ -75,6 +79,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(619, 344);
             this.panel1.TabIndex = 3;
+            // 
+            // lblLocalizarId
+            // 
+            this.lblLocalizarId.AutoSize = true;
+            this.lblLocalizarId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocalizarId.Location = new System.Drawing.Point(387, 9);
+            this.lblLocalizarId.Name = "lblLocalizarId";
+            this.lblLocalizarId.Size = new System.Drawing.Size(147, 13);
+            this.lblLocalizarId.TabIndex = 5;
+            this.lblLocalizarId.Text = "Pesquisar Usuário Por Id";
+            // 
+            // txtLocalizarId
+            // 
+            this.txtLocalizarId.Location = new System.Drawing.Point(390, 25);
+            this.txtLocalizarId.Name = "txtLocalizarId";
+            this.txtLocalizarId.Size = new System.Drawing.Size(171, 20);
+            this.txtLocalizarId.TabIndex = 4;
             // 
             // dgvLocalizaUsu
             // 
@@ -116,5 +137,7 @@
         private System.Windows.Forms.Button btnLocalizaUsu;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvLocalizaUsu;
+        private System.Windows.Forms.Label lblLocalizarId;
+        private System.Windows.Forms.TextBox txtLocalizarId;
     }
 }

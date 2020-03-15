@@ -58,5 +58,11 @@ namespace MyLearnings.Desktop
             frmLocalizarResumo frm = new frmLocalizarResumo();
             frm.Show();
         }
+
+        private void pesquisarResumoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLocalizarResumo frm = new frmLocalizarResumo();
+            frm.Show();
+        }
     }
 }

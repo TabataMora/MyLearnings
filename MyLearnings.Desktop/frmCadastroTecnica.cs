@@ -54,12 +54,7 @@ namespace MyLearnings.Desktop
             if (op == 1)
             {
                 btnInserir.Enabled = true;
-                btnLocalizar.Enabled = true;
-                txtNomeTec.ReadOnly = true;
-                txtDescCurto.ReadOnly = true;
-                txtDescLongo.ReadOnly = true;
-                txtTempoCiclo.ReadOnly = true;
-                txtIdUsuCadastro.ReadOnly = true;
+                btnLocalizar.Enabled = true;               
                 txtNomeTec.Enabled = false;
                 txtDescCurto.Enabled = false;
                 txtDescLongo.Enabled = false;
@@ -76,6 +71,13 @@ namespace MyLearnings.Desktop
                 txtDescLongo.Enabled = true;
                 txtTempoCiclo.Enabled = true;
                 txtIdUsuCadastro.Enabled = true;
+                txtNomeTec.ReadOnly = false;
+                txtDescCurto.ReadOnly = false;
+                txtDescLongo.ReadOnly = false;
+                txtTempoCiclo.ReadOnly = false;
+                txtIdUsuCadastro.ReadOnly = false;
+                txtIdUsuAlteracao.ReadOnly = false;
+                txtIdUsuCadastro.Enabled = false;
             }
             if (op == 3)
             {
@@ -98,11 +100,7 @@ namespace MyLearnings.Desktop
             this.operacao = "Inserir";
             this.AlteraBotoes(2);
 
-            txtNomeTec.ReadOnly = false;
-            txtDescCurto.ReadOnly = false;
-            txtDescLongo.ReadOnly = false;
-            txtTempoCiclo.ReadOnly = false;
-            txtIdUsuCadastro.ReadOnly = false;
+            txtNomeTec.Focus();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -162,6 +160,7 @@ namespace MyLearnings.Desktop
                 throw;
             }
 
+            txtNomeTec.UseWaitCursor = false;
             this.LimpaTela();
             this.AlteraBotoes(1);
         } 
@@ -200,14 +199,6 @@ namespace MyLearnings.Desktop
             mskDataAlteracao.Text = DateTime.Now.ToString();
             this.operacao = "Alterar";
             this.AlteraBotoes(2);
-
-            txtNomeTec.ReadOnly = false;
-            txtDescCurto.ReadOnly = false;
-            txtDescLongo.ReadOnly = false;
-            txtTempoCiclo.ReadOnly = false;
-            txtIdUsuCadastro.ReadOnly = false;
-            txtIdUsuAlteracao.ReadOnly = false;
-            txtIdUsuCadastro.Enabled = false;
         }
 
         private void btnLocalizar_Click(object sender, EventArgs e)
@@ -220,8 +211,8 @@ namespace MyLearnings.Desktop
 
         private void txtIdUsuCadastro_Validated(object sender, EventArgs e)
         {
-            UsuarioRegrasDeNegocio usuarioRegrasDeNegocio = new UsuarioRegrasDeNegocio();
-            var usuario = usuarioRegrasDeNegocio.BuscaUsuarioPorId(Convert.ToInt32(txtIdUsuCadastro.Text));
+        //    UsuarioRegrasDeNegocio usuarioRegrasDeNegocio = new UsuarioRegrasDeNegocio();
+        //    var usuario = usuarioRegrasDeNegocio.BuscaUsuarioPorId(Convert.ToInt32(txtIdUsuCadastro.Text));
 
             //txtNomeUsu.Text = usuario.Nome;
         }   

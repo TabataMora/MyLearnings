@@ -238,6 +238,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCadastroResumo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Resumo";
             this.Load += new System.EventHandler(this.frmCadastroResumo_Load);
             this.panel1.ResumeLayout(false);

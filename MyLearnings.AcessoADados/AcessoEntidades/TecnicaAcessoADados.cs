@@ -95,11 +95,11 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                     {
                         query += " AND NOME LIKE '%" + tecnica.Nome + "%';";
                     }
-                    //if (!string.IsNullOrWhiteSpace(Convert.ToString(tecnica?.Id)))
-                    //{
-                    //    query += " AND ID LIKE '%" + tecnica.Id + "%';";
-                    //}
-
+                    if (tecnica?.Id > 0)
+                    {
+                        query += " AND ID LIKE '%" + tecnica.Id + "%';";
+                    }
+                
                     cmd.CommandText = query;
 
                     using (cmd)
@@ -179,40 +179,6 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                 {
                     _conexao.Desconectar();
                 }
-            }
-        }
-
-        public Tecnica BuscaTecnicaId(int id)
-        {
-            Tecnica tecnica = new Tecnica();
-            SqlCommand cmd = new SqlCommand();
-            using (cmd.Connection = _conexao.ObjetoDaConexao)
-            {
-                try
-                {
-                    _conexao.Conectar();
-                    cmd.CommandText = "SELECT NOME FROM TB_TECNICA WHERE ID = @ID";
-                    cmd.Parameters.AddWithValue("@ID", id);
-                    using (cmd)
-                    {
-                        using (DbDataReader dbReader = cmd.ExecuteReader())
-                        {
-                            while (dbReader.Read())
-                            {
-                                tecnica.Nome = (dbReader["NOME"].ToString());
-                            }
-                        }
-                    }
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-                finally
-                {
-                    _conexao.Desconectar();
-                }
-                return tecnica;
             }
         }
     }

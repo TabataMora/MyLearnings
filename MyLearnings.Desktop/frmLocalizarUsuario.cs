@@ -25,12 +25,18 @@ namespace MyLearnings.Desktop
         {
             Usuario usuario = new Usuario();
             usuario.Nome = txtLocalizaUsu.Text;
+            int id;
+            int.TryParse(txtLocalizarId.Text, out id); //tentando converter, se não converter mantém o valor atual
+            usuario.Id = id;
             UsuarioRegrasDeNegocio usuarioRegra = new UsuarioRegrasDeNegocio();
             List<Usuario> lista = new List<Usuario>();
 
             lista = usuarioRegra.BuscarUsuario(usuario);
 
             dgvLocalizaUsu.DataSource = lista;
+            
+            txtLocalizarId.Clear();
+            txtLocalizaUsu.Clear();
         }
 
         private void frmLocalizarUsuario_Load(object sender, EventArgs e)
@@ -41,7 +47,8 @@ namespace MyLearnings.Desktop
             dgvLocalizaUsu.Columns[1].HeaderText = "Nome do Usuário";
             dgvLocalizaUsu.Columns[1].Width = 200;
             dgvLocalizaUsu.Columns[2].Visible = false;
-            dgvLocalizaUsu.Columns[3].Visible = false;
+            dgvLocalizaUsu.Columns[3].HeaderText = "Email";
+            dgvLocalizaUsu.Columns[3].Width = 200;
         }
 
         private void dgvLocalizaUsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -50,11 +57,10 @@ namespace MyLearnings.Desktop
             formQueChamou.txtIdUsuario.Text =  id; // passando para o parâmetro form no campo Id o que contém na variável
             string nome = dgvLocalizaUsu.CurrentRow.Cells["NOME"].Value.ToString();
             formQueChamou.txtUsuario.Text = nome;
-            //string senha = dgvLocalizaUsu.CurrentRow.Cells["SENHA"].Value.ToString();
-            //formQueChamou.txtSenha.Text = senha;
             string email = dgvLocalizaUsu.CurrentRow.Cells["EMAIL"].Value.ToString();
             formQueChamou.txtEmail.Text = email;
             this.Hide(); //ocultando (?)
         }
+
     }
 }

@@ -191,15 +191,15 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(510, 20);
-            this.txtEmail.TabIndex = 2;
+            this.txtEmail.TabIndex = 3;
             // 
             // txtSenha
             // 
             this.txtSenha.Location = new System.Drawing.Point(6, 146);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.ReadOnly = true;
-            this.txtSenha.Size = new System.Drawing.Size(100, 20);
-            this.txtSenha.TabIndex = 1;
+            this.txtSenha.Size = new System.Drawing.Size(137, 20);
+            this.txtSenha.TabIndex = 2;
             // 
             // txtUsuario
             // 
@@ -207,8 +207,8 @@
             this.txtUsuario.Location = new System.Drawing.Point(6, 87);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.ReadOnly = true;
-            this.txtUsuario.Size = new System.Drawing.Size(100, 20);
-            this.txtUsuario.TabIndex = 0;
+            this.txtUsuario.Size = new System.Drawing.Size(137, 20);
+            this.txtUsuario.TabIndex = 29;
             // 
             // txtIdUsuario
             // 

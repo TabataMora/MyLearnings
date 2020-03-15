@@ -65,7 +65,12 @@ namespace MyLearnings.Desktop
                 btnCancelar.Enabled = true;
                 btnSalvar.Enabled = true;
                 btnLocalizar.Enabled = false;
-                
+                txtAssunto.Enabled = true;
+                txtSubAssunto.Enabled = true;
+                txtResumo.Enabled = true;
+                txtAssunto.ReadOnly = false;
+                txtResumo.ReadOnly = false;
+                txtSubAssunto.ReadOnly = false;
             }
             if (op == 3)
             {
@@ -148,13 +153,6 @@ namespace MyLearnings.Desktop
         {
             this.operacao = "Inserir";
             this.AlteraBotoes(2);
-
-            txtAssunto.Enabled = true;
-            txtSubAssunto.Enabled = true;
-            txtResumo.Enabled = true;
-            txtAssunto.ReadOnly = false;
-            txtSubAssunto.ReadOnly = false;
-            txtResumo.ReadOnly = false;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -174,10 +172,6 @@ namespace MyLearnings.Desktop
         {
             this.operacao = "Alterar";
             this.AlteraBotoes(2);
-
-            txtAssunto.ReadOnly = false;
-            txtResumo.ReadOnly = false;
-            txtSubAssunto.ReadOnly = false;
         }
 
         private void btnLocalizar_Click(object sender, EventArgs e)

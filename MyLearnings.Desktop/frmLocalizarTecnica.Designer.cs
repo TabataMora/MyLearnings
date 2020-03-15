@@ -34,6 +34,8 @@
             this.txtLocalizaTec = new System.Windows.Forms.TextBox();
             this.btnLocalizaTec = new System.Windows.Forms.Button();
             this.lblLocalizaTec = new System.Windows.Forms.Label();
+            this.txtLocalizarTecId = new System.Windows.Forms.TextBox();
+            this.lblLocalizarId = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalizaTec)).BeginInit();
             this.SuspendLayout();
@@ -41,13 +43,15 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel1.Controls.Add(this.lblLocalizarId);
+            this.panel1.Controls.Add(this.txtLocalizarTecId);
             this.panel1.Controls.Add(this.dgvLocalizaTec);
             this.panel1.Controls.Add(this.txtLocalizaTec);
             this.panel1.Controls.Add(this.btnLocalizaTec);
             this.panel1.Controls.Add(this.lblLocalizaTec);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(496, 351);
+            this.panel1.Size = new System.Drawing.Size(602, 351);
             this.panel1.TabIndex = 4;
             // 
             // dgvLocalizaTec
@@ -56,11 +60,11 @@
             this.dgvLocalizaTec.AllowUserToDeleteRows = false;
             this.dgvLocalizaTec.BackgroundColor = System.Drawing.Color.White;
             this.dgvLocalizaTec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLocalizaTec.Location = new System.Drawing.Point(10, 64);
+            this.dgvLocalizaTec.Location = new System.Drawing.Point(7, 61);
             this.dgvLocalizaTec.Name = "dgvLocalizaTec";
             this.dgvLocalizaTec.ReadOnly = true;
             this.dgvLocalizaTec.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLocalizaTec.Size = new System.Drawing.Size(476, 279);
+            this.dgvLocalizaTec.Size = new System.Drawing.Size(589, 278);
             this.dgvLocalizaTec.TabIndex = 3;
             this.dgvLocalizaTec.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLocalizaTec_CellContentClick);
             // 
@@ -68,13 +72,13 @@
             // 
             this.txtLocalizaTec.Location = new System.Drawing.Point(10, 27);
             this.txtLocalizaTec.Name = "txtLocalizaTec";
-            this.txtLocalizaTec.Size = new System.Drawing.Size(427, 20);
+            this.txtLocalizaTec.Size = new System.Drawing.Size(355, 20);
             this.txtLocalizaTec.TabIndex = 1;
             // 
             // btnLocalizaTec
             // 
             this.btnLocalizaTec.Image = ((System.Drawing.Image)(resources.GetObject("btnLocalizaTec.Image")));
-            this.btnLocalizaTec.Location = new System.Drawing.Point(443, 11);
+            this.btnLocalizaTec.Location = new System.Drawing.Point(553, 9);
             this.btnLocalizaTec.Name = "btnLocalizaTec";
             this.btnLocalizaTec.Size = new System.Drawing.Size(43, 43);
             this.btnLocalizaTec.TabIndex = 2;
@@ -91,12 +95,29 @@
             this.lblLocalizaTec.TabIndex = 0;
             this.lblLocalizaTec.Text = "Pesquisar Técnica Por Nome";
             // 
+            // txtLocalizarTecId
+            // 
+            this.txtLocalizarTecId.Location = new System.Drawing.Point(384, 27);
+            this.txtLocalizarTecId.Name = "txtLocalizarTecId";
+            this.txtLocalizarTecId.Size = new System.Drawing.Size(158, 20);
+            this.txtLocalizarTecId.TabIndex = 4;
+            // 
+            // lblLocalizarId
+            // 
+            this.lblLocalizarId.AutoSize = true;
+            this.lblLocalizarId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocalizarId.Location = new System.Drawing.Point(381, 11);
+            this.lblLocalizarId.Name = "lblLocalizarId";
+            this.lblLocalizarId.Size = new System.Drawing.Size(150, 13);
+            this.lblLocalizarId.TabIndex = 5;
+            this.lblLocalizarId.Text = "Pesquisar Técnica Por Id";
+            // 
             // frmLocalizarTecnica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(520, 371);
+            this.ClientSize = new System.Drawing.Size(626, 354);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLocalizarTecnica";
@@ -117,5 +138,7 @@
         private System.Windows.Forms.TextBox txtLocalizaTec;
         private System.Windows.Forms.Button btnLocalizaTec;
         private System.Windows.Forms.Label lblLocalizaTec;
+        private System.Windows.Forms.Label lblLocalizarId;
+        private System.Windows.Forms.TextBox txtLocalizarTecId;
     }
 }

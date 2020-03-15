@@ -34,12 +34,16 @@
             this.txtLocalizaResumo = new System.Windows.Forms.TextBox();
             this.btnLocalizaResumo = new System.Windows.Forms.Button();
             this.lblLocalizaResumo = new System.Windows.Forms.Label();
+            this.txtLocalizaResumoId = new System.Windows.Forms.TextBox();
+            this.lblLocalizaId = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalizaResumo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtLocalizaResumoId);
+            this.panel1.Controls.Add(this.lblLocalizaId);
             this.panel1.Controls.Add(this.dgvLocalizaResumo);
             this.panel1.Controls.Add(this.txtLocalizaResumo);
             this.panel1.Controls.Add(this.btnLocalizaResumo);
@@ -67,7 +71,7 @@
             // 
             this.txtLocalizaResumo.Location = new System.Drawing.Point(8, 24);
             this.txtLocalizaResumo.Name = "txtLocalizaResumo";
-            this.txtLocalizaResumo.Size = new System.Drawing.Size(576, 20);
+            this.txtLocalizaResumo.Size = new System.Drawing.Size(372, 20);
             this.txtLocalizaResumo.TabIndex = 1;
             // 
             // btnLocalizaResumo
@@ -89,6 +93,23 @@
             this.lblLocalizaResumo.Size = new System.Drawing.Size(183, 13);
             this.lblLocalizaResumo.TabIndex = 0;
             this.lblLocalizaResumo.Text = "Pesquisar Resumo Por Assunto";
+            // 
+            // txtLocalizaResumoId
+            // 
+            this.txtLocalizaResumoId.Location = new System.Drawing.Point(399, 24);
+            this.txtLocalizaResumoId.Name = "txtLocalizaResumoId";
+            this.txtLocalizaResumoId.Size = new System.Drawing.Size(184, 20);
+            this.txtLocalizaResumoId.TabIndex = 5;
+            // 
+            // lblLocalizaId
+            // 
+            this.lblLocalizaId.AutoSize = true;
+            this.lblLocalizaId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocalizaId.Location = new System.Drawing.Point(396, 8);
+            this.lblLocalizaId.Name = "lblLocalizaId";
+            this.lblLocalizaId.Size = new System.Drawing.Size(149, 13);
+            this.lblLocalizaId.TabIndex = 4;
+            this.lblLocalizaId.Text = "Pesquisar Resumo Por Id";
             // 
             // frmLocalizarResumo
             // 
@@ -116,5 +137,7 @@
         private System.Windows.Forms.TextBox txtLocalizaResumo;
         private System.Windows.Forms.Button btnLocalizaResumo;
         private System.Windows.Forms.Label lblLocalizaResumo;
+        private System.Windows.Forms.TextBox txtLocalizaResumoId;
+        private System.Windows.Forms.Label lblLocalizaId;
     }
 }

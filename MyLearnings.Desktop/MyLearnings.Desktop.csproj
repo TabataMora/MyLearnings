@@ -64,12 +64,6 @@
     <Compile Include="frmCadastroUsuario.Designer.cs">
       <DependentUpon>frmCadastroUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHistorico.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHistorico.Designer.cs">
-      <DependentUpon>frmHistorico.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLocalizarResumo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,9 +113,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadastroUsuario.resx">
       <DependentUpon>frmCadastroUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmHistorico.resx">
-      <DependentUpon>frmHistorico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLocalizarResumo.resx">
       <DependentUpon>frmLocalizarResumo.cs</DependentUpon>

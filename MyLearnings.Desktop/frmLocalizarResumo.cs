@@ -25,12 +25,18 @@ namespace MyLearnings.Desktop
         {
             Resumo resumo = new Resumo();
             resumo.Assunto = txtLocalizaResumo.Text;
+            int id;
+            int.TryParse(txtLocalizaResumoId.Text, out id); //tentando converter, se não converter mantém o valor atual
+            resumo.Id = id;
             ResumoRegrasDeNegocio tecnicaRegras = new ResumoRegrasDeNegocio();
             List<Resumo> lista = new List<Resumo>();
 
             lista = tecnicaRegras.BuscarResumo(resumo);
 
             dgvLocalizaResumo.DataSource = lista;
+
+            txtLocalizaResumo.Clear();
+            txtLocalizaResumoId.Clear();
         }
 
         private void frmLocalizarResumo_Load(object sender, EventArgs e)

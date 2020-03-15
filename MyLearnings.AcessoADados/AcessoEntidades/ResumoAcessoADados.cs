@@ -84,14 +84,15 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                 {
                     _conexao.Conectar();
 
-                    if (resumo.Assunto.Trim().Length == 0)
+                    query = @"SELECT * FROM TB_RESUMO WHERE ID > 0 ";
+
+                    if (!string.IsNullOrWhiteSpace(resumo.Assunto))
                     {
-                        query = "SELECT * FROM TB_RESUMO";
+                        query = query + ("AND ASSUNTO LIKE '%" + resumo.Assunto + "%';");
                     }
-                    else
+                    if(resumo.Id > 0)
                     {
-                        query = ("SELECT ASSUNTO, ID, SUBASSUNTO, ID_CICLO_RESUMO, RESUMO" +
-                            " FROM TB_RESUMO WHERE ASSUNTO LIKE '%" + resumo.Assunto + "%';");
+                        query = query + ("AND ID LIKE '%" + resumo.Id + "%';");
                     }
 
                     cmd.CommandText = query;

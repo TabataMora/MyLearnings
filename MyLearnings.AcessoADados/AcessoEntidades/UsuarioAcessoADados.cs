@@ -127,8 +127,7 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
 
                     if (usuario.Id > 0)
                     {
-                        query = query + ("AND ID = @ID");
-                        cmd.Parameters.AddWithValue("@ID", usuario.Id);
+                        query = query + ("AND ID LIKE '%" + usuario.Id + "%';");
                     }
 
                     cmd.CommandText = query;
@@ -180,40 +179,7 @@ namespace MyLearnings.AcessoADados.AcessoEntidades
                     _conexao.Desconectar();
                 }
             }
-        }
-
-        public Usuario BuscaUsuarioPorId(int id)
-        {
-            Usuario usuario = new Usuario();
-            SqlCommand cmd = new SqlCommand();
-            using (cmd.Connection = _conexao.ObjetoDaConexao)
-            {
-                try
-                {
-                    _conexao.Conectar();
-                    cmd.CommandText = "SELECT NOME FROM TB_USUARIO WHERE ID = @ID";
-                    cmd.Parameters.AddWithValue("@ID", id);
-                    using (cmd)
-                    {
-                        using (DbDataReader dbReader = cmd.ExecuteReader())
-                        {
-                            while (dbReader.Read())
-                            {
-                                usuario.Nome = (dbReader["NOME"].ToString());
-                            }
-                        }
-                    }
-                }
-                catch (Exception)
-                {
-                    throw;
-                }
-                finally
-                {
-                    _conexao.Desconectar();
-                }
-                return usuario;
-            }
-        }
+        }        
+        
     }
 }
