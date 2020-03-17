@@ -49,7 +49,6 @@
             this.txtIdTec = new System.Windows.Forms.TextBox();
             this.lblIdTec = new System.Windows.Forms.Label();
             this.chkResumo = new System.Windows.Forms.CheckBox();
-            this.txtResumo = new System.Windows.Forms.TextBox();
             this.lblResumo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -224,26 +223,18 @@
             // 
             // chkResumo
             // 
-            this.chkResumo.Location = new System.Drawing.Point(68, 228);
+            this.chkResumo.Location = new System.Drawing.Point(68, 213);
             this.chkResumo.Name = "chkResumo";
             this.chkResumo.Size = new System.Drawing.Size(29, 24);
             this.chkResumo.TabIndex = 10008;
             this.chkResumo.UseVisualStyleBackColor = true;
-            this.chkResumo.CheckedChanged += new System.EventHandler(this.chkResumo_CheckedChanged);
-            // 
-            // txtResumo
-            // 
-            this.txtResumo.Enabled = false;
-            this.txtResumo.Location = new System.Drawing.Point(11, 228);
-            this.txtResumo.Name = "txtResumo";
-            this.txtResumo.Size = new System.Drawing.Size(43, 20);
-            this.txtResumo.TabIndex = 10007;
+            this.chkResumo.Click += new System.EventHandler(this.chkResumo_Click);
             // 
             // lblResumo
             // 
             this.lblResumo.AutoSize = true;
             this.lblResumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResumo.Location = new System.Drawing.Point(8, 212);
+            this.lblResumo.Location = new System.Drawing.Point(8, 218);
             this.lblResumo.Name = "lblResumo";
             this.lblResumo.Size = new System.Drawing.Size(52, 13);
             this.lblResumo.TabIndex = 10006;
@@ -256,7 +247,6 @@
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(465, 255);
             this.Controls.Add(this.chkResumo);
-            this.Controls.Add(this.txtResumo);
             this.Controls.Add(this.lblResumo);
             this.Controls.Add(this.lblIdTec);
             this.Controls.Add(this.txtIdTec);
@@ -306,7 +296,6 @@
         private System.Windows.Forms.TextBox txtIdTec;
         private System.Windows.Forms.Label lblIdTec;
         private System.Windows.Forms.CheckBox chkResumo;
-        private System.Windows.Forms.TextBox txtResumo;
         private System.Windows.Forms.Label lblResumo;
     }
 }

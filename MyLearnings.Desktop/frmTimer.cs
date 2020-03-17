@@ -110,6 +110,24 @@ namespace MyLearnings.Desktop
 
             timer.Stop();
             timer.Enabled = false;
+
+            try
+            {
+                this.Player.SoundLocation = @"C:\gitRepository\MyLearnings\MyLearnings.Desktop\Songs\alerta.wav";
+                this.Player.PlayLooping();
+                DialogResult d = MessageBox.Show("Tempo finalizado!", "Bosta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                if (d == DialogResult.OK)
+                {
+                    this.Player.Stop();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error playing sound");
+            }
+
             return;
         }
 
@@ -231,17 +249,6 @@ namespace MyLearnings.Desktop
         {
             TimerPausadoPeloUsuario();
             InicioTimer(psegundos: 0);
-
-            try
-            {
-                this.Player.SoundLocation = @"C:\gitRepository\MyLearnings\MyLearnings.Desktop\Songs\alerta.wav";
-                this.Player.PlayLooping();
-                DialogResult d = MessageBox.Show("Tempo finalizado!", "Alerta", MessageBoxButtons.OK);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error playing sound");
-            }
         }
 
         private void chkTempoCiclo_CheckedChanged(object sender, EventArgs e)
@@ -255,7 +262,6 @@ namespace MyLearnings.Desktop
 
         private void chkDescCurto_CheckedChanged(object sender, EventArgs e)
         {
-            chkTempoCiclo.Checked = false;
             chkDescLongo.Checked = false;
             chkTempoCiclo.Checked = false;
             chkResumo.Checked = false;
@@ -267,10 +273,19 @@ namespace MyLearnings.Desktop
         {
             chkDescCurto.Checked = false;
             chkTempoCiclo.Checked = false;
-            chkTempoCiclo.Checked = false;
             chkResumo.Checked = false;
 
             HoraQueAComboEChamado();
+        }
+
+        private void chkResumo_Click(object sender, EventArgs e)
+        {
+            chkDescCurto.Checked = false;
+            chkDescLongo.Checked = false;
+            chkTempoCiclo.Checked = false;
+
+            frmCadastroResumo frm = new frmCadastroResumo(IdCicloAtual);
+            frm.Show();
         }
 
         private void cmbTecnica_SelectionChangeCommitted(object sender, EventArgs e)
@@ -302,20 +317,12 @@ namespace MyLearnings.Desktop
                 {
                     segundoselecionado = (int)tecnicaSelecionada.DescLongo * 60;
                 }
+               
                 else if (tecnicaSelecionada == null)
                 {
                     MessageBox.Show("O tempo não está sendo informado!");
                 }
             }
-        }
-
-        private void chkResumo_CheckedChanged(object sender, EventArgs e)
-        {
-            chkDescCurto.Checked = false;
-            chkDescLongo.Checked = false;
-            chkTempoCiclo.Checked = false;
-            frmCadastroResumo frm = new frmCadastroResumo(IdCicloAtual);
-            frm.Show();
         }
     }
 }
